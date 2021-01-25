@@ -1,0 +1,18 @@
+p1{
+    color: white;
+}
+
+.diabloAbout{
+
+    width: 1000px;
+}
+
+.pictureDiv{
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+#biography{
+    color:white;
+}

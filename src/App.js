@@ -7,11 +7,15 @@ import {
 import Homepage from './pages/homepage/Homepage';
 import About from './pages/about/About';
 import TopMenu from './components/TopMenu';
+import Demodrop from "./pages/demodrop/Demodrop";
+import Contact from "./pages/contact/Contact";
+import './App.css';
 
 
 
 function App() {
   return (
+      <body className="bodycontainer">
       <Router>
           <TopMenu />
               <Switch>
@@ -21,8 +25,15 @@ function App() {
                   <Route exact path="/About">
                       <About />
                   </Route>
+                  <Route exact path="/Demodrop">
+                      <Demodrop />
+                  </Route>
+                  <Route exact path="/Contact">
+                      <Contact />
+                  </Route>
               </Switch>
       </Router>
+      </body>
   );
 }
 

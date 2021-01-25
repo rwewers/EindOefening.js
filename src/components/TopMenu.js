@@ -19,11 +19,11 @@ function TopMenu() {
                         <NavLink to="/about" activeClassName="active-link">About</NavLink>
                     </li>
                     <li>
-                        <NavLink to="Demo drop" exact activeClassName="active-link">Demo drop</NavLink>
+                        <NavLink to="demodrop" exact activeClassName="active-link">Demo drop</NavLink>
                     </li>
 
                     <li>
-                        <NavLink to="/Contact" activeClassName="active-link">Contact</NavLink>
+                        <NavLink to="/contact" activeClassName="active-link">Contact</NavLink>
                     </li>
 
                 </ul>
