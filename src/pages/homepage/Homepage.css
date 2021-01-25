@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+    background: #222;
+
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+header{
+    background: black;
+    height: 75px;
+
+}
+
+nav{
+    float: right;
+}
+
+header:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+.App-logo{
+    width: 175px;
+}
+
+nav ul{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    color: white;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 23px;
+
+    position: relative;
+
+}
+
+
+
+nav a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+nav a:hover{
+    color: #b0148f;
+}
+
+
+nav a::before{
+    content:  '';
+    display: block;
+    height: 5px;
+    width: 0%;
+    background-color: #b0148f;
+    position: absolute;
+    top:0;
+    transition: all ease-in-out 250ms;
+
+}
+
+nav a:hover::before{
+    width: 100%;
+}
+
+.background-image{
+    width: 100%;
+}
+
+
