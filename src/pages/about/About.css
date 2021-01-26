@@ -14,5 +14,12 @@ p1{
 }
 
 #biography{
+    display: flex;
+    justify-content: center;
     color:white;
+
 }
+#personal-message{
+    height: 250px;
+}
+

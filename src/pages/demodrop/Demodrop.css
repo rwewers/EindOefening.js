@@ -7,11 +7,7 @@ h1{
     display: flex;
     justify-content: center;
 }
-#text{
-    color: white;
-    padding: 10px;
 
-}
 
 
 form{
@@ -22,13 +18,19 @@ form{
 
 input, label {
     display:block;
+    margin:5px;
 }
 
 input{
     width: 500px;
+   
 }
+label{
 
-.form{
+    color: white;
+    text-transform: uppercase;
+}
+form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,5 +38,25 @@ input{
 
 #personalText {
     width: 500px;
-    height: 250px;
+    height: 205px;
 }
+
+span{
+    margin: 20px;
+    color: white;
+
+}
+
+#spanContainer{
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+button{
+    width: 200px;
+    height: 50px;
+}
+
+
