@@ -71,7 +71,7 @@ const InputField = forwardRef((props, ref) => {
     })
 
     return(
-        <div>
+        <div className="divInputField">
             {props.label && (
                 <label>{props.label}</label>
             )}

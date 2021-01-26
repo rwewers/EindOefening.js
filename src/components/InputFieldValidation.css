@@ -1,3 +1,11 @@
 .error{
+    display: flex;
     color: red;
+    font-size: 13px;
+    justify-content: center;
+    margin: 0;
+}
+
+.divInputField{
+    margin: 5px;
 }
