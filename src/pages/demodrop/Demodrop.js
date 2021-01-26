@@ -1,8 +1,6 @@
 import React from 'react';
 import './Demodrop.css';
 import InputField from "../../components/InputFieldValidation";
-
-
 function Demodrop() {
 
 
@@ -16,7 +14,7 @@ function Demodrop() {
     }
 
     console.log(data);
-    console.log(inputRefs);
+    // console.log(inputRefs);
 
     const submitForm = (e) => {
         e.preventDefault();
@@ -39,6 +37,7 @@ function Demodrop() {
 
     return (
                     <div>
+
                     <h1 id="demodrop">DEMODROP</h1>
                    <form onSubmit={submitForm}>
                     <InputField
