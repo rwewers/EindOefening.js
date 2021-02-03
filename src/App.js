@@ -1,23 +1,24 @@
 
 import {
-    BrowserRouter as Router,
+
     Switch,
     Route,
 } from "react-router-dom";
-import Homepage from './pages/homepage/Homepage';
-import About from './pages/about/About';
-import TopMenu from './components/TopMenu';
-import Demodrop from "./pages/demodrop/Demodrop";
-import Contact from "./pages/contact/Contact";
+import Homepage from './pages/Customer/homepage/Homepage';
+import About from './pages/Customer/about/About';
+import Demodrop from "./pages/Customer/demodrop/Demodrop";
+import Contact from "./pages/Customer/contact/Contact";
+import Login from "./pages/Customer/login/Login";
+import Logged_in_homepage from "./pages/Company/Logged_in_homepage/Logged_in_homepage";
 import './App.css';
+import Submissions from "./pages/Company/Submissions/Submissions";
 
 
 
 function App() {
   return (
       <body className="bodycontainer">
-      <Router>
-          <TopMenu />
+
               <Switch>
                   <Route exact path="/">
                       < Homepage />
@@ -31,8 +32,17 @@ function App() {
                   <Route exact path="/Contact">
                       <Contact />
                   </Route>
+
+                  <Route exact path="/Login">
+                      <Login />
+                  </Route>
+                  <route exact path ="/logged-in-homepage">
+                      <Logged_in_homepage />
+                  </route>
+                  <route exact path ="/logged-in-submissions">
+                      <Submissions />
+                  </route>
               </Switch>
-      </Router>
       </body>
   );
 }

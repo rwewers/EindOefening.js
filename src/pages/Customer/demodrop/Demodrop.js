@@ -1,6 +1,9 @@
 import React from 'react';
 import './Demodrop.css';
-import InputField from "../../components/InputFieldValidation";
+import InputField from "../../../components/InputValidation/InputFieldValidation";
+import TopMenu from "../../../components/TopMenuCustomer/TopMenu";
+
+
 function Demodrop() {
 
 
@@ -37,7 +40,7 @@ function Demodrop() {
 
     return (
                     <div>
-
+                        <TopMenu />
                     <h1 id="demodrop">DEMODROP</h1>
                    <form onSubmit={submitForm}>
                     <InputField
@@ -90,15 +93,15 @@ function Demodrop() {
                        <InputField
                            ref={inputRefs.current[7]}
                            id="personalText"
-                           name="personal-messages"
-                           label="Personal messages *"
+                           name="personal-message"
+                           label="Personal message *"
                            onChange ={handleChange}
                            validation={"required|max:250"}
                        />
 
                        <button type="submit" >
-                        Submit
-                    </button>
+                           Submit
+                       </button>
 
                     </form>
                     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.css';
-import pictureAboutDiablo from "../../assets/1+(1).jpg";
+import pictureAboutDiablo from "../../../assets/1+(1).jpg";
+import TopMenu from "../../../components/TopMenuCustomer/TopMenu";
 
 
 function About() {
@@ -10,6 +11,7 @@ function About() {
 
 
         <div className="flexcontainer">
+            <TopMenu />
             <h1 id="biography">BIOGRAPHY</h1>
                 <div className="pictureDiv">
             <img src={pictureAboutDiablo} className="diabloAbout" alt="logo"/>

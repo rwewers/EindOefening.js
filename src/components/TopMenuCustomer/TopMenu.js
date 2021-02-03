@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../logo.png';
+import logo from '../../logo.png';
+import './TopMenuCustomer.css';
+
 
 function TopMenu() {
     return (
@@ -25,6 +27,7 @@ function TopMenu() {
                     <li>
                         <NavLink to="/contact" activeClassName="active-link">Contact</NavLink>
                     </li>
+
 
                 </ul>
 

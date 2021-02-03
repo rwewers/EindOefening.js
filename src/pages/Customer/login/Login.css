@@ -1,0 +1,16 @@
+#loginButton{
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.loginFormContainer {
+    width: 1920px;
+    height: 1080px;
+    justify-content: center;
+    align-items: start;
+    display: flex;
+    margin-top: 100px;
+}
+
+
+

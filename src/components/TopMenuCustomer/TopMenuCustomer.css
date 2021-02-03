@@ -1,23 +1,16 @@
-body{
-    margin: 0;
-    background: #222;
-
+.App-logo{
+    width: 175px;
 }
 
-.container{
-    width: 80%;
-    margin: 0 auto;
+nav{
+    float: right;
+
+    /*HIER MOET NOG NA GEKEKEN WORDEN !!!! FLOAT MAG NIET */
 }
 
 header{
     background: black;
     height: 75px;
-
-
-}
-
-nav{
-    float: right;
 }
 
 header:after{
@@ -25,10 +18,6 @@ header:after{
     display: table;
     clear: both;
 }
-.App-logo{
-    width: 175px;
-}
-
 nav ul{
     margin:0;
     padding: 0;
@@ -74,9 +63,3 @@ nav a::before{
 nav a:hover::before{
     width: 100%;
 }
-
-.background-image{
-    width: 100%;
-}
-
-
