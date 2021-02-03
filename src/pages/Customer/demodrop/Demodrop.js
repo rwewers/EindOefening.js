@@ -52,8 +52,8 @@ function Demodrop() {
                     />
                        <InputField
                            ref={inputRefs.current[1]}
-                           name="emailadress"
-                           label="Email adress * "
+                           name="emailaddress"
+                           label="Email address * "
                            onChange ={handleChange}
                            validation={"required|email"}
                        />
@@ -85,8 +85,8 @@ function Demodrop() {
                        />
                        <InputField
                            ref={inputRefs.current[6]}
-                           name="music-url"
-                           label="Music-url *"
+                           name="music-file"
+                           label="Music-file *"
                            onChange ={handleChange}
                            validation={"required"}
                        />

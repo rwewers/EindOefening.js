@@ -51,7 +51,7 @@ function Login() {
                         onChange={handleChange}
                        />
                     <button id="loginButton" type="submit" >
-                        Submit
+                        Login
                     </button>
                 </form>
 

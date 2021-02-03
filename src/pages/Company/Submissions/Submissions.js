@@ -20,32 +20,32 @@ function Submissions(){
                     </thead>
                     <tbody>
                     <tr>
-                        <td>Remco Wewers</td>
-                        <td>remco@wewers.nl</td>
-                        <td>Netherlands</td>
-                        <td>03-02-2021</td>
-                        <td>In progress</td>
+                        <td><a href="#" className="row-link">Remco Wewers</a></td>
+                        <td><a href="#" className="row-link" >remco@wewers.nl</a></td>
+                        <td><a href="#" className="row-link"  >Netherlands</a></td>
+                        <td><a href="#" className="row-link"  >03-02-2021</a></td>
+                        <td><a href="#" className="row-link" >In progress</a></td>
                     </tr>
                     <tr>
-                        <td>David Guetta</td>
-                        <td>david@guetta.nl</td>
-                        <td>Netherlands</td>
-                        <td>15-12-2020</td>
-                        <td>Rejected</td>
+                        <td><a href="#" className="row-link">David Guetta</a></td>
+                        <td><a href="#" className="row-link">david@guetta.nl</a></td>
+                        <td><a href="#" className="row-link">Netherlands</a></td>
+                        <td><a href="#" className="row-link">15-12-2020 </a></td>
+                        <td><a href="#" className="row-link">Rejected</a></td>
                     </tr>
                     <tr>
-                        <td>Dj manbun</td>
-                        <td>manbun@live.nl</td>
-                        <td>France</td>
-                        <td>07-08-2020</td>
-                        <td>Approved</td>
+                        <td><a href="#" className="row-link">Dj manbun</a></td>
+                        <td><a href="#" className="row-link">manbun@live.nl</a></td>
+                        <td><a href="#" className="row-link">France</a></td>
+                        <td><a href="#" className="row-link">07-08-2020</a></td>
+                        <td><a href="#" className="row-link">Approved</a></td>
                     </tr>
                     <tr>
-                        <td>Dj Tiesto</td>
-                        <td>teisto@live.nl</td>
-                        <td>Netherlands</td>
-                        <td>01-08-2019</td>
-                        <td>Approved</td>
+                        <td><a href="#" className="row-link">Dj Tiesto</a></td>
+                        <td><a href="#" className="row-link">teisto@live.nl</a></td>
+                        <td><a href="#" className="row-link">Netherlands</a></td>
+                        <td><a href="#" className="row-link">01-08-2019</a></td>
+                        <td><a href="#" className="row-link">Approved</a></td>
                     </tr>
 
                     </tbody>
