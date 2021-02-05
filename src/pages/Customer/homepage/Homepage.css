@@ -10,9 +10,18 @@ body{
 }
 
 
-.background-image{
+
+.background-image3{
     width: 1920px;
     height: 1080px;
+
 }
 
+.don_diablo_unknown {
+
+
+    top: 200px;
+    left: 450px;
+    position: absolute
+}
 

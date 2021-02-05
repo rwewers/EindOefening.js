@@ -9,7 +9,7 @@ nav{
 }
 
 header{
-    background: black;
+    background: #222222;
     height: 75px;
 }
 
@@ -44,7 +44,7 @@ nav a{
 }
 
 nav a:hover{
-    color: #b0148f;
+    color: red;
 }
 
 
@@ -53,7 +53,7 @@ nav a::before{
     display: block;
     height: 5px;
     width: 0%;
-    background-color: #b0148f;
+    background-color: red;
     position: absolute;
     top:0;
     transition: all ease-in-out 250ms;
@@ -64,6 +64,6 @@ nav a:hover::before{
     width: 100%;
 }
 header{
-    border-bottom: 2px solid #b0148f
-;
+    border-bottom: 2px solid white;
+
 }
