@@ -12,7 +12,7 @@ function Submissions(){
                     <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Email adress</th>
+                        <th>Email address</th>
                         <th>Country</th>
                         <th>Date</th>
                         <th>Status</th>

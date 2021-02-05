@@ -63,6 +63,7 @@ function Contact() {
                     validation={"required"}
                 />
                 <InputField
+                    id="labelmessage"
                     ref={inputRefs.current[3]}
                     name="Message"
                     label="Message *"

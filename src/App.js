@@ -9,9 +9,10 @@ import About from './pages/Customer/about/About';
 import Demodrop from "./pages/Customer/demodrop/Demodrop";
 import Contact from "./pages/Customer/contact/Contact";
 import Login from "./pages/Customer/login/Login";
-import Logged_in_homepage from "./pages/Company/Logged_in_homepage/Logged_in_homepage";
+import Logged_in_homepage from "./pages/Company/Homepage/Logged_in_homepage";
 import './App.css';
 import Submissions from "./pages/Company/Submissions/Submissions";
+import SelectedSubmission from "./pages/Company/SelectedSubmission/SelectedSubmission";
 
 
 
@@ -41,6 +42,9 @@ function App() {
                   </route>
                   <route exact path ="/logged-in-submissions">
                       <Submissions />
+                  </route>
+                  <route exact path ="/logged-in-selected-submission">
+                      <SelectedSubmission />
                   </route>
               </Switch>
       </body>
