@@ -3,14 +3,17 @@
 }
 
 nav{
-    float: right;
+    /*float: right;*/
 
     /*HIER MOET NOG NA GEKEKEN WORDEN !!!! FLOAT MAG NIET */
 }
-
+ul{
+    display: flex;
+    justify-content: space-evenly;
+}
 header{
-    background: #222222;
-    height: 75px;
+    background: black;
+    height: 100px;
 }
 
 header:after{
@@ -40,7 +43,7 @@ nav a{
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 nav a:hover{
@@ -63,7 +66,9 @@ nav a::before{
 nav a:hover::before{
     width: 100%;
 }
-header{
-    border-bottom: 2px solid white;
 
+.App-logo2{
+
+    margin: 0;
+    width: 150px;
 }

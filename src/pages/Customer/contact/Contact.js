@@ -1,6 +1,6 @@
 import React from 'react';
 import './Contact.css';
-import TopMenu from "../../../components/TopMenuCustomer/TopMenu";
+import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
 import InputField from "../../../components/InputValidation/InputFieldValidation";
 
 
@@ -38,7 +38,7 @@ function Contact() {
 
     return (
         <div>
-            <TopMenu />
+            <TopMenuCustomer />
             <h1 id="demodrop">Contact</h1>
             <form onSubmit={submitForm}>
                 <InputField

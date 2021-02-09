@@ -1,17 +1,16 @@
 import React from 'react';
 
-import background1 from "../../../782147.jpg";
 import DonDiablo_into_the_unknown from "../../../assets/DonDiablo_into_the_unkown.PNG"
-import background2 from "../../../assets/138618.jpg";
-
-import background3 from "../../../assets/138616.jpg";
+import logo from "../../../logo.png";
+import background3 from "../../../assets/background.jpg";
+import background4 from "../../../assets/background2.jpg";
 
 import './Homepage.css';
 import {
     Link,
 useHistory,
 } from 'react-router-dom';
-import TopMenu from "../../../components/TopMenuCustomer/TopMenu";
+import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
 
 function Homepage(){
 
@@ -23,15 +22,24 @@ function Homepage(){
 
     return(
     <html>
-    <TopMenu />
+    <TopMenuCustomer />
+
+
     <body className="parent">
       <main>
-        <img src={background3} className="background-image3" alt="logo"/>
+          <div className="pictureContainer">
+          <img src={background4} className="background-image3" alt="logo"/>
+          {/*<img src={logo} className="App-logo1" alt="logo" />*/}
           <img src={DonDiablo_into_the_unknown} className="don_diablo_unknown" alt="logo"/>
+          </div>
+          <div className="homepageContainer">
+          <h1 className="h1News">NEWS</h1>
+          </div>
     </main>
 
 
     </body>
+
     </html>
     );
 }

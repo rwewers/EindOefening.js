@@ -12,16 +12,25 @@ body{
 
 
 .background-image3{
-    width: 1920px;
-    height: 1080px;
-
+   /* position: absolute;*/
+   /*top:150px;*/
 }
 
 .don_diablo_unknown {
-
-
-    top: 200px;
+    height: 342px;
+    width: 906px;
+    top: 250px;
     left: 450px;
     position: absolute
 }
+
+.h1News{
+    font-size: 60px;
+}
+
+.homepageContainer{
+    display: flex;
+    justify-content: center;
+}
+
 

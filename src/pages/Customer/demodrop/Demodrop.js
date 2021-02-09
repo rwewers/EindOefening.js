@@ -1,7 +1,7 @@
 import React from 'react';
 import './Demodrop.css';
 import InputField from "../../../components/InputValidation/InputFieldValidation";
-import TopMenu from "../../../components/TopMenuCustomer/TopMenu";
+import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
 
 
 function Demodrop() {
@@ -40,7 +40,7 @@ function Demodrop() {
 
     return (
                     <div>
-                        <TopMenu />
+                        <TopMenuCustomer />
                     <h1 id="demodrop">DEMODROP</h1>
                    <form onSubmit={submitForm}>
                     <InputField
