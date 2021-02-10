@@ -21,7 +21,7 @@ body{
 .don_diablo_unknown {
     height: 342px;
     width: 906px;
-    top: 250px;
+    top: 270px;
     left: 450px;
     position: absolute
 }
@@ -29,6 +29,7 @@ body{
 .h1News{
     font-size: 60px;
     margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .homepageContainer{
