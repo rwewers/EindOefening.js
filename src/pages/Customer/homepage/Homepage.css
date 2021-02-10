@@ -14,6 +14,8 @@ body{
 .background-image3{
    /* position: absolute;*/
    /*top:150px;*/
+    width: 1920px;
+    height: 765px;
 }
 
 .don_diablo_unknown {
@@ -26,11 +28,24 @@ body{
 
 .h1News{
     font-size: 60px;
+    margin-top: 0;
 }
 
 .homepageContainer{
+
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+
 }
 
+.newsDates{
+    color: darkgrey;
+    margin-bottom: 0;
+}
 
+.newsInfo{
+    margin-top: 0;
+    color: white;
+}
