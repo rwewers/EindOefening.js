@@ -92,8 +92,8 @@ body{
     background-image: url("../../../assets/home_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+    /*background-position: center center;*/
+    /*background-attachment: fixed;*/
 
 }
 
@@ -105,5 +105,44 @@ body{
     margin:0;
     height: 40px;
 }
+.background2Wrapper{
+    height: 650px;
+    background-image: url("../../../assets/dondiablo_shows.PNG");
+    background-repeat: no-repeat;
+    background-size: 1920px;
+    /*background-position: center center;*/
+    /*background-attachment: fixed;*/
+}
+
+.musicContainer{
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 1046px;
+    height: 808px;
+
+}
+.musicPictures{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    width: 238px;
+}
 
 
+
+
+.divContainerMusic{
+    display: flex;
+    justify-content: center;
+
+}
+
+.h1Music{
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    margin-top: 0;
+
+}
