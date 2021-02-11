@@ -8,7 +8,7 @@ import './TopMenuCustomer.css';
 function TopMenuCustomer() {
     return (
         <div className="Topmenu-Container">
-        <header>
+
             {/*<img src={logo} className="App-logo" alt="logo" />*/}
         <nav>
             <div className="nav-container">
@@ -38,7 +38,7 @@ function TopMenuCustomer() {
 
             </div>
         </nav>
-        </header>
+
         </div>
     );
 }

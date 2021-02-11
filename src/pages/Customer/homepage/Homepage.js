@@ -22,16 +22,26 @@ function Homepage(){
 
     return(
     <html>
-    <TopMenuCustomer />
 
 
-    <body className="parent">
+
+    <body>
+    <header className="homepageHeader">
+
+    </header>
       <main>
+          <div className="parent">
+          <TopMenuCustomer/>
           <div className="pictureContainer">
-          <img src={home} className="background-image3" alt="logo"/>
-          {/*<img src={logo} className="App-logo1" alt="logo" />*/}
-          <img src={DonDiablo_into_the_unknown} className="don_diablo_unknown" alt="logo"/>
+          {/*<img src={home} className="background-image3" alt="logo"/>*/}
+
+          <img src={DonDiablo_into_the_unknown} className="don_diablo_unknown" alt="albumcover"/>
+              <button type="submit" className="listenButton" >
+                  OFFICIAL VIDEO
+              </button>
           </div>
+          </div>
+
           <div className="homepageContainer">
               <h1 className="h1News">NEWS</h1>
               <h3 className="newsDates">JAN 29, 2021</h3>

@@ -11,19 +11,21 @@ body{
 
 
 
-.background-image3{
-   /* position: absolute;*/
-   /*top:150px;*/
-    width: 1920px;
-    height: 765px;
-}
+/*.background-image3{*/
+/*   !* position: absolute;*!*/
+/*   !*top:150px;*!*/
+/*   !* width: 1920px;*!*/
+/*    height: auto;*/
+/*    max-width: 100%;*/
+/*    width: 1920px;*/
+/*}*/
 
 .don_diablo_unknown {
-    height: 342px;
-    width: 906px;
-    top: 270px;
-    left: 450px;
-    position: absolute
+    height: 381px;
+    width: 1007px;
+
+    max-width: 100%;
+
 }
 
 .h1News{
@@ -50,3 +52,58 @@ body{
     margin-top: 0;
     color: white;
 }
+
+.pictureContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+/*.pictureContainer img {*/
+/*    height: auto;*/
+/*}*/
+
+.listenButton{
+    height: 66px;
+    width: 223px;
+
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: 3px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+
+}
+
+.listenButton:hover {
+    background-color: black;
+}
+
+.don_diablo_shows{
+    height: auto;
+    max-width: 100%;
+    width: 1920px;
+}
+
+.parent{
+    background-image: url("../../../assets/home_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+}
+
+.pictureContainer{
+    height: 800px;
+}
+
+.homepageHeader{
+    margin:0;
+    height: 40px;
+}
+
+

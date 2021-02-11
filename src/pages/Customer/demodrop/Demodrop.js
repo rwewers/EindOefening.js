@@ -39,7 +39,7 @@ function Demodrop() {
     }
 
     return (
-                    <div>
+                    <div className="parentDemodrop">
                         <TopMenuCustomer />
                     <h1 id="demodrop">DEMODROP</h1>
                    <form onSubmit={submitForm}>
