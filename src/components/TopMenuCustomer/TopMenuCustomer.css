@@ -9,7 +9,7 @@ nav{
 }
 ul{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 header{
     background: black;
@@ -30,8 +30,7 @@ nav ul{
 
 nav li{
     display: inline-block;
-    margin-left: 70px;
-    padding-top: 23px;
+
 
     position: relative;
 
@@ -68,7 +67,6 @@ nav a:hover::before{
 }
 
 .App-logo2{
-
-    margin: 0;
     width: 150px;
 }
+

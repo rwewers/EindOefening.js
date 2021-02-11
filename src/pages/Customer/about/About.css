@@ -15,11 +15,13 @@ h1{
 
 #biography{
     display: flex;
+    margin-right: 93px;
     justify-content: center;
     color:white;
 
 }
 #personal-message{
+
     height: 250px;
 }
 

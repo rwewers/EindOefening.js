@@ -16,21 +16,21 @@ function TopMenuCustomer() {
 
                 <ul>
                     <li>
-                        <NavLink to="/" exact activeClassName="active-link">Home</NavLink>
+                        <NavLink className="navLinks" to="/" exact activeClassName="active-link">Home</NavLink>
                     </li>
 
                     <li>
-                        <NavLink to="/about" activeClassName="active-link">About</NavLink>
+                        <NavLink className="navLinks" to="/about" activeClassName="active-link">About</NavLink>
                     </li>
                     <li>
                         <img src={logo1} className="App-logo2" alt="logo1" />
                     </li>
                     <li>
-                        <NavLink to="demodrop" exact activeClassName="active-link">Demo drop</NavLink>
+                        <NavLink className="navLinks" to="demodrop" exact activeClassName="active-link">Demo drop</NavLink>
                     </li>
 
                     <li>
-                        <NavLink to="/contact" activeClassName="active-link">Contact</NavLink>
+                        <NavLink className="navLinks" to="/contact" activeClassName="active-link">Contact</NavLink>
                     </li>
 
 
