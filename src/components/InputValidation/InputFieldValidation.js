@@ -9,6 +9,7 @@ const InputField = forwardRef((props, ref) => {
         setValue(event.target.value)
         setError("");
         props.onChange(event.target.name, event.target.value)
+
     }
 
     const validate = () => {

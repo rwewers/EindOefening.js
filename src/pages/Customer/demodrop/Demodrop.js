@@ -13,7 +13,7 @@ function Demodrop() {
     const[data, setData] = React.useState({});
 
     const handleChange = (name, value) => {
-    setData(prev => ({ ...prev, [name]: value }))
+        setData(prev => ({ ...prev, [name]: value }))
     }
 
     console.log(data);

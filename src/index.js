@@ -7,14 +7,14 @@ import {
     BrowserRouter as Router,
 
 } from "react-router-dom";
-import {AuthContextProvidor} from "./context/AuthContext";
+import {AuthContextProvider} from "./context/AuthContext";
 
 ReactDOM.render(
   <React.StrictMode>
       <Router>
-          <AuthContextProvidor>
+          <AuthContextProvider>
                 <App/>
-          </AuthContextProvidor>
+          </AuthContextProvider>
       </Router>
   </React.StrictMode>,
   document.getElementById('root')

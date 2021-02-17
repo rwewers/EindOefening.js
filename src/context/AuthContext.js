@@ -1,54 +1,87 @@
-import {useContext, createContext, useEffect, useState} from 'react';
 import './AuthContext.css';
-
+import React, { createContext, useContext, useEffect, useState } from 'react';
 const AuthContext = createContext({});
 
-function AuthContextProvidor({ children }){
+function AuthContextProvider({ children }) {
     const [authState, setAuthState] = useState({
         status: 'pending',
         error: null,
         user: null,
     })
 
-    useEffect(()=> {
+    useEffect(() => {
+        // haal uit de local storage de JWT Token
+        // Als die er niet is, kunnen we gewoon verder
+        // Als die token er wel is, dan betekend dat dat de applicatie herstart is
+        // En dan willen we nog even onze gebruikersdata (username, etc.) ophalen.
 
-        setTimeout(()=>{
-
-            setAuthState( {
+        setTimeout(() => {
+            // er is geen token, dus we beginnen met een schone lei!
+            setAuthState({
                 ...authState,
                 status: 'done',
             })
         }, 2000)
     }, []);
 
-    return(
+    function login(data){
+        localStorage.setItem('token', data.accessToke);
 
-        <AuthContext.Provider value={authState}>
+        setAuthState({
+            ...authState,
+            user: {
+                username: data.username,
+                email: data.email,
+                roles: data.roles,
+            }
+        })
+    }
+
+
+    function logout(){
+    localStorage.clear();
+    setAuthState({
+        ...authState,
+        user: null,
+        })
+
+    }
+    const providorData ={
+        ...authState,
+        login: login,
+        logout: logout,
+    }
+
+    return (
+        <AuthContext.Provider value={providorData}>
+            {/*Hebben we alles gecheckt? Laat dan de applicatie zien*/}
             {authState.status === 'done' && children}
-            {authState.status === 'pending' && <p className="loading">Loading...</p>}
+            {/*Zijn we nog bezig met verifieren? Dan gaan we ook de applicatie niet laden!*/}
+            {authState.status === 'pending' && <p>Loading...</p>}
         </AuthContext.Provider>
     );
 }
-function useAuthState(){
+
+function useAuthState() {
 
     const authState = useContext(AuthContext);
 
+
     const isDone = authState.status === 'done';
-    const isAuthenticated =   authState.user !== null && isDone;
+    const isAuthenticated = authState.user !== null && isDone;
 
-    console.log('Ik ben authenticated', isAuthenticated);
+    console.log('Ik ben authenticated:', isAuthenticated);
 
-    return{
+    return {
         ...authState,
         isAuthenticated: isAuthenticated,
     }
 
 }
 
+
 export{
-
     AuthContext,
-    AuthContextProvidor,
     useAuthState,
-
+    AuthContextProvider,
 }

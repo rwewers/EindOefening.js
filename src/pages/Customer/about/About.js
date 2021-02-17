@@ -8,8 +8,6 @@ function About() {
 
     return (
 
-
-
         <div className="flexcontainer">
             <TopMenuCustomer />
             <h1 id="biography">BIOGRAPHY</h1>
