@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState} from 'react';
 import './Demodrop.css';
 import InputField from "../../../components/InputValidation/InputFieldValidation";
 import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
+import axios from "axios";
+import {Link} from "react-router-dom";
 
 
 function Demodrop() {
@@ -16,11 +18,12 @@ function Demodrop() {
         setData(prev => ({ ...prev, [name]: value }))
     }
 
+    const[demodropSucces, setDemodropSucces] = useState(false);
     // console.log(data);
     // console.log(inputRefs);
 
-    const submitForm = (e) => {
-        e.preventDefault();
+    async function onSubmit(event) {
+        event.preventDefault();
 
         let isValid = true;
 
@@ -34,7 +37,32 @@ function Demodrop() {
         if(!isValid){
             return;
         }
+        if(isValid === true) {
+            try {
+                console.log(isValid);
 
+                console.log(data);
+
+                const response = await axios.post('http://localhost:8080/api/auth/demodroptest', {
+                    name: data.name,
+                    country: data.country,
+                    facebook: data.facebook,
+                    instagram: data.instagram,
+                    artistnameSongname: data.artistnameSongname,
+                    musicfile: data.musicfile,
+                    personalMessage: data.personalMessage
+
+                })
+
+
+                console.log(response.data);
+
+
+
+            } catch (e) {
+                console.log(e);
+            }
+        }
         //carry on as normal
     }
 
@@ -42,13 +70,14 @@ function Demodrop() {
                     <div className="parentDemodrop">
                         <TopMenuCustomer />
                     <h1 id="demodrop">DEMODROP</h1>
-                   <form onSubmit={submitForm}>
+
+                   <form onSubmit={onSubmit}>
                     <InputField
                         ref={inputRefs.current[0]}
                         name="name"
                         label="Name *"
                         onChange ={handleChange}
-                        validation={"required|min:5|max:12"}
+                        validation={"required"}
                     />
 
                        <InputField
@@ -72,14 +101,14 @@ function Demodrop() {
                        />
                        <InputField
                            ref={inputRefs.current[4]}
-                           name="atristname-songname"
+                           name="artistnameSongname"
                            label="Artistname - Songname *"
                            onChange ={handleChange}
                            validation={"required"}
                        />
                        <InputField
                            ref={inputRefs.current[5]}
-                           name="music-file"
+                           name="musicfile"
                            label="Music-file *"
                            onChange ={handleChange}
                            validation={"required"}
@@ -87,7 +116,7 @@ function Demodrop() {
                        <InputField
                            ref={inputRefs.current[6]}
                            id="personalText"
-                           name="personal-message"
+                           name="personalMessage"
                            label="Personal message *"
                            onChange ={handleChange}
                            validation={"required|max:250"}
