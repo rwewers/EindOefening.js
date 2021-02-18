@@ -8,7 +8,7 @@ function Demodrop() {
 
 
     const inputRefs = React.useRef([
-        React.createRef(), React.createRef(), React.createRef(), React.createRef(), React.createRef(), React.createRef(), React.createRef(), React.createRef()
+        React.createRef(), React.createRef(), React.createRef(), React.createRef(), React.createRef(), React.createRef(), React.createRef()
     ]);
     const[data, setData] = React.useState({});
 
@@ -16,7 +16,7 @@ function Demodrop() {
         setData(prev => ({ ...prev, [name]: value }))
     }
 
-    console.log(data);
+    // console.log(data);
     // console.log(inputRefs);
 
     const submitForm = (e) => {
@@ -50,48 +50,42 @@ function Demodrop() {
                         onChange ={handleChange}
                         validation={"required|min:5|max:12"}
                     />
+
                        <InputField
                            ref={inputRefs.current[1]}
-                           name="emailaddress"
-                           label="Email address * "
-                           onChange ={handleChange}
-                           validation={"required|email"}
-                       />
-                       <InputField
-                           ref={inputRefs.current[2]}
                            name="country"
                            label="Country * "
                            onChange ={handleChange}
                            validation={"required"}
                        />
                        <InputField
-                           ref={inputRefs.current[3]}
+                           ref={inputRefs.current[2]}
                            name="facebook"
                            label="Facebook"
                            onChange ={handleChange}
                        />
                        <InputField
-                           ref={inputRefs.current[4]}
+                           ref={inputRefs.current[3]}
                            name="instagram"
                            label="Instagram"
                            onChange ={handleChange}
                        />
                        <InputField
-                           ref={inputRefs.current[5]}
+                           ref={inputRefs.current[4]}
                            name="atristname-songname"
                            label="Artistname - Songname *"
                            onChange ={handleChange}
                            validation={"required"}
                        />
                        <InputField
-                           ref={inputRefs.current[6]}
+                           ref={inputRefs.current[5]}
                            name="music-file"
                            label="Music-file *"
                            onChange ={handleChange}
                            validation={"required"}
                        />
                        <InputField
-                           ref={inputRefs.current[7]}
+                           ref={inputRefs.current[6]}
                            id="personalText"
                            name="personal-message"
                            label="Personal message *"

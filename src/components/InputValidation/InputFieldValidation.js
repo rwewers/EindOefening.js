@@ -34,6 +34,7 @@ const InputField = forwardRef((props, ref) => {
 
                     if(!pattern.test(value)){
                         setError("invalid email");
+                        return false;
                     }
 
                 }
