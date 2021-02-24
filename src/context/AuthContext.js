@@ -25,8 +25,9 @@ function AuthContextProvider({ children }) {
     }, []);
 
     function login(data){
-        localStorage.setItem('token', data.accessToke);
-
+        localStorage.setItem('token', data.accessToken);
+        localStorage.setItem('id', data.id);
+        console.log(data.accessToken);
         setAuthState({
             ...authState,
             user: {

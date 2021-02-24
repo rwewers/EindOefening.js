@@ -16,19 +16,17 @@ import music12 from "../../../assets/pictures/music/12.jpeg";
 
 import './Homepage.css';
 import {
-    Link,
+
 useHistory,
 } from 'react-router-dom';
 import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
-import logo1 from "../../../logo.png";
+
 
 function Homepage(){
 
     const history=useHistory();
 
-    function handleClick(){
-        history.push('/About');
-    }
+
 
     return(
     <html>

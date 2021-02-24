@@ -6,10 +6,6 @@ import './SignUp.css';
 import InputField from "../../../components/InputValidation/InputFieldValidation";
 
 function SignUp() {
-    const [email, setEmail] = useState('');
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [role, setRole] = useState('')
 
     const[createUserSucces, setCreateUserSucces] = useState(false);
 

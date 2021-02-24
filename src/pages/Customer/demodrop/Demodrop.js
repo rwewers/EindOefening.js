@@ -3,7 +3,7 @@ import './Demodrop.css';
 import InputField from "../../../components/InputValidation/InputFieldValidation";
 import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
 import axios from "axios";
-import {Link} from "react-router-dom";
+
 
 
 function Demodrop() {
@@ -18,9 +18,7 @@ function Demodrop() {
         setData(prev => ({ ...prev, [name]: value }))
     }
 
-    const[demodropSucces, setDemodropSucces] = useState(false);
-    // console.log(data);
-    // console.log(inputRefs);
+
 
     async function onSubmit(event) {
         event.preventDefault();
@@ -43,7 +41,10 @@ function Demodrop() {
 
                 console.log(data);
 
+
                 const response = await axios.post('http://localhost:8080/api/auth/demodroptest', {
+
+                    user_ID: parseInt(localStorage.getItem('id')),
                     name: data.name,
                     country: data.country,
                     facebook: data.facebook,
@@ -52,10 +53,11 @@ function Demodrop() {
                     musicfile: data.musicfile,
                     personalMessage: data.personalMessage
 
+
                 })
 
 
-                console.log(response.data);
+                console.log(response);
 
 
 

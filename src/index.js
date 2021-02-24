@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import {AuthContextProvider} from "./context/AuthContext";
 
+
 ReactDOM.render(
   <React.StrictMode>
       <Router>
