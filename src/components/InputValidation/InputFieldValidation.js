@@ -96,7 +96,7 @@ const InputField = forwardRef((props, ref) => {
 InputField.defaultProp={
     placeholder: "",
     name: "",
-    type: "text",
+    type: "",
     value: "",
     id: "",
     validation: ""

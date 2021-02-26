@@ -22,7 +22,10 @@ input, label {
     height: 25px;
 
 }
-
+#myfile{
+    background-color: white;
+    margin: 20px;
+}
 input{
     width: 500px;
 
@@ -37,6 +40,10 @@ form{
 
     flex-direction: column;
     align-items: center;
+}
+
+#fileLabel{
+    background-color: white;
 }
 
 #personalText {
