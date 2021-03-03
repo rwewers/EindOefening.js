@@ -1,9 +1,14 @@
 import React, {forwardRef, useImperativeHandle} from "react";
 import './InputFieldValidation.css';
+let password1 = ``;
+
 
 const InputField = forwardRef((props, ref) => {
-    const[value, setValue] = React.useState("");
+    const [value, setValue] = React.useState("");
     const [error, setError] = React.useState("");
+
+
+
     const handleChange = (event) => {
 
         setValue(event.target.value)
@@ -11,6 +16,10 @@ const InputField = forwardRef((props, ref) => {
         props.onChange(event.target.name, event.target.value)
 
     }
+
+
+
+
 
     const validate = () => {
         // return true if is valid
@@ -21,12 +30,54 @@ const InputField = forwardRef((props, ref) => {
             for (let i = 0; i < rules.length ; i++) {
                 const current = rules[i];
 
+
                 if(current === "required"){
                     if(!value){
                         setError("This field is required")
                         return false;
                     }
                 }
+
+                if(current === "password1") {
+                   password1 = value;
+
+                }
+
+
+                    if(current === "password"){
+
+
+
+                    const loweCase = new RegExp("^(?=.*[a-z])");
+                    const upperCase = new RegExp("^(?=.*[A-Z])")
+                    const numeric = new RegExp("^(?=.*[0-9])")
+                    const special = new RegExp("^(?=.*[!@#$%^&*])")
+                    const charactersLong = new RegExp("^(?=.{8,})")
+
+                    if(!loweCase.test(value)){
+                        setError("Password must contain at least 1 lowercase character");
+                        return false;
+                    }
+                    if(!upperCase.test(value)){
+                        setError("Password must contain at least 1 uppercase character");
+                        return false;
+                    }
+                    if(!numeric.test(value)){
+                        setError("Password must contain at least 1 numeric character");
+                        return false;
+                    }
+                    if(!special.test(value)){
+                        setError("Password must contain at least 1 least one special character");
+                        return false;
+                    }
+                    if(!charactersLong.test(value)){
+                        setError("Password must be eight characters or longer");
+                        return false;
+                    }
+
+                }
+
+
 
                 if(current === "email"){
 
@@ -38,7 +89,20 @@ const InputField = forwardRef((props, ref) => {
                     }
 
                 }
+                if(current === "passwordRepeat"){
 
+                    console.log(value);
+                    console.log(password1);
+
+                    console.log(value === password1);
+
+                    if(value !== password1){
+
+                        setError("Passwords dont match")
+                        return false;
+                    }
+
+                }
                 const pair = current.split(":");
                 switch (pair[0]){
                     case "min":

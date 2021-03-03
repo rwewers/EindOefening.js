@@ -11,6 +11,7 @@ function SignUp() {
 
 
     const inputRefs = React.useRef([
+        React.createRef(),React.createRef(), React.createRef(), React.createRef(), React.createRef(), React.createRef(),
         React.createRef(), React.createRef(), React.createRef()
     ]);
     const[data, setData] = React.useState({});
@@ -21,11 +22,13 @@ function SignUp() {
     }
 
 
+
     async function onSubmit(event) {
         event.preventDefault();
         // console.log(email, username, password);
 
         let isValid = true;
+
 
         for(let i = 0; i<inputRefs.current.length; i++ ){
             const valid =  inputRefs.current[i].current.validate()
@@ -47,7 +50,12 @@ function SignUp() {
 
                 const response = await axios.post('http://localhost:8080/api/auth/signup', {
                     username: data.username,
+                    first_name: data.firstName,
+                    last_name: data.lastName,
                     email: data.email,
+                    country: data.country,
+                    facebook: data.facebook,
+                    instagram: data.instagram,
                     password: data.password,
                     role: ["USER"],
 
@@ -81,25 +89,67 @@ function SignUp() {
 
                 <InputField
                     ref={inputRefs.current[0]}
-                    name="email"
-                    label="Email *"
+                    name="username"
+                    label="Username"
                     onChange ={handleChange}
-                    validation={"required|email"}
+                    validation={"required"}
                 />
                 <InputField
                     ref={inputRefs.current[1]}
-                    name="username"
-                    label="Username *"
+                    name="firstName"
+                    label="Firstname"
                     onChange ={handleChange}
                     validation={"required|"}
                 />
 
                 <InputField
                     ref={inputRefs.current[2]}
-                    name="password"
-                    label="Password *"
+                    name="lastName"
+                    label="Lastname"
                     onChange ={handleChange}
                     validation={"required"}
+                />
+                <InputField
+                    ref={inputRefs.current[3]}
+                    name="email"
+                    label="Email"
+                    onChange ={handleChange}
+                    validation={"required|email"}
+                />
+                <InputField
+                    ref={inputRefs.current[4]}
+                    name="country"
+                    label="Country"
+                    onChange ={handleChange}
+                    validation={"required"}
+                />
+                <InputField
+                    ref={inputRefs.current[5]}
+                    name="facebook"
+                    label="Facebook"
+                    onChange ={handleChange}
+                    validation={"required"}
+                />
+                <InputField
+                    ref={inputRefs.current[6]}
+                    name="instagram"
+                    label="Instagram"
+                    onChange ={handleChange}
+                    validation={"required"}
+                />
+                <InputField
+                    ref={inputRefs.current[7]}
+                    name="password"
+                    label="Password"
+                    onChange ={handleChange}
+                    validation={"password1|required|password"}
+                />
+                <InputField
+                    ref={inputRefs.current[8]}
+                    name="passwordRepeat"
+                    label="Password repeat"
+                    onChange ={handleChange}
+                    validation={"password2|required|passwordRepeat|password"}
                 />
 
                 <button

@@ -10,10 +10,8 @@ import Demodrop from "./pages/Customer/demodrop/Demodrop";
 import Contact from "./pages/Customer/contact/Contact";
 import SignIn from "./pages/Customer/SignIn/SignIn";
 import SignUp from "./pages/Customer/SignUp/SignUp";
-import Logged_in_homepage from "./pages/Company/Homepage/Logged_in_homepage";
 import './App.css';
-import Submissions from "./pages/Company/Submissions/Submissions";
-import SelectedSubmission from "./pages/Company/SelectedSubmission/SelectedSubmission";
+import MyDemos from "./pages/Customer/mydemos/MyDemos";
 
 
 
@@ -21,6 +19,10 @@ import SelectedSubmission from "./pages/Company/SelectedSubmission/SelectedSubmi
 
 function App() {
 
+    window.onunload = () => {
+        // Clear the local storage
+        window.localStorage.clear()
+    }
 
     return (
 
@@ -44,15 +46,11 @@ function App() {
                   <Route exact path="/SignUp">
                       <SignUp />
                   </Route>
-                  <route exact path ="/logged-in-homepage">
-                      <Logged_in_homepage />
+
+                  <route exact path ="/myDemos">
+                      <MyDemos />
                   </route>
-                  <route exact path ="/logged-in-submissions">
-                      <Submissions />
-                  </route>
-                  <route exact path ="/logged-in-selected-submission">
-                      <SelectedSubmission />
-                  </route>
+
               </Switch>
 
   );

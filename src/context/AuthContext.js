@@ -1,5 +1,6 @@
 import './AuthContext.css';
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import {useHistory} from "react-router-dom";
 const AuthContext = createContext({});
 
 function AuthContextProvider({ children }) {
@@ -8,6 +9,7 @@ function AuthContextProvider({ children }) {
         error: null,
         user: null,
     })
+    const history = useHistory();
 
     useEffect(() => {
         // haal uit de local storage de JWT Token
@@ -45,6 +47,10 @@ function AuthContextProvider({ children }) {
         ...authState,
         user: null,
         })
+
+
+     history.push('/signin');
+
 
     }
     const providorData ={

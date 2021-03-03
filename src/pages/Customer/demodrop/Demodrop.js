@@ -12,9 +12,17 @@ function Demodrop() {
         React.createRef(), React.createRef(), React.createRef()
     ]);
     const[data, setData] = React.useState({});
+    const[file, setFile] = React.useState({});
+
+
 
     const handleChange = (name, value) => {
         setData(prev => ({ ...prev, [name]: value }))
+
+        // console.log(data.file);
+
+
+
     }
 
 
@@ -22,13 +30,19 @@ function Demodrop() {
     async function onSubmit(event) {
         event.preventDefault();
 
+        const file = document.getElementById("fileLabel").files[0];
+        const fileName = document.getElementById("fileLabel").files[0].name;
 
-        console.log(data.file);
-        console.log(data.songTitle);
-        console.log(data.artist);
-        console.log(document.getElementById("data.file".value))
+        let formData = new FormData();
+        formData.append('file', file )
+        formData.append('userId', localStorage.getItem('id'))
+        formData.append('fileName', fileName)
+        formData.append('songTitle', data.songTitle)
+        formData.append('artist', data.artist)
 
-
+        for (let pair of formData.entries()) {
+            console.log(pair[0] + " - " + pair[1]);
+        }
 
 
         let isValid = true;
@@ -43,27 +57,28 @@ function Demodrop() {
         if(!isValid){
             return;
         }
+
         if(isValid === true) {
             try {
                 console.log(isValid);
 
-                console.log(data);
 
-                console.log(data.file);
+                const axiosLink = axios.create({
+                    baseURL: 'http://localhost:8080/api'
+                })
+                await axiosLink.post('/fileUpload', formData, {
 
-
-                const response = await axios.post('http://localhost:8080/api/files', {
-
-                    file: data.file[0],
-                    userId: parseInt(localStorage.getItem('id')),
-                    fileName: "test.mp3" ,
-                    songTitle: data.songTitle,
-                    artist: data.artist
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                            'Authorization':  localStorage.getItem('token')
+                    }
 
                 })
 
 
-                console.log(response);
+
+
+
 
 
 
