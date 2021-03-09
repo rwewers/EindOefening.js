@@ -1,60 +1,49 @@
-import React, { useState} from 'react';
+import React, { useEffect, useState, useContext} from 'react';
+import { useAuthState} from '../../../context/AuthContext';
 import './MyDemos.css';
-import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
 import axios from "axios";
-import InputField from "../../../components/InputValidation/InputFieldValidation";
-
+import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
 
 
 function Mydemos() {
 
-    async function onSubmit(event) {
-        event.preventDefault();
-        let formData = new FormData();
-        formData.append('userId', localStorage.getItem('id'))
+    const { user } = useAuthState()
+    const [songs, setSongs] = useState()
+
+    useEffect(() => {
+
+
+        fetchData()
+
+
+//              TODO PAGINA REFRESHEN LOGT UIT!!!
+
+        async function fetchData() {
 
             try {
-
-                for (let pair of formData.entries()) {
-                    console.log(pair[0] + " - " + pair[1]);
-                }
-
-                const axiosLink = axios.create({
-                    baseURL: 'http://localhost:8080/api'
-                })
-                const data = await axiosLink.post('/fileUpload/user_id', formData, {
+                const {data} = await axios.get(`http://localhost:8080/api/user/${user.userId}/demos`,  {
 
                     headers: {
-                        'Content-Type': 'multipart/form-data',
                         'Authorization':  localStorage.getItem('token')
-                    }
-                })
+                    }});
 
                 console.log(data);
+                setSongs(data)
 
-                for (let i = 0; i <data.data.length; i++) {
-                    console.log(await axios.get(`http://localhost:8080/api/fileUpload/${data.data[i].fileName}`));
-                }
-
-            } catch (e) {
-                console.log(e);
+            } catch (error) {
+                // TODO User error message
+                console.log(error)
             }
         }
-        //carry on as normal
 
+
+    }, [user])
 
     return (
-        <div>
-            <form onSubmit={onSubmit}>
-                <TopMenuCustomer />
+        <>
+            <TopMenuCustomer/>
+        </>
 
-
-                <button type="submit" >
-                    Submit
-                </button>
-
-            </form>
-        </div>
 
     );
 }

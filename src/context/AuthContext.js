@@ -1,6 +1,9 @@
 import './AuthContext.css';
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { setLocalUser, getLocalUser, resetLocalUser, roles } from "../components/localStorage/localStorage"
 import {useHistory} from "react-router-dom";
+
+
 const AuthContext = createContext({});
 
 function AuthContextProvider({ children }) {
@@ -10,6 +13,16 @@ function AuthContextProvider({ children }) {
         user: null,
     })
     const history = useHistory();
+
+
+    const [user, setUser] = useState(getLocalUser())
+
+    function isAdmin() {
+        if (user) {
+            return user.roles.includes(roles.ADMIN)
+        }
+    }
+
 
     useEffect(() => {
         // haal uit de local storage de JWT Token
@@ -27,18 +40,48 @@ function AuthContextProvider({ children }) {
     }, []);
 
     function login(data){
-        localStorage.setItem('token', data.accessToken);
-        localStorage.setItem('id', data.id);
+
+
+
+        const newUser= {}
+        newUser.userId = data.id
+        newUser.username = data.username
+        newUser.accessToken = 'Bearer ' + data.accessToken
+        newUser.roles = data.roles
+
+        localStorage.setItem('token', newUser.accessToken);
+        localStorage.setItem('id', newUser.userId);
+        localStorage.setItem('role', newUser.roles);
+        localStorage.setItem('username', newUser.username);
+
+
+
+        setUser(newUser)
+        setLocalUser(newUser)
+
+
+
+
         console.log(data.accessToken);
+        console.log(data.id);
+
         setAuthState({
             ...authState,
             user: {
                 username: data.username,
                 email: data.email,
                 roles: data.roles,
+                userId: data.id
+
             }
+
         })
+
+
+
     }
+
+
 
 
     function logout(){
@@ -57,12 +100,15 @@ function AuthContextProvider({ children }) {
         ...authState,
         login: login,
         logout: logout,
+
     }
 
     return (
         <AuthContext.Provider value={providorData}>
             {/*Hebben we alles gecheckt? Laat dan de applicatie zien*/}
             {authState.status === 'done' && children}
+
+
             {/*Zijn we nog bezig met verifieren? Dan gaan we ook de applicatie niet laden!*/}
             {authState.status === 'pending' && <p>Loading...</p>}
         </AuthContext.Provider>
@@ -87,8 +133,14 @@ function useAuthState() {
 }
 
 
+
+
+
 export{
     AuthContext,
     useAuthState,
     AuthContextProvider,
-}
+
+
+    }
+

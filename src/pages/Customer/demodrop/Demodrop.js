@@ -6,13 +6,17 @@ import axios from "axios";
 
 
 
+
+
 function Demodrop() {
 
     const inputRefs = React.useRef([
         React.createRef(), React.createRef(), React.createRef()
     ]);
     const[data, setData] = React.useState({});
-    const[file, setFile] = React.useState({});
+
+
+
 
 
 
