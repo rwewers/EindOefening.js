@@ -61,6 +61,7 @@ function SignIn() {
                         <input
                             type="text"
                             id="username-field"
+                            placeholder="nick"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
@@ -71,6 +72,7 @@ function SignIn() {
                         <input
                             type="password"
                             id="password-field"
+                            placeholder="nicknick"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)} />
                     </label>
