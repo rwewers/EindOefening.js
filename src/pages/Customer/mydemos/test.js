@@ -4,69 +4,43 @@ import './MyDemos.css';
 import axios from "axios";
 import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
 import SongLoader from "../../../components/songLoader/SongLoader";
-
 const songs= [];
+import './MyDemos.css';
 
 function Mydemos() {
 
-    const [data, setData] = useState();
+    let data = {};
 
     const {user} = useAuthState()
-    const [isLoading, setIsLoading] = useState(true)
-
-
-    const getAudioContext = () => {
-        AudioContext = window.AudioContext || window.webkitAudioContext;
-        const audioContent = new AudioContext();
-        return audioContent;
-    };
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
 
-
         fetchData()
-
-
-//              TODO PAGINA REFRESHEN LOGT UIT!!!
-
 
         async function fetchData() {
             setIsLoading(true)
 
             try {
-                const response = await axios.get(`http://localhost:8080/api/user/${user.userId}/demos`, {
+                data = await axios.get(`http://localhost:8080/api/user/${user.userId}/demos`, {
 
                     headers: {
                         'Authorization': localStorage.getItem('token')
                     }
-
                 });
-                setData(response);
-
                 setIsLoading(false)
-
-
-
-
             } catch (error) {
                 // TODO User error message
                 setIsLoading(false)
                 console.log(error)
             }
-        }
-
-        ;
-
-
+            console.log(data);
+        };
     }, [user])
-
 
     if(isLoading === false){
         console.log(data);
     }
-
-
-
 
     return (
         <>
@@ -76,8 +50,8 @@ function Mydemos() {
             {/*</button>*/}
             <ul>
                 <li id="loadingError">
-                    {data?.data && data.data.length > 0
-                        ? data.data.map((song) => {
+                    {data && data.length > 0
+                        ? data.map((song) => {
 
                                 return <SongLoader
                                     className="test"
@@ -88,13 +62,8 @@ function Mydemos() {
                         : "Loading..."}
                 </li>
             </ul>
-
         </>
 
     );
-
-
-
 }
-
 export default Mydemos;
