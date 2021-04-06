@@ -96,7 +96,7 @@ function Demodrop() {
     return (
         <div className="parentDemodrop">
             <TopMenuCustomer />
-            <h1 id="demodrop">DEMODROP</h1>
+
 
             <form onSubmit={onSubmit}>
                 <InputField
@@ -104,7 +104,7 @@ function Demodrop() {
                     id="fileLabel"
                     name="file"
                     type="file"
-                    label="File *"
+                    label="File "
                     onChange ={handleChange}
                     validation={"required"}
                 />
@@ -113,7 +113,7 @@ function Demodrop() {
                     ref={inputRefs.current[1]}
                     name="songTitle"
                     type="text"
-                    label="Song title"
+                    label="Songtitle"
                     onChange ={handleChange}
                     validation={"required"}
                 />

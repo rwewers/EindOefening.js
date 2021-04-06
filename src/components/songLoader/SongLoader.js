@@ -30,21 +30,7 @@ function SongLoader({song}) {
                     }
                 });
                 setData(response.config.url);
-
                 console.log(response);
-                // // create audio context
-                // const audioContext = getAudioContext();
-                // // create audioBuffer (decode audio file)
-                // const audioBuffer = await audioContext.decodeAudioData(response.data);
-                // // create audio source
-                // const source = audioContext.createBufferSource();
-                // source.buffer = audioBuffer;
-                // source.connect(audioContext.destination);
-                // // play audio
-                //  // source.play();
-                // console.log(audioBuffer);
-
-
                 setIsLoading(false)
 
             } catch (error) {
@@ -69,17 +55,7 @@ function SongLoader({song}) {
         return (
             <> {isLoading}
             <div className="songLoader">
-
                 <label>{song.songTitle} + {song.artist}</label>
-
-                {/*<button className="playButton"*/}
-                {/*       onClick={playMusic}>*/}
-                {/*    <span>play</span>*/}
-                {/*</button>*/}
-                {/*<button className="stopButton"*/}
-                {/*        >*/}
-                {/*    <span>Stop</span>*/}
-                {/*</button>*/}
                 <ReactAudioPlayer
                     src={data}
                     // preload={data}

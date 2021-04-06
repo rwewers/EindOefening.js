@@ -42,7 +42,6 @@ function Mydemos() {
 
                 });
                 setData(response);
-
                 setIsLoading(false)
 
 

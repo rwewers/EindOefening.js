@@ -15,14 +15,16 @@ import MyDemos from "./pages/Customer/mydemos/MyDemos";
 
 
 
-
-
 function App() {
+
+
 
     window.onunload = () => {
         // Clear the local storage
         window.localStorage.clear()
     }
+
+
 
     return (
 
@@ -33,9 +35,9 @@ function App() {
                   <Route exact path="/About">
                       <About />
                   </Route>
-                  <Route exact path="/Demodrop">
+                  <route exact path="/Demodrop">
                       <Demodrop />
-                  </Route>
+                  </route>
                   <Route exact path="/Contact">
                       <Contact />
                   </Route>
@@ -46,7 +48,6 @@ function App() {
                   <Route exact path="/SignUp">
                       <SignUp />
                   </Route>
-
                   <route exact path ="/myDemos">
                       <MyDemos />
                   </route>

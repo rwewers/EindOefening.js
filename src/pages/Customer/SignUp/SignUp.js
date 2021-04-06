@@ -81,9 +81,9 @@ function SignUp() {
             <div className="signupContainer">
                 <TopMenuCustomer />
 
-            <h1>Registreren</h1>
+
                 {createUserSucces === true &&(
-            <h2 className="message-succes">Het is gelukt! Klik <Link to="/SignIn">hier</Link> om je in te loggen.</h2>
+            <h2 className="message-succes">You did it !! Click <Link to="/SignIn">here</Link> to sign in.</h2>
             )}
             <form className="signupForm" onSubmit={onSubmit}>
 
@@ -156,9 +156,9 @@ function SignUp() {
                     type="submit"
                     className="form-button"
                 >
-                    Maak account aan
+                    SIGN UP
                 </button>
-                <p>Heb je al een account? Je kunt je <Link to="/SignIn">hier</Link> inloggen.</p>
+                <p>Already have an account? You can sign in <Link to="/SignIn">here</Link> !</p>
             </form>
 
             </div>

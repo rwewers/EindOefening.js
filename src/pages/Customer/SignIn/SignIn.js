@@ -10,7 +10,7 @@ function SignIn() {
 
     const { login } = useContext(AuthContext);
     const { isAuthenticated } = useAuthState();
-
+    const {user} = useAuthState();
 
 
     const history = useHistory();
@@ -29,6 +29,7 @@ function SignIn() {
     async function onSubmit(event) {
         event.preventDefault();
 
+        console.log(user);
         try{
             const response = await axios.post('http://localhost:8080/api/auth/signin', {
                 username: username,
@@ -57,7 +58,7 @@ function SignIn() {
 
                 <form className="loginForm" onSubmit={onSubmit}>
                     <label id="labelSignin" htmlFor="username-field">
-                        Gebruikersnaam:
+                        Username :
                         <input
                             type="text"
                             id="username-field"
@@ -68,7 +69,7 @@ function SignIn() {
                     </label>
 
                     <label id="labelSignin" htmlFor="password-field">
-                        Wachtwoord:
+                        Password :
                         <input
                             type="password"
                             id="password-field"
@@ -82,7 +83,7 @@ function SignIn() {
                     >
                         Inloggen
                     </button>
-                    <p>Moet je nog een account maken? Je kunt je <Link to="/SignUp">hier</Link> registreren.</p>
+                    <p>Don't have an account yet? You can create an account <Link to="/SignUp">here</Link> !</p>
                 </form>
                 </div>
 
