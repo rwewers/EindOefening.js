@@ -14,7 +14,7 @@ function Contact() {
         setData(prev => ({ ...prev, [name]: value }))
     }
 
-    console.log(data);
+
     // console.log(inputRefs);
 
     const submitForm = (e) => {

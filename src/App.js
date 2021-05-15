@@ -12,6 +12,7 @@ import SignIn from "./pages/Customer/SignIn/SignIn";
 import SignUp from "./pages/Customer/SignUp/SignUp";
 import './App.css';
 import MyDemos from "./pages/Customer/mydemos/MyDemos";
+import Submissions from "./pages/Customer/Submission/Submissions";
 
 
 
@@ -50,6 +51,9 @@ function App() {
                   </Route>
                   <route exact path ="/myDemos">
                       <MyDemos />
+                  </route>
+                  <route exact path ="/submissions">
+                      <Submissions/>
                   </route>
 
               </Switch>

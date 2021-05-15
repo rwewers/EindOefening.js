@@ -15,12 +15,6 @@ function Mydemos() {
     const [isLoading, setIsLoading] = useState(true)
 
 
-    const getAudioContext = () => {
-        AudioContext = window.AudioContext || window.webkitAudioContext;
-        const audioContent = new AudioContext();
-        return audioContent;
-    };
-
     useEffect(() => {
 
 
@@ -64,7 +58,7 @@ function Mydemos() {
         console.log(data);
     }
 
-
+    console.log(data);
 
 
     return (

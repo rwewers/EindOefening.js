@@ -23,7 +23,7 @@ function TopMenuCustomer() {
         }
     }
 
-    console.log(isAdmin);
+    // console.log(isAdmin);
 
 
     function onSubmit(event){
@@ -32,7 +32,7 @@ function TopMenuCustomer() {
 
     }
 
-    function thisisDave(){
+    function whoLoggedIn(){
         if(isAuthenticated){
             if(isAdmin){
                 return(
@@ -53,7 +53,7 @@ function TopMenuCustomer() {
                             <img src={logo1} className="App-logo2" alt="logo1" />
                         </li>
                         <li>
-                            <NavLink className="navLinks" to="/contact" exact activeClassName="active-link">Submissions</NavLink>
+                            <NavLink className="navLinks" to="/submissions" exact activeClassName="active-link">Submissions</NavLink>
                         </li>
                         <li>
                             <NavLink to="/" activeClassName="active-link" >
@@ -128,7 +128,7 @@ function TopMenuCustomer() {
         <div className="Topmenu-Container">
               <nav>
                 <div className="nav-container">
-                    {thisisDave()}
+                    {whoLoggedIn()}
                 </div>
         </nav>
 
