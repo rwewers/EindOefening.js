@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import "./ReviewSubmission.css";
+import "./viewSubmission.css";
 import axios from "axios";
 import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
 import SongLoader from "../../../components/songLoader/SongLoader";
 
-function ReviewSubmission({userID}){
+function viewSubmission(){
 
 
     return(
-        <>
+        <div className="test">
             <TopMenuCustomer/>
-            <div></div>
-        </>
-    )
+
+                <h1>
+                    test
+                </h1>
+            </div>
+
+    );
 
 }
-export default ReviewSubmission;
+export default viewSubmission;

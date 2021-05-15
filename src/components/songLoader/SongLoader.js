@@ -55,7 +55,7 @@ function SongLoader({song}) {
         return (
             <> {isLoading}
             <div className="songLoader">
-                < a href="/about"> <label>{song.songTitle} + {song.artist}</label></a>
+                < a href="/viewSubmission"> <label>{song.songTitle} + {song.artist}</label></a>
 
                 <ReactAudioPlayer
                     src={data}
