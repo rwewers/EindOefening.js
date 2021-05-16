@@ -66,6 +66,7 @@ function Submissions(){
         return demos.map(demo => (
 
             <li key={demo.songTitle} >
+
                 <SongLoader
                     song={demo}
 

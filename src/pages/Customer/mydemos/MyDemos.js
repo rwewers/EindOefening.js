@@ -72,7 +72,8 @@ function Mydemos() {
                     {data?.data && data.data.length > 0
                         ? data.data.map((song) => {
 
-                                return <SongLoader
+                                return <
+                                    SongLoader
                                     className="test"
                                     song={song}
                                 />

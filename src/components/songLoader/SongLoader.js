@@ -18,6 +18,8 @@ function SongLoader({song}) {
 
     useEffect(() => {
 
+
+
         playMusic();
 
 
@@ -31,7 +33,7 @@ function SongLoader({song}) {
                     }
                 });
                 setData(response.config.url);
-                console.log(response);
+                console.log(data);
                 setIsLoading(false)
 
             } catch (error) {
@@ -56,7 +58,8 @@ function SongLoader({song}) {
         return (
             <> {isLoading}
             <div className="songLoader">
-                < a href="/viewSubmission"> <label>{song.songTitle} + {song.artist}</label></a>
+                <NavLink className="navLinks" to=
+                    "/viewSubmission" exact activeClassName="active-link"><label>{song.songTitle} + {song.artist}</label></NavLink>
                 <ReactAudioPlayer
                     src={data}
                     // preload={data}
