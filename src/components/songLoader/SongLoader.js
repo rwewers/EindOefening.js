@@ -3,6 +3,7 @@ import './SongLoader.css';
 import axios from "axios";
 import ReactAudioPlayer from 'react-audio-player';
 import {useAuthState} from "../../context/AuthContext";
+import {NavLink} from "react-router-dom";
 
 function SongLoader({song}) {
     const [isLoading, setIsLoading] = useState(false)
@@ -56,7 +57,6 @@ function SongLoader({song}) {
             <> {isLoading}
             <div className="songLoader">
                 < a href="/viewSubmission"> <label>{song.songTitle} + {song.artist}</label></a>
-
                 <ReactAudioPlayer
                     src={data}
                     // preload={data}

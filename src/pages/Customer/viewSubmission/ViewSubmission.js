@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import "./viewSubmission.css";
-import axios from "axios";
+import "./ViewSubmission.css";
 import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
-import SongLoader from "../../../components/songLoader/SongLoader";
 
-function viewSubmission(){
+function ViewSubmission(){
 
 
     return(
@@ -19,4 +17,4 @@ function viewSubmission(){
     );
 
 }
-export default viewSubmission;
+export default ViewSubmission;
