@@ -65,8 +65,6 @@ function Mydemos() {
         <>
             {isLoading}
             <TopMenuCustomer/>
-            {/*<button onClick={showData}>*/}
-            {/*</button>*/}
             <ul>
                 <li id="loadingError">
                     {data?.data && data.data.length > 0

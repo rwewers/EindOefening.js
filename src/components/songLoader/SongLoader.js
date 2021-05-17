@@ -59,7 +59,7 @@ function SongLoader({song}) {
             <> {isLoading}
             <div className="songLoader">
                 <NavLink className="navLinks" to=
-                    "/viewSubmission" exact activeClassName="active-link"><label>{song.songTitle} + {song.artist}</label></NavLink>
+                    "/viewSubmission" exact activeClassName="active-link"><label> {song.artist} + {song.songTitle} </label></NavLink>
                 <ReactAudioPlayer
                     src={data}
                     // preload={data}
