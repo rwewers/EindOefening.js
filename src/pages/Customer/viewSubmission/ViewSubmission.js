@@ -46,11 +46,40 @@ function ViewSubmission(){
                     (
                         <>
                             <TopMenuCustomer/>
-                            <h1>test1</h1>
-                            <SongLoader
-                                className="test"
-                                song={demoData.data}
-                            />
+                            <div className="containerViewSubmission">
+                            <h1>{demoData.data.artist} + {demoData.data.songTitle}</h1>
+
+
+                                <ul className="listViewSubmission">
+
+                                    <li>
+                                        Firstname: {userData.data.firstName}
+                                    </li>
+                                    <li>
+                                        Lastname: {userData.data.lastName}
+                                    </li>
+                                    <li>
+                                        Email: {userData.data.email}
+                                    </li>
+                                    <li>
+                                        Country: {userData.data.country}
+                                    </li>
+                                    <li>
+                                        Facebook: {userData.data.facebook}
+                                    </li>
+                                    <li>
+                                        Instagram: {userData.data.instagram}
+                                    </li>
+                                    <li>
+                                        <SongLoader
+                                            className="test"
+                                            song={demoData.data}
+                                        />
+                                    </li>
+                                </ul>
+
+
+                            </div>
 
                          </>
                     ) : (

@@ -1,3 +1,9 @@
-.test {
+.containerViewSubmission {
+    display: flex;
+    justify-content: center;
     color: white;
+}
+
+.listViewSubmission{
+    display: block;
 }
