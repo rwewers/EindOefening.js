@@ -18,7 +18,7 @@ function ViewSubmission(){
             setIsLoading(true)
 
             try {
-                const userData = await axios.get(`http://localhost:8080/api/user/5`, {
+                const userData = await axios.get(`http://localhost:8080/api/user/4`, {
                     headers: {
                         'Authorization': localStorage.getItem('token')
                     }
@@ -70,12 +70,12 @@ function ViewSubmission(){
                                     <li>
                                         Instagram: {userData.data.instagram}
                                     </li>
-                                    <li>
+                                    <linm>
                                         <SongLoader
                                             className="test"
                                             song={demoData.data}
                                         />
-                                    </li>
+                                    </linm>
                                 </ul>
 
 
