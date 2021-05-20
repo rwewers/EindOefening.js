@@ -4,26 +4,43 @@ import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer
 import {useAuthState} from "../../../context/AuthContext";
 import axios from "axios";
 import SongLoader from "../../../components/songLoader/SongLoader";
+import * as url from "url";
 
 function ViewSubmission(){
 
+    const urlParams = new URLSearchParams(window.location.search);
     const [userData, setUserData] = useState();
     const [demoData, setDemoData] = useState();
     const [isLoading, setIsLoading] = useState(false)
+    var urlParameters = [];
+
+
+
+    for (const param of urlParams) {
+        urlParameters.push(param);
+        console.log(param)
+    }
+
+
+    console.log(urlParameters);
 
     useEffect(() => {
         fetchData()
 //              TODO PAGINA REFRESHEN LOGT UIT!!!
         async function fetchData() {
+
+
+
+
             setIsLoading(true)
 
             try {
-                const userData = await axios.get(`http://localhost:8080/api/user/4`, {
+                const userData = await axios.get(`http://localhost:8080/api/user/${urlParameters[0][1]}`, {
                     headers: {
                         'Authorization': localStorage.getItem('token')
                     }
                 })
-                const demoResponse = await axios.get(`http://localhost:8080/api/demos/2`, {
+                const demoResponse = await axios.get(`http://localhost:8080/api/demos/${urlParameters[1][1]}`, {
                     headers: {
                         'Authorization': localStorage.getItem('token')
                     }
@@ -38,8 +55,9 @@ function ViewSubmission(){
             }
         };
     }, [])
-    console.log(userData);
-    console.log(demoData);
+
+
+
 
     return(
             !isLoading && demoData ?

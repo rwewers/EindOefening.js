@@ -65,21 +65,23 @@ function Mydemos() {
         <>
             {isLoading}
             <TopMenuCustomer/>
-            <ul>
-                <li id="loadingError">
+
                     {data?.data && data.data.length > 0
                         ? data.data.map((song) => {
 
-                                return <
-                                    SongLoader
+                                return  <ul>
+                                    <li id="loadingError">
+                                     <label> {song.artist} + {song.songTitle} </label>
+                                    <SongLoader
                                     className="test"
                                     song={song}
                                 />
+                                    </li>
+                                </ul>
                             }
                         )
                         : "Loading..."}
-                </li>
-            </ul>
+
 
         </>
 

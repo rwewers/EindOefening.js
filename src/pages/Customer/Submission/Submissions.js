@@ -3,6 +3,7 @@ import "./Submissions.css";
 import axios from "axios";
 import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
 import SongLoader from "../../../components/songLoader/SongLoader";
+import {NavLink} from "react-router-dom";
 
 function Submissions(){
 
@@ -61,11 +62,13 @@ function Submissions(){
 
     console.log(allUsers);
 
-    function displayDemos(demos) {
+    function displayDemos(user, demos) {
 
         return demos.map(demo => (
 
             <li key={demo.songTitle} >
+                <NavLink className="navLinks" to=
+                    {`/viewSubmission?userId=${user.userId}&demoId=${demo.id}`} exact activeClassName="active-link"><label>{demo.artist} + {demo.songTitle}</label></NavLink>
 
                 <SongLoader
                     song={demo}
@@ -73,6 +76,8 @@ function Submissions(){
                 />
             </li>
         ))
+
+
     }
 
     function displayUser(user) {
@@ -83,9 +88,11 @@ function Submissions(){
                     className="userID">
                     <strong>User: </strong>{user.username}
                 </li>
-                {displayDemos(user.demos)}
+                {displayDemos(user, user.demos)}
             </ul>
         )
+
+
     }
 
 
