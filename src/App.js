@@ -4,16 +4,19 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import Homepage from './pages/Customer/homepage/Homepage';
-import About from './pages/Customer/about/About';
-import Demodrop from "./pages/Customer/demodrop/Demodrop";
-import Contact from "./pages/Customer/contact/Contact";
-import SignIn from "./pages/Customer/SignIn/SignIn";
-import SignUp from "./pages/Customer/SignUp/SignUp";
+import Homepage from './pages/homepage/Homepage';
+import About from './pages/about/About';
+import Demodrop from "./pages/demodrop/Demodrop";
+import Contact from "./pages/contact/Contact";
+import SignIn from "./pages/SignIn/SignIn";
+import SignUp from "./pages/SignUp/SignUp";
 import './App.css';
-import MyDemos from "./pages/Customer/mydemos/MyDemos";
-import Submissions from "./pages/Customer/Submission/Submissions";
-import ViewSubmission from "./pages/Customer/viewSubmission/ViewSubmission";
+import MyDemos from "./pages/mydemos/MyDemos";
+import Submissions from "./pages/Submission/Submissions";
+import ViewSubmission from "./pages/viewSubmission/ViewSubmission";
+import ViewComment from "./pages/Comment/ViewComment";
+import WriteComment from "./pages/Comment/WriteComment";
+import EditComment from "./pages/Comment/EditComment";
 
 
 
@@ -59,6 +62,17 @@ function App() {
                   <route exact path ="/viewSubmission">
                       <ViewSubmission/>
                   </route>
+
+                  <route exact path ="/viewComment">
+                      <ViewComment/>
+                  </route>
+                  <route exact path ="/writeComment">
+                      <WriteComment/>
+                  </route>
+                  <route exact path ="/editComment">
+                      <EditComment/>
+                  </route>
+
 
               </Switch>
 

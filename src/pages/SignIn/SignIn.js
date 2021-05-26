@@ -2,8 +2,8 @@ import React, {useState, useContext, useEffect} from 'react';
 import './SignIn.css';
 import axios from "axios";
 import {Link, useHistory} from "react-router-dom";
-import { AuthContext, useAuthState } from '../../../context/AuthContext';
-import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
+import { AuthContext, useAuthState } from '../../context/AuthContext';
+import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
 
 
 function SignIn() {

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import "./Submissions.css";
 import axios from "axios";
-import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
-import SongLoader from "../../../components/songLoader/SongLoader";
+import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import SongLoader from "../../components/songLoader/SongLoader";
 import {NavLink} from "react-router-dom";
 
 function Submissions(){

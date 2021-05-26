@@ -89,7 +89,7 @@ body{
 }
 
 .parent{
-    background-image: url("../../../assets/home_background.jpg");
+    background-image: url("../../assets/home_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     /*background-position: center center;*/
@@ -107,7 +107,7 @@ body{
 }
 .background2Wrapper{
     height: 650px;
-    background-image: url("../../../assets/dondiablo_shows.PNG");
+    background-image: url("../../assets/dondiablo_shows.PNG");
     background-repeat: no-repeat;
     background-size: 1920px;
     /*background-position: center center;*/

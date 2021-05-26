@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
+import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
 import './SignUp.css';
-import InputField from "../../../components/InputValidation/InputFieldValidation";
+import InputField from "../../components/InputValidation/InputFieldValidation";
 
 function SignUp() {
 

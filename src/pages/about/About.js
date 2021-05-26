@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
-import pictureAboutDiablo from "../../../assets/1+(1).jpg";
-import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
+import pictureAboutDiablo from "../../assets/1+(1).jpg";
+import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
 
 
 function About() {

@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext} from 'react';
-import { useAuthState} from '../../../context/AuthContext';
+import { useAuthState} from '../../context/AuthContext';
 import './MyDemos.css';
 import axios from "axios";
-import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
-import SongLoader from "../../../components/songLoader/SongLoader";
+import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import SongLoader from "../../components/songLoader/SongLoader";
 
 const songs= [];
 

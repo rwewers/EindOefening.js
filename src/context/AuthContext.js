@@ -59,6 +59,11 @@ function AuthContextProvider({ children }) {
         setUser(newUser)
         setLocalUser(newUser)
 
+        function isAdmin() {
+            if (user) {
+                return user.roles.includes(roles.ADMIN)
+            }
+        }
 
 
 
@@ -71,7 +76,8 @@ function AuthContextProvider({ children }) {
                 username: data.username,
                 email: data.email,
                 roles: data.roles,
-                userId: data.id
+                userId: data.id,
+
 
             }
 
@@ -101,12 +107,14 @@ function AuthContextProvider({ children }) {
         login: login,
         logout: logout,
 
+
     }
 
     return (
         <AuthContext.Provider value={providorData}>
             {/*Hebben we alles gecheckt? Laat dan de applicatie zien*/}
             {authState.status === 'done' && children}
+
 
 
             {/*Zijn we nog bezig met verifieren? Dan gaan we ook de applicatie niet laden!*/}

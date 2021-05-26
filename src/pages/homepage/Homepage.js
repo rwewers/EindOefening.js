@@ -1,25 +1,25 @@
 import React from 'react';
 
-import DonDiablo_into_the_unknown from "../../../assets/DonDiablo_into_the_unkown.PNG"
-import music1 from "../../../assets/pictures/music/1.png";
-import music2 from "../../../assets/pictures/music/2.jpeg";
-import music3 from "../../../assets/pictures/music/3.jpeg";
-import music4 from "../../../assets/pictures/music/4.jpeg";
-import music5 from "../../../assets/pictures/music/5.jpeg";
-import music6 from "../../../assets/pictures/music/6.jpeg";
-import music7 from "../../../assets/pictures/music/7.jpeg";
-import music8 from "../../../assets/pictures/music/8.jpeg";
-import music9 from "../../../assets/pictures/music/9.png";
-import music10 from "../../../assets/pictures/music/10.jpeg";
-import music11 from "../../../assets/pictures/music/11.jpeg";
-import music12 from "../../../assets/pictures/music/12.jpeg";
+import DonDiablo_into_the_unknown from "../../assets/DonDiablo_into_the_unkown.PNG"
+import music1 from "../../assets/pictures/music/1.png";
+import music2 from "../../assets/pictures/music/2.jpeg";
+import music3 from "../../assets/pictures/music/3.jpeg";
+import music4 from "../../assets/pictures/music/4.jpeg";
+import music5 from "../../assets/pictures/music/5.jpeg";
+import music6 from "../../assets/pictures/music/6.jpeg";
+import music7 from "../../assets/pictures/music/7.jpeg";
+import music8 from "../../assets/pictures/music/8.jpeg";
+import music9 from "../../assets/pictures/music/9.png";
+import music10 from "../../assets/pictures/music/10.jpeg";
+import music11 from "../../assets/pictures/music/11.jpeg";
+import music12 from "../../assets/pictures/music/12.jpeg";
 
 import './Homepage.css';
 import {
 
 useHistory,
 } from 'react-router-dom';
-import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
+import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
 
 
 function Homepage(){

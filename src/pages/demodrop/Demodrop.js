@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import './Demodrop.css';
-import InputField from "../../../components/InputValidation/InputFieldValidation";
-import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
+import InputField from "../../components/InputValidation/InputFieldValidation";
+import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
 import axios from "axios";
 
 

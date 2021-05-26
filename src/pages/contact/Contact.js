@@ -1,7 +1,7 @@
 import React from 'react';
 import './Contact.css';
-import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
-import InputField from "../../../components/InputValidation/InputFieldValidation";
+import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import InputField from "../../components/InputValidation/InputFieldValidation";
 
 
 function Contact() {

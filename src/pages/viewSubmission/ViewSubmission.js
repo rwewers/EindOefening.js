@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import "./ViewSubmission.css";
-import TopMenuCustomer from "../../../components/TopMenuCustomer/TopMenuCustomer";
-import {useAuthState} from "../../../context/AuthContext";
+import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import {useAuthState} from "../../context/AuthContext";
 import axios from "axios";
-import SongLoader from "../../../components/songLoader/SongLoader";
+import SongLoader from "../../components/songLoader/SongLoader";
 import * as url from "url";
+import {NavLink} from "react-router-dom";
 
 function ViewSubmission(){
 
@@ -18,7 +19,7 @@ function ViewSubmission(){
 
     for (const param of urlParams) {
         urlParameters.push(param);
-        console.log(param)
+
     }
 
 
@@ -48,6 +49,8 @@ function ViewSubmission(){
                 setUserData(userData);
                 setDemoData(demoResponse);
                 setIsLoading(false)
+
+
             } catch (error) {
                 // TODO User error message
                 setIsLoading(false)
@@ -56,6 +59,31 @@ function ViewSubmission(){
         };
     }, [])
 
+
+    console.log(demoData);
+    console.log(userData);
+
+
+    function isThereAComment(){
+        if(demoData.data.comment != null ){
+            return(
+                <li>
+
+                        <li key="view">
+                            <NavLink to={`/viewComment/?demoId=${demoData.data.id}&userId=${userData.data.userId}`}>View comment</NavLink>
+                        </li>
+
+                </li>
+            )}
+            else{
+                return (
+                    <li>
+                        There is no comment yet...
+                        <p><NavLink to={`/writeComment/?demoId=${demoData.data.id}&userId=${userData.data.userId}`}> Write one here !</NavLink></p>
+                    </li>
+
+                )
+            }}
 
 
 
@@ -88,12 +116,18 @@ function ViewSubmission(){
                                     <li>
                                         Instagram: {userData.data.instagram}
                                     </li>
+
                                     <linm>
                                         <SongLoader
                                             className="test"
                                             song={demoData.data}
                                         />
                                     </linm>
+                                    <li>
+                                        {isThereAComment()}
+                                    </li>
+
+
                                 </ul>
 
 
