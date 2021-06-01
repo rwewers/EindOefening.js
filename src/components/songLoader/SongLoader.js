@@ -3,7 +3,6 @@ import './SongLoader.css';
 import axios from "axios";
 import ReactAudioPlayer from 'react-audio-player';
 import {useAuthState} from "../../context/AuthContext";
-import {NavLink} from "react-router-dom";
 
 function SongLoader({song}) {
     const [isLoading, setIsLoading] = useState(false)
@@ -33,7 +32,6 @@ function SongLoader({song}) {
                     }
                 });
                 setData(response.config.url);
-                console.log(data);
                 setIsLoading(false)
 
             } catch (error) {
@@ -47,11 +45,6 @@ function SongLoader({song}) {
 
         }
     }, [user])
-
-    if(isLoading === false){
-        console.log(data);
-    }
-
 
 
 

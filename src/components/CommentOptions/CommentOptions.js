@@ -33,7 +33,7 @@ function CommentOptions({ song, comment}) {
                         } }
                 )
                 if (result) {
-                    history.push(`/submissions`)
+                    history.push(`/newsubmissions`)
                 }
             } catch (error) {
                 console.log(error)

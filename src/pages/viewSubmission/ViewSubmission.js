@@ -70,7 +70,7 @@ function ViewSubmission(){
                 <li>
 
                         <li key="view">
-                            <NavLink to={`/viewComment/?demoId=${demoData.data.id}&userId=${userData.data.userId}`}>View comment</NavLink>
+                            <NavLink to={`/viewComment/?demoId=${demoData.data.id}&userId=${userData.data.userId}`}><button> Edit comment</button></NavLink>
                         </li>
 
                 </li>
@@ -78,8 +78,7 @@ function ViewSubmission(){
             else{
                 return (
                     <li>
-                        There is no comment yet...
-                        <p><NavLink to={`/writeComment/?demoId=${demoData.data.id}&userId=${userData.data.userId}`}> Write one here !</NavLink></p>
+                        <p><NavLink to={`/writeComment/?demoId=${demoData.data.id}&userId=${userData.data.userId}`}><button> Write a comment</button>< /NavLink></p>
                     </li>
 
                 )
@@ -117,17 +116,17 @@ function ViewSubmission(){
                                         Instagram: {userData.data.instagram}
                                     </li>
 
-                                    <linm>
+
+
+                                    <li>
                                         <SongLoader
                                             className="test"
                                             song={demoData.data}
                                         />
-                                    </linm>
+                                    </li>
                                     <li>
                                         {isThereAComment()}
                                     </li>
-
-
                                 </ul>
 
 

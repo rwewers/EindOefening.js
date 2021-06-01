@@ -4,6 +4,7 @@ import './MyDemos.css';
 import axios from "axios";
 import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
 import SongLoader from "../../components/songLoader/SongLoader";
+import CommentViewer from "../../components/CommentViewer/CommentViewer";
 
 const songs= [];
 
@@ -69,15 +70,16 @@ function Mydemos() {
                     {data?.data && data.data.length > 0
                         ? data.data.map((song) => {
 
-                                return  <ul>
-                                    <li id="loadingError">
+                                return <div className="demodropContainer">
+
                                      <label> {song.artist} + {song.songTitle} </label>
                                     <SongLoader
                                     className="test"
                                     song={song}
                                 />
-                                    </li>
-                                </ul>
+                                        <CommentViewer
+                                            songId = {song.id} />
+                                </div>
                             }
                         )
                         : "Loading..."}

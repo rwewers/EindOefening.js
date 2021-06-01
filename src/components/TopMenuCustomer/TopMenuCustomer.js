@@ -53,7 +53,10 @@ function TopMenuCustomer() {
                             <img src={logo1} className="App-logo2" alt="logo1" />
                         </li>
                         <li>
-                            <NavLink className="navLinks" to="/submissions" exact activeClassName="active-link">Submissions</NavLink>
+                            <NavLink className="navLinks" to="/newsubmissions" exact activeClassName="active-link">New </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className="navLinks" to="/oldsubmissions" exact activeClassName="active-link">old </NavLink>
                         </li>
                         <li>
                             <NavLink to="/" activeClassName="active-link" >

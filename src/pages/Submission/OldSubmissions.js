@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import "./Submissions.css";
+import "./OldSubmissions.css";
 import axios from "axios";
 import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
 import SongLoader from "../../components/songLoader/SongLoader";
 import {NavLink} from "react-router-dom";
+import CommentViewer from "../../components/CommentViewer/CommentViewer";
 
-function Submissions(){
+
+function NewSubmissions(){
 
     const [allUsers, setAllUsers] = useState()
     const [hasDemos, setHasDemos] = useState(false)
@@ -20,15 +22,10 @@ function Submissions(){
             setIsLoading(true)
             try {
                 const response = await axios.get(`http://localhost:8080/api/user/`, {
-
                     headers: {
                         'Authorization': localStorage.getItem('token')
-
                     }
-
-
                 })
-
 
                 setAllUsers(response);
                 console.log(response);
@@ -40,64 +37,49 @@ function Submissions(){
                         setHasDemos(true);
                     }
                 }
-
-                // response.forEach(user => {
-                //     if (user.demos.length > 0) {
-                //         setHasDemos(true)
-                //     }
-                // })
-
             } catch (error) {
                 // TODO User error message
                 setIsLoading(false)
                 console.log(error)
             }
         }
-         }, [])
-
-
-    // if(isLoading === false){
-    //     console.log(data);
-    // }
-
-    console.log(allUsers);
-
+    }, [])
     function displayDemos(user, demos) {
+        console.log(demos);
 
         return demos.map(demo => (
+            demo.comment != null ? (
 
-            <li key={demo.songTitle} >
-                <NavLink className="navLinks" to=
-                    {`/viewSubmission?userId=${user.userId}&demoId=${demo.id}`} exact activeClassName="active-link"><label>{demo.artist} + {demo.songTitle}</label></NavLink>
 
-                <SongLoader
-                    song={demo}
+                <li className="displayDemoContainer" key={demo.songTitle} >
 
-                />
-            </li>
+                    <label>Uername: {user.username}</label>
+                    <label> {demo.artist} + {demo.songTitle}</label>
+                    <SongLoader
+                        song={demo}
+                    />
+                    <CommentViewer
+                        songId = {demo.id} />
+
+                    <NavLink className="navLinks" to=
+                        {`/viewSubmission?userId=${user.userId}&demoId=${demo.id}`} exact activeClassName="active-link"><button>View info</button></NavLink>
+                </li>
+            ):(
+                <div>
+                    <p></p>
+                </div>
+            )
         ))
-
-
     }
-
     function displayUser(user) {
         return user.demos.length > 0 && (
-            <ul key={`user${user.userId}`}>
-                <li
-                    key={user.userId}
-                    className="userID">
-                    <strong>User: </strong>{user.username}
-                </li>
+            <div className="ulContainer">
                 {displayDemos(user, user.demos)}
-            </ul>
+
+            </div>
+
         )
-
-
     }
-
-
-       // console.log(allUsers);
-
 
 
 
@@ -109,10 +91,17 @@ function Submissions(){
                 {!hasDemos && <ul><li key="no-demos">No demos yet...</li></ul>}
                 {allUsers?.data && allUsers.data.map(user => (
                     displayUser(user)
+
                 ))}
+                <button
+
+                >Edit
+                </button>
+
+
             </div>
         </>
     )
 }
-export default Submissions;
+export default NewSubmissions;
 

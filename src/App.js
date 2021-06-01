@@ -12,11 +12,12 @@ import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
 import './App.css';
 import MyDemos from "./pages/mydemos/MyDemos";
-import Submissions from "./pages/Submission/Submissions";
+import NewSubmissions from "./pages/Submission/NewSubmissions";
 import ViewSubmission from "./pages/viewSubmission/ViewSubmission";
 import ViewComment from "./pages/Comment/ViewComment";
 import WriteComment from "./pages/Comment/WriteComment";
 import EditComment from "./pages/Comment/EditComment";
+import OldSubmissions from "./pages/Submission/OldSubmissions";
 
 
 
@@ -56,8 +57,11 @@ function App() {
                   <route exact path ="/myDemos">
                       <MyDemos />
                   </route>
-                  <route exact path ="/submissions">
-                      <Submissions/>
+                  <route exact path ="/newsubmissions">
+                      <NewSubmissions/>
+                  </route>
+                  <route exact path ="/oldsubmissions">
+                      <OldSubmissions/>
                   </route>
                   <route exact path ="/viewSubmission">
                       <ViewSubmission/>
