@@ -80,10 +80,6 @@ function NewSubmissions(){
                 )
             }
     }
-
-
-
-
     return(
         <>
             <TopMenuCustomer/>
