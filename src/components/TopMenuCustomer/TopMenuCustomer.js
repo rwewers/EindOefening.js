@@ -39,17 +39,6 @@ function TopMenuCustomer() {
 
                     <ul>
                         <li>
-                            <NavLink className="navLinks" to="/" exact activeClassName="active-link">Home</NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink className="navLinks" to="/about" activeClassName="active-link">About</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="navLinks" to="/contact" exact activeClassName="active-link">Contact</NavLink>
-                        </li>
-
-                        <li>
                             <img src={logo1} className="App-logo2" alt="logo1" />
                         </li>
                         <li>
@@ -71,18 +60,10 @@ function TopMenuCustomer() {
                 return(
                     <ul>
                         <li>
-                            <NavLink className="navLinks" to="/" exact activeClassName="active-link">Home</NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink className="navLinks" to="/about" activeClassName="active-link">About</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="navLinks" to="/contact" exact activeClassName="active-link">Contact</NavLink>
-                        </li>
-                        <li>
                             <img src={logo1} className="App-logo2" alt="logo1" />
                         </li>
+
+
                         <li>
                             <NavLink className="navLinks" to="demodrop" exact activeClassName="active-link">Demo drop</NavLink>
                         </li>
@@ -104,17 +85,14 @@ function TopMenuCustomer() {
 
                 <ul>
                     <li>
+                        <img src={logo1} className="App-logo2" alt="logo1" />
+                    </li>
+                    <li>
                         <NavLink className="navLinks" to="/" exact activeClassName="active-link">Home</NavLink>
                     </li>
 
                     <li>
                         <NavLink className="navLinks" to="/about" activeClassName="active-link">About</NavLink>
-                    </li>
-                    <li>
-                        <img src={logo1} className="App-logo2" alt="logo1" />
-                    </li>
-                    <li>
-                        <NavLink className="navLinks" to="/contact" exact activeClassName="active-link">Contact</NavLink>
                     </li>
 
                     <li>
@@ -129,11 +107,14 @@ function TopMenuCustomer() {
 
     return (
         <div className="Topmenu-Container">
-              <nav>
-                <div className="nav-container">
-                    {whoLoggedIn()}
-                </div>
-        </nav>
+            <header className="homepageHeader">
+                /header>
+                <nav>
+                    <div className="nav-container">
+                        {whoLoggedIn()}
+                    </div>
+                </nav>
+            </header>
 
         </div>
     );

@@ -84,9 +84,9 @@ function NewSubmissions(){
         <>
             <TopMenuCustomer/>
             {isLoading}
-            <div className='demo-list'>
+            <div>
 
-                {!hasDemos && <ul><li key="no-demos">No demos yet...</li></ul>}
+                {!hasDemos && <ul className='demo-list'><li key="no-demos">No demos yet...</li></ul>}
                 {allUsers?.data && allUsers.data.map(user => (
                     displayUser(user)
 

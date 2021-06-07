@@ -20,9 +20,16 @@ h5{
     border-left: 0;
     border-right: 0;
     padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 
 }
 
 .h1NewSubmission{
     color: white;
 }
+
+
+

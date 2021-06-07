@@ -55,7 +55,7 @@ function SignIn() {
 
                 <div>
                 <TopMenuCustomer />
-
+                <div className="signInContainer">
                 <form className="loginForm" onSubmit={onSubmit}>
                     <label id="labelSignin" htmlFor="username-field">
                         Username :
@@ -85,6 +85,7 @@ function SignIn() {
                     </button>
                     <p>Don't have an account yet? You can create an account <Link to="/SignUp">here</Link> !</p>
                 </form>
+                    </div>
                 </div>
 
 

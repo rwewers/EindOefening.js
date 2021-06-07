@@ -66,7 +66,7 @@ function NewSubmissions(){
                 </li>
             ):(
                 <div>
-                    <p></p>
+                    <p>There are no old demos yet.</p>
                 </div>
             )
         ))
@@ -93,10 +93,7 @@ function NewSubmissions(){
                     displayUser(user)
 
                 ))}
-                <button
 
-                >Edit
-                </button>
 
 
             </div>

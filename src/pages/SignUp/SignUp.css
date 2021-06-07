@@ -5,15 +5,23 @@
 }
 
 .signupContainer {
-    width: 1920px;
-    height: 1080px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 .signupForm p{
     color: white;
+
 }
 
 .message-succes{
     color: white;
+}
+
+#signUpInput{
+width: 350px;
 }

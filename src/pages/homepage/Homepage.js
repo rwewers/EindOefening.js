@@ -1,6 +1,5 @@
 import React from 'react';
 
-import DonDiablo_into_the_unknown from "../../assets/DonDiablo_into_the_unkown.PNG"
 import music1 from "../../assets/pictures/music/1.png";
 import music2 from "../../assets/pictures/music/2.jpeg";
 import music3 from "../../assets/pictures/music/3.jpeg";
@@ -13,6 +12,8 @@ import music9 from "../../assets/pictures/music/9.png";
 import music10 from "../../assets/pictures/music/10.jpeg";
 import music11 from "../../assets/pictures/music/11.jpeg";
 import music12 from "../../assets/pictures/music/12.jpeg";
+import backgroundPicture from "../../assets/pictures/home_background.jpg"
+import donDiabloShows from "../../assets/pictures/dondiablo_shows.PNG"
 
 import './Homepage.css';
 import {
@@ -31,22 +32,16 @@ function Homepage(){
     return(
     <html>
 
-
+    <TopMenuCustomer/>
 
     <body>
-    <header className="homepageHeader">
 
-    </header>
+
       <main>
           <div className="parent">
-          <TopMenuCustomer/>
-          <div className="pictureContainer">
-          {/*<img src={home} className="background-image3" alt="logo"/>*/}
 
-          <img src={DonDiablo_into_the_unknown} className="don_diablo_unknown" alt="albumcover"/>
-              <button type="submit" className="listenButton" >
-                  OFFICIAL VIDEO
-              </button>
+          <div className="pictureContainer">
+          <img src={backgroundPicture} className="homeBackground" alt="logo"/>
           </div>
           </div>
 
@@ -61,8 +56,7 @@ function Homepage(){
               <h3 className="newsDates">JAN 16, 2021</h3>
               <h3 className="newsInfo">DON DIABLO & IMANBEK - KILL ME BETTER FT. TREVOR DANIEL (DON DIABLO VIP MIX)</h3>
           </div>
-          <div className="background2Wrapper">
-          </div>
+          <img src={donDiabloShows} className="homeBackground" alt="logo"/>
           <h1 className="h1Music">MUSIC</h1>
           <div className="divContainerMusic">
 

@@ -19,7 +19,6 @@
 }
 
 .edit {
-    color: var(--custom-green);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -35,8 +34,7 @@
     position: relative;
     margin-bottom: 20px;
     min-height: 80px;
-    background-color: var(--custom-white);
-    border-radius: var(--custom-border-radius);
+
     padding: 20px;
     white-space: pre-line;
 }
@@ -48,3 +46,10 @@
 .CommentMessage{
     color: white;
 }
+
+.viewComment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

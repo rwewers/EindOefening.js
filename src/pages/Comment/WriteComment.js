@@ -92,6 +92,7 @@ function Writecomment(){
         !isLoading && song?
             (
                 <div>
+                    <div className="writeComment">
                     <TopMenuCustomer/>
                     <h1>Write Comment</h1>
                    <SongLoader song={song.data} />}
@@ -106,6 +107,7 @@ function Writecomment(){
                         type="button"
                         onClick={handleSave}
                     >Save comment</button>
+                    </div>
                 </div>
     ): (
                 <div>

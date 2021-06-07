@@ -3,7 +3,7 @@ import { useHistory} from 'react-router-dom'
 import SongLoader from "../../components/songLoader/SongLoader";
 import axios from "axios";
 import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
-
+import "./EditComment.css"
 
 function EditComment() {
 
@@ -82,21 +82,22 @@ function EditComment() {
     return (
 
         !isLoading ?(
-            <div className="center">
+            <div className="center1">
                 <TopMenuCustomer/>
-                <div className="full-page">
-                    <h3>Edit commentd</h3>
+                <div className="editCommentContainer">
+                    <h3>Edit comment</h3>
                     {song && <SongLoader song={song} />}
-                    <p className="comment">
+                    <p className="commentEdit1">
                         {comment && (
                             <textarea
+                                className="textContainer1"
                                 value={comment.message}
                                 onChange={handleChange}
                             />
                         )}
                     </p>
                     <button
-                        className="save"
+                        className="save1"
                         type="button"
                         onClick={handleSave}
                     >Save comment</button>

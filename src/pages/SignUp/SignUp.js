@@ -78,8 +78,9 @@ function SignUp() {
 
     return (
         <>
+            <TopMenuCustomer />
             <div className="signupContainer">
-                <TopMenuCustomer />
+
 
 
                 {createUserSucces === true &&(
@@ -89,6 +90,7 @@ function SignUp() {
 
                 <InputField
                     ref={inputRefs.current[0]}
+                    id="signUpInput"
                     name="username"
                     label="Username"
                     onChange ={handleChange}
@@ -96,6 +98,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[1]}
+                    id="signUpInput"
                     name="firstName"
                     label="Firstname"
                     onChange ={handleChange}
@@ -104,6 +107,7 @@ function SignUp() {
 
                 <InputField
                     ref={inputRefs.current[2]}
+                    id="signUpInput"
                     name="lastName"
                     label="Lastname"
                     onChange ={handleChange}
@@ -111,6 +115,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[3]}
+                    id="signUpInput"
                     name="email"
                     label="Email"
                     onChange ={handleChange}
@@ -118,6 +123,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[4]}
+                    id="signUpInput"
                     name="country"
                     label="Country"
                     onChange ={handleChange}
@@ -125,6 +131,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[5]}
+                    id="signUpInput"
                     name="facebook"
                     label="Facebook"
                     onChange ={handleChange}
@@ -132,6 +139,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[6]}
+                    id="signUpInput"
                     name="instagram"
                     label="Instagram"
                     onChange ={handleChange}
@@ -139,6 +147,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[7]}
+                    id="signUpInput"
                     name="password"
                     label="Password"
                     onChange ={handleChange}
@@ -146,6 +155,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[8]}
+                    id="signUpInput"
                     name="passwordRepeat"
                     label="Password repeat"
                     onChange ={handleChange}

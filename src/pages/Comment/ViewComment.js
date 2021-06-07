@@ -86,6 +86,7 @@ function ViewComment() {
         !isLoading && song && user?
             (
                 <div>
+                    <div className="viewComment">
                     <TopMenuCustomer/>
                     <h3 className="h3comment">View comment</h3>
                     {song && <SongLoader song={song} />}
@@ -95,6 +96,7 @@ function ViewComment() {
                     {comment && (
                         <CommentOptions song={song} comment={comment}/>
                     )}
+                    </div>
                 </div>
             ): (
                 <div>

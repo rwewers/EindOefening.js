@@ -9,8 +9,8 @@
 }
 .loginFormContainer {
 
-    width: 1920px;
-    height: 1080px;
+
+width: 500px;
     justify-content: center;
     align-items: start;
     display: flex;
@@ -26,3 +26,14 @@
 
 }
 
+#username-field{
+   width: 350px;
+
+
+}
+
+#password-field{
+   width: 350px;
+
+
+}

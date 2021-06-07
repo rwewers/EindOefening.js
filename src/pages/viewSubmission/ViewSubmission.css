@@ -1,9 +1,12 @@
 .containerViewSubmission {
     display: flex;
-    justify-content: center;
+   flex-direction: column;
+    align-items: center;
     color: white;
 }
 
 .listViewSubmission{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
 }

@@ -4,6 +4,11 @@ nav{
 
     /*HIER MOET NOG NA GEKEKEN WORDEN !!!! FLOAT MAG NIET */
 }
+
+.homepageHeader{
+    margin:0;
+    height: 100px;
+}
 ul{
     display: flex;
     margin-top: 130px;

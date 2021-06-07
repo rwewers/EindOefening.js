@@ -93,10 +93,7 @@ function ViewSubmission(){
                             <TopMenuCustomer/>
                             <div className="containerViewSubmission">
                             <h1>{demoData.data.artist} + {demoData.data.songTitle}</h1>
-
-
                                 <ul className="listViewSubmission">
-
                                     <li>
                                         Firstname: {userData.data.firstName}
                                     </li>

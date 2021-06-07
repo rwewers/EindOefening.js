@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import pictureAboutDiablo from "../../assets/1+(1).jpg";
+import pictureAboutDiablo from "../../assets/pictures/1+(1).jpg";
 import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
 
 
@@ -8,8 +8,9 @@ function About() {
 
     return (
 
-        <div className="flexcontainer">
+        <div >
             <TopMenuCustomer />
+            <div className="flexContainer">
             <h1 id="biography">BIOGRAPHY</h1>
                 <div className="pictureDiv">
             <img src={pictureAboutDiablo} className="diabloAbout" alt="logo"/>
@@ -35,6 +36,8 @@ function About() {
             </span>
 
             </div>
+            </div>
+
         </div>
 
     );
