@@ -3,7 +3,9 @@ import { useHistory} from 'react-router-dom'
 import SongLoader from "../../components/songLoader/SongLoader";
 import axios from "axios";
 import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
-import "./EditComment.css"
+
+
+import styles from "./Comment.module.css";
 
 function EditComment() {
 
@@ -26,7 +28,7 @@ function EditComment() {
         async function fetchData() {
             setIsLoading(true)
             try {
-                const data = await axios.get(`http://localhost:8080/api/demos/1`, {
+                const data = await axios.get(`http://localhost:8080/api/demos/${songId}`, {
                     headers: {
                         'Authorization': localStorage.getItem('token')
                     }
@@ -73,18 +75,19 @@ function EditComment() {
         history.push(`/viewComment?songId=${songId}`)
     }
 
+
     return (
 
         !isLoading ?(
-            <div className="center1">
+            <div>
                 <TopMenuCustomer/>
-                <div className="editCommentContainer">
+                <div className={styles['editCommentContainer']}>
                     <h3>Edit comment</h3>
                     {song && <SongLoader song={song} />}
-                    <p className="commentEdit1">
+                    <p>
                         {comment && (
                             <textarea
-                                className="textContainer1"
+                                className={styles['editCommentTextArea']}
                                 value={comment.message}
                                 onChange={handleChange}
                             />

@@ -1,5 +1,5 @@
 import React from 'react';
-import './About.css';
+import styles from './About.module.css';
 import pictureAboutDiablo from "../../assets/pictures/1+(1).jpg";
 import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
 
@@ -10,12 +10,12 @@ function About() {
 
         <div >
             <TopMenuCustomer />
-            <div className="flexContainer">
-            <h1 id="biography">BIOGRAPHY</h1>
-                <div className="pictureDiv">
-            <img src={pictureAboutDiablo} className="diabloAbout" alt="logo"/>
+            <div className={styles['aboutContainer']}>
+            <h1 className={styles['h1-about']} >BIOGRAPHY</h1>
+                <div className={styles['pictureDiv']}>
+            <img src={pictureAboutDiablo} className={styles['diabloAbout']} alt="logo"/>
                 </div>
-            <div id="spanContainer">
+            <div className={styles['spanContainer']}>
             <span>
             Some artists look toward the future. Don Diablo dictates it.
             </span>

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import "./ViewSubmission.css";
 import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
-import {useAuthState} from "../../context/AuthContext";
 import axios from "axios";
 import SongLoader from "../../components/songLoader/SongLoader";
-import * as url from "url";
-import {NavLink} from "react-router-dom";
+import CommentOptions from "../../components/CommentOptions/CommentOptions";
+
+import styles from "./viewSubmission.module.css";
 
 function ViewSubmission(){
 
@@ -14,7 +13,8 @@ function ViewSubmission(){
     const [demoData, setDemoData] = useState();
     const [isLoading, setIsLoading] = useState(false)
     var urlParameters = [];
-
+    const [comment, setComment] = useState({});
+    const [song, setSong] = useState(null);
 
 
     for (const param of urlParams) {
@@ -50,6 +50,12 @@ function ViewSubmission(){
                 setDemoData(demoResponse);
                 setIsLoading(false)
 
+                if (demoResponse) {
+
+                    setSong(demoResponse.data)
+                    setComment(demoResponse.data.comment)
+
+                }
 
             } catch (error) {
                 // TODO User error message
@@ -59,41 +65,53 @@ function ViewSubmission(){
         };
     }, [])
 
+    function showingComment(comment){
 
-    console.log(demoData);
-    console.log(userData);
+        if(comment != null){
+            return(
+
+                <li>
+                    Comment: {comment.message}
+                </li>
+                //  <li>
+                // <CommentOptions song={song} comment={comment}/>
+                // </li>
+
+            )
+
+        }
+    }
+
+    function showingCommentOptions(comment){
+
+        if(comment != null){
+            return(
 
 
-    function isThereAComment(){
-        if(demoData.data.comment != null ){
+                 <li>
+                <CommentOptions song={song} comment={comment}/>
+                </li>
+            )
+
+
+        }
+        else{
             return(
                 <li>
-
-                        <li key="view">
-                            <NavLink to={`/viewComment/?demoId=${demoData.data.id}&userId=${userData.data.userId}`}><button> Edit comment</button></NavLink>
-                        </li>
-
+                    <CommentOptions song={song} comment={comment}/>
                 </li>
-            )}
-            else{
-                return (
-                    <li>
-                        <p><NavLink to={`/writeComment/?demoId=${demoData.data.id}&userId=${userData.data.userId}`}><button> Write a comment</button>< /NavLink></p>
-                    </li>
+            )
+        }
 
-                )
-            }}
-
-
-
+    }
     return(
-            !isLoading && demoData ?
+            !isLoading && demoData && song  ?
                     (
                         <>
                             <TopMenuCustomer/>
-                            <div className="containerViewSubmission">
+                            <div className={styles['containerViewSubmission']}>
                             <h1>{demoData.data.artist} + {demoData.data.songTitle}</h1>
-                                <ul className="listViewSubmission">
+                                <ul className={styles['listViewSubmission']}>
                                     <li>
                                         Firstname: {userData.data.firstName}
                                     </li>
@@ -112,29 +130,22 @@ function ViewSubmission(){
                                     <li>
                                         Instagram: {userData.data.instagram}
                                     </li>
-
-
-
-                                    <li>
-                                        <SongLoader
-                                            className="test"
-                                            song={demoData.data}
-                                        />
-                                    </li>
-                                    <li>
-                                        {isThereAComment()}
-                                    </li>
+                                    {showingComment(comment)}
+                                    {showingCommentOptions(comment)}
                                 </ul>
-
+                                <SongLoader
+                                   song={demoData.data}
+                                />
 
                             </div>
 
                          </>
                     ) : (
-                    <div>
+                    <>
                         <TopMenuCustomer/>
-                            <h1>test2</h1>
-                    </div>
+
+                        <h1> teasdsadsad</h1>
+                    </>
                     )
 
 

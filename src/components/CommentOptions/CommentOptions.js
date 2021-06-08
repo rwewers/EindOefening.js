@@ -36,18 +36,15 @@ function CommentOptions({ song, comment}) {
             }
         }
     }
+
     return (
         <>
-            {showModal && (
-                <DeleteConformation
-                    action={modalAction}
-                    message="Are you sure you want to delete this comment?"
-                />
-            )}
-            {isAdmin} && (
+
+            {isAdmin}
                 <>
                     {comment ? (
                         <>
+
                             <li key="edit"><Link to={`/editComment?songId=${song.id}`}>Edit comment</Link></li>
                             <li key="delete">
                                 <Link
@@ -63,6 +60,11 @@ function CommentOptions({ song, comment}) {
                         <li key="write"><NavLink to={`/writeComment?songId=${song.id}`}>Write new comment</NavLink></li>
                     )}
                 </>
+            {showModal && (
+                <DeleteConformation
+                    action={modalAction}
+                    message="Are you sure you want to delete this comment?"
+                />
             )}
         </>
     )

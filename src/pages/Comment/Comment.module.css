@@ -1,0 +1,38 @@
+@import url('../../css/custom-vars.css');
+
+.editCommentContainer{
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.viewCommentContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.editCommentTextArea{
+    width: 500px;
+    height: 350px;
+    resize: none;
+
+}
+
+.writeCommentContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.writeCommentTextArea{
+    width: 500px;
+    height: 350px;
+    resize: none;
+}
+
+
+

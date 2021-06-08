@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
-
-import './VievComment.css'
 import axios from "axios";
 import {useAuthState} from "../../context/AuthContext";
 import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
@@ -9,6 +6,7 @@ import SongLoader from "../../components/songLoader/SongLoader";
 import CommentOptions from "../../components/CommentOptions/CommentOptions";
 import {roles} from "../../components/Roles/Roles"
 
+import styles from './Comment.module.css'
 
 function ViewComment() {
 
@@ -70,15 +68,16 @@ function ViewComment() {
                 <div>
                     <TopMenuCustomer/>
 
-                    <div className="viewComment">
-                    <h3 className="h3comment">View comment</h3>
+                    <div className={styles['viewCommentContainer']}>
+                    <h3>View comment</h3>
                     {song && <SongLoader song={song} />}
-                    <p className="CommentMessage">
+                    <p>
                         {comment && comment.message}
                     </p>
-                    {comment && (
-                        <CommentOptions song={song} comment={comment}/>
-                    )}
+
+                        {comment && (
+                            <CommentOptions song={song} comment={comment}/>
+                        )}
                     </div>
                 </div>
             ): (

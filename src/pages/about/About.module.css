@@ -1,10 +1,10 @@
-h1{
+@import url('../../css/custom-vars.css');
+
+.h1-about{
     color: white;
 }
-
-
-.flexContainer{
-   display: flex;
+.aboutContainer{
+     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -15,20 +15,10 @@ h1{
     width: 100%;
 }
 
-.pictureDiv{
+.spanContainer{
+    display: flex;
     align-items: center;
     flex-direction: column;
-    display: flex;
-}
-
-
-
-#personal-message{
-
-    height: 250px;
-}
-
-#spanContainer{
     width:100%;
     max-width: 800px;
 

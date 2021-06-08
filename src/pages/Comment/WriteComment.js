@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import './WriteComment.css'
 import { useHistory } from 'react-router-dom'
 import axios from "axios";
 import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
 import SongLoader from "../../components/songLoader/SongLoader";
 
+import styles from './Comment.module.css'
 
 
 function Writecomment(){
@@ -15,7 +15,7 @@ function Writecomment(){
     const [song, setSong] = useState(null)
     const history = useHistory()
     const [isLoading, setIsLoading] = useState(false)
-
+    const [textComment, setTextComment] = useState();
 
 
     for (const param of urlParams) {
@@ -60,6 +60,8 @@ function Writecomment(){
         setComment(updatedComment)
     }
     async function handleSave() {
+
+        console.log(comment);
         setIsLoading(true)
         try {
 
@@ -78,27 +80,57 @@ function Writecomment(){
         }
     }
 
+    function jsFunction(value){
+        if(value === "1"){
+
+            setTextComment("nico");
+            console.log(textComment);
+
+        }
+        else if(value === "2"){
+
+            setTextComment("parkiet");
+            console.log(textComment);
+
+        }
+        else{
+          setTextComment("Snoef");
+            console.log(textComment);
+        }
+
+    }
+
+
+
     return(
-        !isLoading && song?
+        !isLoading && song ?
             (
                 <div>
                     <TopMenuCustomer/>
-                    <div className="writeComment">
-
+                    <div className={styles['writeCommentContainer']}>
+                        <select name="type" onChange={e => jsFunction(e.target.value) }>
+                            <option value="1">One</option>
+                            <option value='2'>Two</option>
+                            <option value='3'>Three</option>
+                        </select>
                     <h1>Write Comment</h1>
                    <SongLoader song={song.data} />}
+
+
                     <p>
-                    <textarea
-                        value={comment.message}
-                        onChange={handleChange}
-                    />
+
+
                     </p>
+
                     <button
 
                         type="button"
                         onClick={handleSave}
                     >Save comment</button>
+
                     </div>
+
+
                 </div>
     ): (
                 <div>
