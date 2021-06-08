@@ -2,7 +2,7 @@
     color: white;
 }
 
-.demodropContainer{
+.mydemosContainer{
     border-style: solid;
     border-color: white;
     margin: 10px;
@@ -15,6 +15,6 @@
 }
 
 
-.demodropContainer > label{
+.mydemosContainer > label{
     padding-bottom: 20px;
 }

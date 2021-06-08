@@ -19,13 +19,9 @@ function CommentOptions({ song, comment}) {
 
         }
     }
-
-
-
     async function modalAction(allowAction) {
         setShowModal(false)
         if (allowAction) {
-
             try {
                 const result = await axios.delete(`http://localhost:8080/api/comments/${comment.commentId}`,
                     { headers: {
@@ -38,11 +34,8 @@ function CommentOptions({ song, comment}) {
             } catch (error) {
                 console.log(error)
             }
-
-
         }
     }
-
     return (
         <>
             {showModal && (

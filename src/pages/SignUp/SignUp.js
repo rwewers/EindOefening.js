@@ -62,7 +62,7 @@ function SignUp() {
                 })
 
 
-                console.log(response.data);
+                console.log(response);
 
                 if (response.data.message === "User registered successfully!") {
                     setCreateUserSucces(true);

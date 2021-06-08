@@ -33,9 +33,7 @@ function EditComment() {
 
                 })
                 setIsLoading(false);
-                console.log(data);
                 if (data) {
-
                     setSong(data.data)
                     setComment(data.data.comment)
                 }
@@ -46,7 +44,6 @@ function EditComment() {
             }
         }
     }, [songId])
-
     function handleChange(event) {
         const updatedComment = { ...comment }
         updatedComment.message = event.target.value
@@ -58,13 +55,11 @@ function EditComment() {
     async function handleSave() {
         setIsLoading(true)
         try {
-
             await axios.put(`http://localhost:8080/api/comments/${comment.commentId}`, comment, {
                 headers: {
                     'Authorization': localStorage.getItem('token')
                 }
             })
-
             setIsLoading(false)
             history.push(`/viewComment?songId=${songId}`)
 
@@ -76,7 +71,6 @@ function EditComment() {
 
         setIsLoading(false)
         history.push(`/viewComment?songId=${songId}`)
-
     }
 
     return (

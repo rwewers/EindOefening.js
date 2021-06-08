@@ -14,17 +14,12 @@ function Contact() {
         setData(prev => ({ ...prev, [name]: value }))
     }
 
-
-    // console.log(inputRefs);
-
     const submitForm = (e) => {
         e.preventDefault();
-
         let isValid = true;
 
         for(let i = 0; i<inputRefs.current.length; i++ ){
             const valid =  inputRefs.current[i].current.validate()
-            console.log(valid);
             if(!valid){
                 isValid= false
             }
@@ -33,7 +28,6 @@ function Contact() {
             return;
         }
 
-        //carry on as normal
     }
 
     return (

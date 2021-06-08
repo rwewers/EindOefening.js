@@ -11,9 +11,7 @@ function TopMenuCustomer() {
     const {isAuthenticated} = useAuthState();
     const {user} = useAuthState();
 
-
     let isAdmin = false;
-
     if(user){
         let length = user.roles.length;
         for (let i = 0; i < length; i++) {
@@ -22,24 +20,18 @@ function TopMenuCustomer() {
             }
         }
     }
-
-    // console.log(isAdmin);
-
-
     function onSubmit(event){
         event.preventDefault();
             logout();
-
     }
 
     function whoLoggedIn(){
         if(isAuthenticated){
             if(isAdmin){
                 return(
-
                     <ul>
                         <li>
-                            <img src={logo1} className="App-logo2" alt="logo1" />
+                            <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1} className="App-logo2" alt="logo1" ></img></NavLink>
                         </li>
                         <li>
                             <NavLink className="navLinks" to="/newsubmissions" exact activeClassName="active-link">New </NavLink>
@@ -51,19 +43,15 @@ function TopMenuCustomer() {
                             <NavLink to="/" activeClassName="active-link" >
                                 <span onClick={onSubmit}>Logout</span> </NavLink>
                         </li>
-
                     </ul>
                 )
-
             }
             else{
                 return(
                     <ul>
                         <li>
-                            <img src={logo1} className="App-logo2" alt="logo1" />
+                            <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1} className="App-logo2" alt="logo1" ></img></NavLink>
                         </li>
-
-
                         <li>
                             <NavLink className="navLinks" to="demodrop" exact activeClassName="active-link">Demo drop</NavLink>
                         </li>
@@ -74,23 +62,19 @@ function TopMenuCustomer() {
                             <NavLink to="/" activeClassName="active-link" >
                                 <span onClick={onSubmit}>Logout</span> </NavLink>
                         </li>
-
                     </ul>
                 )
-
             }
         }
         else{
             return(
-
                 <ul>
                     <li>
-                        <img src={logo1} className="App-logo2" alt="logo1" />
+                        <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1} className="App-logo2" alt="logo1" ></img></NavLink>
                     </li>
                     <li>
                         <NavLink className="navLinks" to="/" exact activeClassName="active-link">Home</NavLink>
                     </li>
-
                     <li>
                         <NavLink className="navLinks" to="/about" activeClassName="active-link">About</NavLink>
                     </li>
@@ -98,8 +82,6 @@ function TopMenuCustomer() {
                     <li>
                         <NavLink className="navLinks" to="/SignIn" activeClassName="active-link">Sign in</NavLink>
                     </li>
-
-
                 </ul>
             )
         }
@@ -119,5 +101,4 @@ function TopMenuCustomer() {
         </div>
     );
 }
-
 export default TopMenuCustomer;

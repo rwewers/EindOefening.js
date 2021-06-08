@@ -36,8 +36,6 @@ function ViewComment() {
     }
 
     const songId = urlParameters[0][1];
-
-
     useEffect(() => {
         let timerId;
         fetchData()
@@ -49,45 +47,30 @@ function ViewComment() {
                         headers: {
                             'Authorization': localStorage.getItem('token')
                         }
-
                     })
                     setIsLoading(false);
-
-
                     if (data) {
                         setSong(data.data)
                         setComment(data.data.comment)
                     }
-
-
-
-
                 } catch (error) {
                     // TODO User error message
                     setIsLoading(false)
                     console.log(error)
 
         }
-
-
     }
         return () => clearTimeout(timerId)
 
     } , [songId], isAdmin)
 
-
-
-    console.log(song);
-    console.log(comment);
-
-
-
     return (
         !isLoading && song && user?
             (
                 <div>
-                    <div className="viewComment">
                     <TopMenuCustomer/>
+
+                    <div className="viewComment">
                     <h3 className="h3comment">View comment</h3>
                     {song && <SongLoader song={song} />}
                     <p className="CommentMessage">
@@ -105,7 +88,5 @@ function ViewComment() {
                 </div>
             )
     );
-
 }
-
 export default ViewComment

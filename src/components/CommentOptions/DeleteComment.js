@@ -16,10 +16,8 @@ function DeleteComment({ message, action }) {
                 <button
                     className="customButton"
                     type="button"
-
                     // color="warning"
                     onClick={() => action(true)}
-
                     >
                         Ok
                   </button>

@@ -30,7 +30,6 @@ function Writecomment(){
         fetchData()
         async function fetchData() {
             setIsLoading(true)
-
             try {
 
                 const data = await axios.get(`http://localhost:8080/api/demos/${songId}`, {
@@ -38,8 +37,6 @@ function Writecomment(){
                         'Authorization': localStorage.getItem('token')
                     }
                 })
-
-
                 setIsLoading(false)
                 setSong(data)
                 const newComment = {}
@@ -62,11 +59,8 @@ function Writecomment(){
         updatedComment.demoId = songId
         setComment(updatedComment)
     }
-
-
     async function handleSave() {
         setIsLoading(true)
-
         try {
 
             await axios.post(`http://localhost:8080/api/comments/` , comment , {
@@ -74,7 +68,6 @@ function Writecomment(){
                     'Authorization': localStorage.getItem('token')
                 }
             })
-
             setIsLoading(false)
             history.push(`/viewComment?songId=${songId}`)
 
@@ -83,17 +76,15 @@ function Writecomment(){
             setIsLoading(false)
             console.log(error)
         }
-
-
-
     }
 
     return(
         !isLoading && song?
             (
                 <div>
-                    <div className="writeComment">
                     <TopMenuCustomer/>
+                    <div className="writeComment">
+
                     <h1>Write Comment</h1>
                    <SongLoader song={song.data} />}
                     <p>

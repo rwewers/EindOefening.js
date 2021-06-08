@@ -3,40 +3,24 @@ import './Demodrop.css';
 import InputField from "../../components/InputValidation/InputFieldValidation";
 import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
 import axios from "axios";
-
-
-
-
-
+import {Link, NavLink} from "react-router-dom";
 function Demodrop() {
-
+    let file;
+    let fileName;
+    const[demoDropSucces, setDemoDropSucces] = useState(false);
     const inputRefs = React.useRef([
         React.createRef(), React.createRef(), React.createRef()
     ]);
     const[data, setData] = React.useState({});
-
-
-
-
-
-
     const handleChange = (name, value) => {
         setData(prev => ({ ...prev, [name]: value }))
-
-        // console.log(data.file);
-
-
-
     }
-
-
-
     async function onSubmit(event) {
         event.preventDefault();
-
-        const file = document.getElementById("fileLabel").files[0];
-        const fileName = document.getElementById("fileLabel").files[0].name;
-
+        if(document.getElementById("fileLabel").files[0] != null){
+            file = document.getElementById("fileLabel").files[0];
+            fileName = document.getElementById("fileLabel").files[0].name;
+        }
         let formData = new FormData();
         formData.append('file', file )
         formData.append('userId', localStorage.getItem('id'))
@@ -48,12 +32,9 @@ function Demodrop() {
             console.log(pair[0] + " - " + pair[1]);
         }
 
-
         let isValid = true;
-
         for(let i = 0; i<inputRefs.current.length; i++ ){
             const valid =  inputRefs.current[i].current.validate()
-            console.log(valid);
             if(!valid){
                 isValid= false
             }
@@ -61,78 +42,67 @@ function Demodrop() {
         if(!isValid){
             return;
         }
-
         if(isValid === true) {
             try {
-                console.log(isValid);
-
-
                 const axiosLink = axios.create({
                     baseURL: 'http://localhost:8080/api'
                 })
-                await axiosLink.post('/fileUpload', formData, {
-
+                const response = await axiosLink.post('/fileUpload', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                             'Authorization':  localStorage.getItem('token')
                     }
-
                 })
-
-
-
-
-
-
-
-
+                if (response.data === "File is uploaded successfully") {
+                    setDemoDropSucces(true);
+                }
             } catch (e) {
                 console.log(e);
             }
         }
-        //carry on as normal
     }
 
     return (
-        <div className="parentDemodrop">
-            <TopMenuCustomer />
-
-
+        <div >
+        <TopMenuCustomer />
+            <div className="pictureContainer">
+            {demoDropSucces === true &&(
+                <h2 className="message-succes">File uploaded. Click <NavLink to="/myDemos">here</NavLink> to see my demos's.</h2>
+            )}
             <form onSubmit={onSubmit}>
                 <InputField
                     ref={inputRefs.current[0]}
                     id="fileLabel"
                     name="file"
                     type="file"
-                    label="File "
+                    label="File ( less than 10 mb) "
                     onChange ={handleChange}
-                    validation={"required"}
+                    validation={"required|file"}
                 />
-
+                <InputField
+                    ref={inputRefs.current[2]}
+                    id="fileLabel"
+                    name="artist"
+                    type="text"
+                    label="Artist"
+                    onChange ={handleChange}
+                    validation = {"required"}
+                />
                 <InputField
                     ref={inputRefs.current[1]}
+                    id="fileLabel"
                     name="songTitle"
                     type="text"
                     label="Songtitle"
                     onChange ={handleChange}
                     validation={"required"}
                 />
-                <InputField
-                    ref={inputRefs.current[2]}
-                    name="artist"
-                    type="text"
-                    label="Artist"
-                    onChange ={handleChange}
-                />
-
-
                 <button type="submit" >
                     Submit
                 </button>
-
             </form>
         </div>
-
+        </div>
     );
 }
 export default Demodrop;

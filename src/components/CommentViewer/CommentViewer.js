@@ -6,15 +6,8 @@ function CommentViewer({songId}){
 
     const [isLoading, setIsLoading] = useState(false);
     const [comment, setComment] = useState({});
-
-
-
     useEffect(() => {
-
-
         fetchData()
-
-
         async function fetchData() {
             setIsLoading(true)
             try {
@@ -23,29 +16,17 @@ function CommentViewer({songId}){
                     headers: {
                         'Authorization': localStorage.getItem('token')
                     }
-
                 })
                 setIsLoading(false);
-                console.log(data);
-
-
                 if (data) {
                     setComment(data.data)
                 }
-
-
             } catch (error) {
                 // TODO User error message
                 setIsLoading(false)
                 console.log(error)
-
             }
-
-
         }
-
-        console.log(comment);
-
     } , [songId])
 
     return (
@@ -54,8 +35,6 @@ function CommentViewer({songId}){
             <p className="testClassP">
                 Comment : {comment.comment.message}
             </p>
-
-
         </div>
         ):(
             <div>

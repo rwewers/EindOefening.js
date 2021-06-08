@@ -45,6 +45,7 @@ function SignIn() {
             console.log(response);
         } catch (e){
             console.log(e);
+            alert("Bad Credentials");
         }
     }
 

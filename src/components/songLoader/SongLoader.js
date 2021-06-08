@@ -16,11 +16,7 @@ function SongLoader({song}) {
     };
 
     useEffect(() => {
-
-
-
         playMusic();
-
 
     async function playMusic() {
         setIsLoading(true)
@@ -40,14 +36,8 @@ function SongLoader({song}) {
 
                 console.log(error)
             }
-
-
-
         }
     }, [user])
-
-
-
         return (
             <> {isLoading}
             <div className="songLoader">
@@ -57,16 +47,8 @@ function SongLoader({song}) {
                     // autoPlay
                     controls
                 />
-
-
-
             </div>
             </>
-
         )
-
-
 }
-
-
 export default SongLoader;

@@ -13,7 +13,6 @@ export function getAccessToken() {
         return JSON.parse(localStorage.getItem('user')).accessToken
     }
 }
-
 export function resetLocalUser() {
     localStorage.removeItem('user')
 }
