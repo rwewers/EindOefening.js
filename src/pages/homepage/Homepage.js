@@ -41,7 +41,7 @@ function Homepage(){
           <div className="parent">
 
           <div className="pictureContainer">
-          <img src={backgroundPicture} className={styles['homepageBackground']} alt="logo"/>
+          <img src={backgroundPicture} className={styles['homepageBackground1']} alt="logo"/>
           </div>
           </div>
 

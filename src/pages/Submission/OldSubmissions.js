@@ -66,8 +66,8 @@ function NewSubmissions(){
                         {`/viewSubmission?userId=${user.userId}&demoId=${demo.id}`} exact activeClassName="active-link"><button className={styles['viewInfoButton']}>View info</button></NavLink>
                 </p>
             ):(
-                <div>
-                    <p>There are no old demos yet.</p>
+                <div className={styles['oldDemosYet']}>
+
                 </div>
             )
         ))

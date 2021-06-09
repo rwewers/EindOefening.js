@@ -5,6 +5,7 @@ import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import InputField from "../../components/InputValidation/InputFieldValidation";
 
 import styles from'./SignUp.module.css';
+import backgroundPicture from "../../assets/pictures/home_background.jpg";
 
 function SignUp() {
 
@@ -79,11 +80,11 @@ function SignUp() {
 
     return (
         <>
+            <div>
             <NavigationBar />
             <div className={styles['signupContainer']}>
 
-
-
+            </div>
                 {createUserSucces === true &&(
             <h2 className={styles['messageSucces']}>You did it !! Click <Link  className={styles['signUpSuccesHere']}  to="/SignIn">here</Link> to sign in.</h2>
             )}
@@ -172,7 +173,7 @@ function SignUp() {
                 <p className={styles['alreadyHaveAnAccount']}>Already have an account? You can sign in <Link className={styles['alreadyHaveAnAccountHere']} to="/SignIn">here</Link> !</p>
             </form>
 
-            </div>
+        </div>
             </>
     );
 }
