@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import axios from "axios";
 import SongLoader from "../../components/songLoader/SongLoader";
 import CommentOptions from "../../components/CommentOptions/CommentOptions";
@@ -50,6 +50,8 @@ function ViewSubmission(){
                 setDemoData(demoResponse);
                 setIsLoading(false)
 
+
+
                 if (demoResponse) {
 
                     setSong(demoResponse.data)
@@ -69,13 +71,12 @@ function ViewSubmission(){
 
         if(comment != null){
             return(
+                    <div className={styles['showCommentDiv']}>
 
-                <li>
-                    Comment: {comment.message}
-                </li>
-                //  <li>
-                // <CommentOptions song={song} comment={comment}/>
-                // </li>
+                       Comment:
+                      <textarea className={styles['viewCommentViewSubmission']} value={comment.message}> </textarea>
+
+                    </div>
 
             )
 
@@ -88,18 +89,18 @@ function ViewSubmission(){
             return(
 
 
-                 <li>
-                <CommentOptions song={song} comment={comment}/>
-                </li>
+
+                <CommentOptions song={song} comment={comment} userId={userData.data.userId}/>
+
             )
 
 
         }
         else{
             return(
-                <li>
-                    <CommentOptions song={song} comment={comment}/>
-                </li>
+
+                    <CommentOptions song={song} comment={comment} userId={userData.data.userId}/>
+
             )
         }
 
@@ -108,41 +109,41 @@ function ViewSubmission(){
             !isLoading && demoData && song  ?
                     (
                         <>
-                            <TopMenuCustomer/>
+                            <NavigationBar/>
                             <div className={styles['containerViewSubmission']}>
-                            <h1>{demoData.data.artist} + {demoData.data.songTitle}</h1>
-                                <ul className={styles['listViewSubmission']}>
-                                    <li>
-                                        Firstname: {userData.data.firstName}
-                                    </li>
-                                    <li>
-                                        Lastname: {userData.data.lastName}
-                                    </li>
-                                    <li>
-                                        Email: {userData.data.email}
-                                    </li>
-                                    <li>
-                                        Country: {userData.data.country}
-                                    </li>
-                                    <li>
-                                        Facebook: {userData.data.facebook}
-                                    </li>
-                                    <li>
-                                        Instagram: {userData.data.instagram}
-                                    </li>
+                            <h1>{demoData.data.artist} - {demoData.data.songTitle}</h1>
+                               <table className={styles['tableViewSubmission']}>
+                                        <tr>
+                                            <th>Firstname</th>
+                                            <th>Lastname</th>
+                                            <th>Email</th>
+                                            <th>Country</th>
+                                            <th>Facebook</th>
+                                            <th>Instagram</th>
+
+                                        </tr>
+                                        <tr>
+                                            <td>{userData.data.firstName}</td>
+                                            <td>{userData.data.lastName}</td>
+                                            <td>{userData.data.email}</td>
+                                            <td>{userData.data.country}</td>
+                                            <td>{userData.data.facebook}</td>
+                                            <td>{userData.data.instagram}</td>
+                                        </tr>
+                                    </table>
+                                <div className={styles['spaceDivViewComment']}></div>
                                     {showingComment(comment)}
                                     {showingCommentOptions(comment)}
-                                </ul>
+
                                 <SongLoader
                                    song={demoData.data}
                                 />
 
                             </div>
-
                          </>
                     ) : (
                     <>
-                        <TopMenuCustomer/>
+                        <NavigationBar/>
 
                         <h1> teasdsadsad</h1>
                     </>

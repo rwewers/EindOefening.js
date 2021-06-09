@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './About.module.css';
 import pictureAboutDiablo from "../../assets/pictures/1+(1).jpg";
-import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 
 
 function About() {
@@ -9,9 +9,9 @@ function About() {
     return (
 
         <div >
-            <TopMenuCustomer />
+            <NavigationBar />
             <div className={styles['aboutContainer']}>
-            <h1 className={styles['h1-about']} >BIOGRAPHY</h1>
+
                 <div className={styles['pictureDiv']}>
             <img src={pictureAboutDiablo} className={styles['diabloAbout']} alt="logo"/>
                 </div>

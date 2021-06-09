@@ -1,0 +1,15 @@
+.commentNotEditable{
+    width: 600px;
+    height: 200px;
+    resize: none;
+
+}
+
+.commentViewerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.noCommentViewerContainer{
+    color: white;
+}

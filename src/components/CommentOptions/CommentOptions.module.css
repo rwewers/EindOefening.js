@@ -1,0 +1,20 @@
+.writeNewComment {
+    color: #198c89;
+    font-size: 25px;
+}
+.deleteMessage{
+color: white;
+}
+
+.modelDelete{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.customButton{
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}

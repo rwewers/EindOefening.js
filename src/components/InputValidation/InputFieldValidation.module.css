@@ -1,12 +1,13 @@
-.error{
+.errorMessage{
     display: flex;
-    color: red;
-    font-size: 13px;
+
+    font-size: 11px;
     justify-content: center;
     margin: 0;
+    color: red;
 }
 
-.divInputField{
+.InputValidationContainer{
     margin: 5px;
 }
 

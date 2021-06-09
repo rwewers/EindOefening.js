@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import "./NewSubmissions.css";
 import axios from "axios";
-import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import SongLoader from "../../components/songLoader/SongLoader";
 import {NavLink} from "react-router-dom";
 import CommentViewer from "../../components/CommentViewer/CommentViewer";
+
+import styles from "./Submissions.module.css";
+
 
 
 function NewSubmissions(){
@@ -50,9 +52,9 @@ function NewSubmissions(){
             demo.comment == null ?(
 
 
-            <li className="displayDemoContainer" key={demo.songTitle} >
+            <li className={styles['displayDemoContainer']} key={demo.songTitle} >
 
-                <label>Uername: {user.username}</label>
+                <label>Username: {user.username}</label>
                 <label> {demo.artist} + {demo.songTitle}</label>
                 <SongLoader
                     song={demo}
@@ -61,7 +63,7 @@ function NewSubmissions(){
                     songId = {demo.id} />
 
                 <NavLink className="navLinks" to=
-                    {`/viewSubmission?userId=${user.userId}&demoId=${demo.id}`} exact activeClassName="active-link"><button>Write a comment</button></NavLink>
+                    {`/viewSubmission?userId=${user.userId}&demoId=${demo.id}`} exact activeClassName="active-link"><button className={styles['writeACommentbutton']}>Write a comment</button></NavLink>
             </li>
             ):(
                 <div>
@@ -73,7 +75,7 @@ function NewSubmissions(){
     function displayUser(user) {
             if(user.demos.length > 0){
                 return(
-                    <div className="ulContainer">
+                    <div>
                         {displayDemos(user, user.demos)}
 
                     </div>
@@ -82,11 +84,11 @@ function NewSubmissions(){
     }
     return(
         <>
-            <TopMenuCustomer/>
+            <NavigationBar/>
             {isLoading}
-            <div>
+            <div className={styles['newSubmissionPictureContainer']}>
 
-                {!hasDemos && <ul className='demo-list'><li key="no-demos">No demos yet...</li></ul>}
+                {!hasDemos && <ul ><li key="no-demos">No demos yet...</li></ul>}
                 {allUsers?.data && allUsers.data.map(user => (
                     displayUser(user)
 

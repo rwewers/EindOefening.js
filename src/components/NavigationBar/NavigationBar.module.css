@@ -1,15 +1,9 @@
 
-nav{
-    /*float: right;*/
-
-    /*HIER MOET NOG NA GEKEKEN WORDEN !!!! FLOAT MAG NIET */
-}
-
 .homepageHeader{
     margin:0;
-    height: 100px;
+    height: 75px;
 }
-ul{
+ ul{
     display: flex;
     margin-top: 130px;
     justify-content: space-around;
@@ -21,14 +15,14 @@ header:after{
     display: table;
     clear: both;
 }
-nav ul{
+ nav ul{
     margin:0;
     padding: 0;
     list-style: none;
     color: white;
 }
 
-nav li{
+ nav li{
     display: inline-block;
 
 
@@ -38,7 +32,7 @@ nav li{
 
 
 
-nav a{
+ nav a{
     color: white;
     text-decoration: none;
     text-transform: uppercase;
@@ -57,16 +51,15 @@ nav a::before{
     width: 0%;
     background-color: #198c89;
     position: absolute;
-    top:0;
+    bottom:0;
     transition: all ease-in-out 250ms;
 
 }
 
-nav a:hover::before{
+ nav a:hover::before{
     width: 100%;
 }
 
-.App-logo2{
-    width: 150px;
+.navigationBarLogo{
+    width: 100px;
 }
-

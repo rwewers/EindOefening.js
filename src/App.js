@@ -5,9 +5,8 @@ import {
     Route,
 } from "react-router-dom";
 import Homepage from './pages/homepage/Homepage';
-import About from './pages/about/About';
-import Demodrop from "./pages/demodrop/Demodrop";
-import Contact from "./pages/contact/Contact";
+import About from './pages/About/About';
+import Demodrop from "./pages/Demodrop/Demodrop";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
 import './App.css';
@@ -44,10 +43,6 @@ function App() {
                   <route exact path="/Demodrop">
                       <Demodrop />
                   </route>
-                  <Route exact path="/Contact">
-                      <Contact />
-                  </Route>
-
                   <Route exact path="/SignIn">
                       <SignIn />
                   </Route>

@@ -1,10 +1,11 @@
 import React, {useState, useContext, useEffect} from 'react';
-import './SignIn.css';
 import axios from "axios";
 import {Link, useHistory} from "react-router-dom";
-import { AuthContext, useAuthState } from '../../context/AuthContext';
-import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import { AuthContext, useAuthState } from '../../Context/AuthContext';
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
+import backgroundPicture from "../../assets/pictures/home_background.jpg"
 
+import styles from './SignIn.module.css';
 
 function SignIn() {
 
@@ -55,38 +56,46 @@ function SignIn() {
         return (
 
                 <div>
-                <TopMenuCustomer />
-                <div className="signInContainer">
-                <form className="loginForm" onSubmit={onSubmit}>
-                    <label id="labelSignin" htmlFor="username-field">
+                <NavigationBar />
+
+
+                    <div className={styles['signInContainer']}>
+                        <img src={backgroundPicture} className={styles['signInBackground']} alt="logo"/>
+                    </div>
+                <form className={styles['loginForm']} onSubmit={onSubmit}>
+                    <div className={styles['signInWrapper']}>
+                    <label className={styles['labelSignIn']} htmlFor="username-field">
                         Username :
                         <input
                             type="text"
-                            id="username-field"
+                            className={styles['username-field']}
                             placeholder="nick"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
                     </label>
-
-                    <label id="labelSignin" htmlFor="password-field">
+                    </div>
+                    <div className={styles['signInWrapper']}>
+                    <label className={styles['labelSignin']} htmlFor="password-field">
                         Password :
                         <input
                             type="password"
-                            id="password-field"
+                            className={styles['password-field']}
                             placeholder="nicknick"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)} />
                     </label>
+                    </div>
                     <button
                         type="submit"
-                        className="form-button"
+                        className={styles['loginButton']}
                     >
                         Inloggen
                     </button>
-                    <p>Don't have an account yet? You can create an account <Link to="/SignUp">here</Link> !</p>
+                    <p>Don't have an account yet? You can create an account <Link className={styles['linkToSignUp']} to="/SignUp">here</Link> !</p>
                 </form>
-                    </div>
+
+
                 </div>
 
 

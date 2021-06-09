@@ -1,10 +1,13 @@
 import React, { useState} from 'react';
-import './Demodrop.css';
 import InputField from "../../components/InputValidation/InputFieldValidation";
-import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import axios from "axios";
 import {Link, NavLink} from "react-router-dom";
+
+import styles from './Demodrop.module.css';
+
 function Demodrop() {
+
     let file;
     let fileName;
     const[demoDropSucces, setDemoDropSucces] = useState(false);
@@ -64,14 +67,15 @@ function Demodrop() {
 
     return (
         <div >
-        <TopMenuCustomer />
-            <div className="pictureContainer">
+        <NavigationBar />
+            <div className={styles['demodropContainer']}>
             {demoDropSucces === true &&(
-                <h2 className="message-succes">File uploaded. Click <NavLink to="/myDemos">here</NavLink> to see my demos's.</h2>
+                <h2 className={styles['messageSucces']}>File uploaded. Click <NavLink className={styles['messageSuccesHere']}  to="/myDemos">here</NavLink> to see my demos's.</h2>
             )}
-            <form onSubmit={onSubmit}>
+            <form className={styles['demodropForm']} onSubmit={onSubmit}>
                 <InputField
                     ref={inputRefs.current[0]}
+                    className={styles['fileLabel']}
                     id="fileLabel"
                     name="file"
                     type="file"
@@ -97,7 +101,7 @@ function Demodrop() {
                     onChange ={handleChange}
                     validation={"required"}
                 />
-                <button type="submit" >
+                <button className={styles['demodropButton']} type="submit" >
                     Submit
                 </button>
             </form>

@@ -1,12 +1,12 @@
 import React, {useContext, useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import logo1 from '../../logo.png';
-import './TopMenuCustomer.css';
-import { AuthContext, useAuthState } from '../../context/AuthContext';
+import { AuthContext, useAuthState } from '../../Context/AuthContext';
+
+import styles from './NavigationBar.module.css';
 
 
-
-function TopMenuCustomer() {
+function NavigationBar() {
     const { logout } = useContext(AuthContext);
     const {isAuthenticated} = useAuthState();
     const {user} = useAuthState();
@@ -31,7 +31,7 @@ function TopMenuCustomer() {
                 return(
                     <ul>
                         <li>
-                            <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1} className="App-logo2" alt="logo1" ></img></NavLink>
+                            <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1} className={styles['navigationBarLogo']} alt="logo1" ></img></NavLink>
                         </li>
                         <li>
                             <NavLink className="navLinks" to="/newsubmissions" exact activeClassName="active-link">New </NavLink>
@@ -50,7 +50,7 @@ function TopMenuCustomer() {
                 return(
                     <ul>
                         <li>
-                            <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1} className="App-logo2" alt="logo1" ></img></NavLink>
+                            <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1} className={styles['navigationBarLogo']} alt="logo1" ></img></NavLink>
                         </li>
                         <li>
                             <NavLink className="navLinks" to="demodrop" exact activeClassName="active-link">Demo drop</NavLink>
@@ -70,7 +70,7 @@ function TopMenuCustomer() {
             return(
                 <ul>
                     <li>
-                        <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1} className="App-logo2" alt="logo1" ></img></NavLink>
+                        <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1} className={styles['navigationBarLogo']} alt="logo1" ></img></NavLink>
                     </li>
                     <li>
                         <NavLink className="navLinks" to="/" exact activeClassName="active-link">Home</NavLink>
@@ -88,11 +88,11 @@ function TopMenuCustomer() {
     }
 
     return (
-        <div className="Topmenu-Container">
-            <header className="homepageHeader">
+        <div className={styles['navigationBarContainer']}>
+            <header className={styles['homepageHeader']}>
                 /header>
                 <nav>
-                    <div className="nav-container">
+                    <div className={styles['nav-container']}>
                         {whoLoggedIn()}
                     </div>
                 </nav>
@@ -101,4 +101,4 @@ function TopMenuCustomer() {
         </div>
     );
 }
-export default TopMenuCustomer;
+export default NavigationBar;

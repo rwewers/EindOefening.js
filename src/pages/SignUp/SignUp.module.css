@@ -1,0 +1,54 @@
+.signupForm label{
+    color: white;
+
+
+}
+
+.signupForm {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.signUpInput{
+    height: 18px;
+}
+
+.signUpInput p{
+    color: white;
+
+}
+
+.messageSucces{
+    color: white;
+}
+
+.signUpInput{
+    width: 350px;
+}
+.signUpButton{
+    width: 200px;
+    height: 50px;
+    border-radius: 12px;
+    margin-top: 15px;
+    color: black;
+}
+.messageSucces{
+    display: flex;
+    justify-content: center;
+}
+
+.signUpSuccesHere{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #198c89;
+}
+
+.alreadyHaveAnAccountHere{
+    color: #198c89;
+}
+
+.alreadyHaveAnAccount{
+    color: white;
+}

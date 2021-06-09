@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useContext} from 'react';
-import { useAuthState} from '../../context/AuthContext';
-import './MyDemos.css';
+import { useAuthState} from '../../Context/AuthContext';
 import axios from "axios";
-import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import SongLoader from "../../components/songLoader/SongLoader";
 import CommentViewer from "../../components/CommentViewer/CommentViewer";
 
-const songs= [];
+
+import styles from './MyDemos.module.css';
+
 
 function Mydemos() {
 
@@ -65,16 +66,15 @@ function Mydemos() {
     return (
         <>
             {isLoading}
-            <TopMenuCustomer/>
+            <NavigationBar/>
 
                     {data?.data && data.data.length > 0
                         ? data.data.map((song) => {
 
-                                return <div className="mydemosContainer">
+                                return <div className={styles['mydemosContainer']}>
 
                                      <label> {song.artist} + {song.songTitle} </label>
                                     <SongLoader
-                                    className="test"
                                     song={song}
                                 />
                                         <CommentViewer

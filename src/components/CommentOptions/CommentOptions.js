@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import {Link, NavLink, useHistory} from 'react-router-dom'
-import {useAuthState} from "../../context/AuthContext";
+import {useAuthState} from "../../Context/AuthContext";
 import axios from "axios";
 import DeleteConformation from "./DeleteComment";
 import {roles} from "../Roles/Roles";
 
-function CommentOptions({ song, comment}) {
+import styles from "./CommentOptions.module.css"
+
+function CommentOptions({ song, comment, userId}) {
 
     const {user} = useAuthState();
     const [showModal, setShowModal] = useState(false)
@@ -45,19 +47,20 @@ function CommentOptions({ song, comment}) {
                     {comment ? (
                         <>
 
-                            <li key="edit"><Link to={`/editComment?songId=${song.id}`}>Edit comment</Link></li>
-                            <li key="delete">
-                                <Link
+                            <p key="edit"><NavLink className={styles['writeNewComment']} to={`/editComment?songId=${song.id}`}>Edit comment</NavLink></p>
+                            <p key="delete">
+                                <NavLink
+                                    className={styles['writeNewComment']}
                                     to={'#'}
                                     onClick={() => setShowModal(true)}
                                 >
                                     Delete comment
-                                </Link>
-                            </li>
+                                </NavLink>
+                            </p>
                         </>
                     ) : (
 
-                        <li key="write"><NavLink to={`/writeComment?songId=${song.id}`}>Write new comment</NavLink></li>
+                        <p  key="write"><NavLink className={styles['writeNewComment']} to={`/writeComment?songId=${song.id}&&userId=${userId}`}>Write new comment</NavLink></p>
                     )}
                 </>
             {showModal && (

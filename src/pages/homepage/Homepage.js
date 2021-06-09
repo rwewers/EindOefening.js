@@ -15,12 +15,12 @@ import music12 from "../../assets/pictures/music/12.jpeg";
 import backgroundPicture from "../../assets/pictures/home_background.jpg"
 import donDiabloShows from "../../assets/pictures/dondiablo_shows.PNG"
 
-import './Homepage.css';
+import styles from './Homepage.module.css';
 import {
 
 useHistory,
 } from 'react-router-dom';
-import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 
 
 function Homepage(){
@@ -32,9 +32,9 @@ function Homepage(){
     return(
     <html>
 
-    <TopMenuCustomer/>
+    <NavigationBar/>
 
-    <body>
+    <body className={styles['homepageBody']}>
 
 
       <main>
@@ -45,81 +45,81 @@ function Homepage(){
           </div>
           </div>
 
-          <div className="homepageContainer">
-              <h1 className="h1News">NEWS</h1>
-              <h3 className="newsDates">JAN 29, 2021</h3>
-              <h3 className="newsInfo">DON DIABLO - INTO THE UNKNOWN</h3>
-              <h3 className="newsDates">JAN 16, 2021</h3>
-              <h3 className="newsInfo">DON DIABLO & IMANBEK - KILL ME BETTER FT. TREVOR DANIEL (TRAVIS BARKER ALT VERSION)</h3>
-              <h3 className="newsDates">DEC 11, 2020</h3>
-              <h3 className="newsInfo">DUA LIPA - LEVITATING FT. DABABY (DON DIABLO REMIX)</h3>
-              <h3 className="newsDates">JAN 16, 2021</h3>
-              <h3 className="newsInfo">DON DIABLO & IMANBEK - KILL ME BETTER FT. TREVOR DANIEL (DON DIABLO VIP MIX)</h3>
+          <div className={styles['homepageContainer']}>
+              <h1 className={styles['h1News']}>NEWS</h1>
+              <h3 className={styles['newsDates']}>JAN 29, 2021</h3>
+              <h3 className={styles['newsDates']}>DON DIABLO - INTO THE UNKNOWN</h3>
+              <h3 className={styles['newsDates']}>JAN 16, 2021</h3>
+              <h3 className={styles['newsDates']}>DON DIABLO & IMANBEK - KILL ME BETTER FT. TREVOR DANIEL (TRAVIS BARKER ALT VERSION)</h3>
+              <h3 className={styles['newsDates']}>DEC 11, 2020</h3>
+              <h3 className={styles['newsDates']}>DUA LIPA - LEVITATING FT. DABABY (DON DIABLO REMIX)</h3>
+              <h3 className={styles['newsDates']}>JAN 16, 2021</h3>
+              <h3 className={styles['newsDates']}>DON DIABLO & IMANBEK - KILL ME BETTER FT. TREVOR DANIEL (DON DIABLO VIP MIX)</h3>
           </div>
-          <img src={donDiabloShows} className="homeBackground" alt="logo"/>
-          <h1 className="h1Music">MUSIC</h1>
-          <div className="divContainerMusic">
+          <img src={donDiabloShows} className={styles['homepageBackground']} alt="logo"/>
+          <h1 className={styles['h1Music']}>MUSIC</h1>
+          <div className={styles['divContainerMusic']}>
 
-              <ul className="musicContainer">
+              <ul className={styles['musicContainer']}>
 
                   <li>
                       <a href="https://www.youtube.com/watch?v=fItOVIPyYRk" target="_blank">
-                      <img src={music1} className="musicPictures" alt="musicPic1" />
+                      <img src={music1} className={styles['musicPictures']} alt="musicPic1" />
                       </a>
                       </li>
                   <li>
                       <a href="https://www.youtube.com/watch?v=2Dvloj_jzqg" target="_blank">
-                      <img src={music2} className="musicPictures" alt="musicPic2" />
+                      <img src={music2} className={styles['musicPictures']}  alt="musicPic2" />
                       </a>
                       </li>
                   <li>
                       <a href="https://www.youtube.com/watch?v=IFQXALpaEwM" target="_blank">
-                      <img src={music3} className="musicPictures" alt="musicPic3" />
+                      <img src={music3} className={styles['musicPictures']}  alt="musicPic3" />
                       </a>
                       </li>
                   <li>
                       <a href="https://www.youtube.com/watch?v=2Dvloj_jzqg" target="_blank">
-                      <img src={music4} className="musicPictures" alt="musicPic4" />
+                      <img src={music4} className={styles['musicPictures']}  alt="musicPic4" />
                       </a>
                       </li>
                   <li>
                       <a href="https://www.youtube.com/watch?v=CSrm85yNwCM&feature=youtu.be" target="_blank">
-                      <img src={music5} className="musicPictures" alt="musicPic5" />
+                      <img src={music5} className={styles['musicPictures']}  alt="musicPic5" />
                       </a>
                   </li>
                   <li>
                       <a href="https://www.youtube.com/watch?v=gSDVTS1-cyU&feature=youtu.be" target="_blank">
-                      <img src={music6} className="musicPictures" alt="musicPic6" />
+                      <img src={music6} className={styles['musicPictures']}  alt="musicPic6" />
                       </a>
                   </li>
                   <li>
                       <a href="https://www.youtube.com/watch?v=hHFymqAf-Zo&feature=youtu.be" target="_blank">
-                      <img src={music7} className="musicPictures" alt="musicPic7" />
+                      <img src={music7}className={styles['musicPictures']}  alt="musicPic7" />
                       </a>
                   </li>
                   <li>
                       <a href="https://www.youtube.com/watch?v=a2WXpiBiNcA&feature=youtu.be" target="_blank">
-                      <img src={music8} className="musicPictures" alt="musicPic8" />
+                      <img src={music8} className={styles['musicPictures']}  alt="musicPic8" />
                       </a>
                   </li>
                   <li>
                       <a href="https://www.youtube.com/watch?v=33lKUK-SxzQ" target="_blank">
-                      <img src={music9} className="musicPictures" alt="musicPic9" />
+                      <img src={music9} className={styles['musicPictures']}  alt="musicPic9" />
                       </a>
                   </li>
                   <li>
                       <a href="https://www.youtube.com/watch?v=dnuI31DXAco&feature=youtu.be" target="_blank">
-                      <img src={music10} className="musicPictures" alt="musicPic10" />
+                      <img src={music10} className={styles['musicPictures']}  alt="musicPic10" />
                       </a>
                   </li>
                   <li>
                       <a href="https://www.youtube.com/watch?v=opMKcQaeTuY&feature=youtu.be" target="_blank">
-                      <img src={music11} className="musicPictures" alt="musicPic11" />
+                      <img src={music11} className={styles['musicPictures']} alt="musicPic11" />
                       </a>
                   </li>
                   <li>
                       <a href="https://www.youtube.com/watch?v=0TF9UCwithU" target="_blank">
-                      <img src={music12} className="musicPictures" alt="musicPic12" />
+                      <img src={music12} className={styles['musicPictures']}  alt="musicPic12" />
                       </a>
                   </li>
               </ul>

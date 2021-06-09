@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory} from 'react-router-dom'
 import SongLoader from "../../components/songLoader/SongLoader";
 import axios from "axios";
-import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 
 
 import styles from "./Comment.module.css";
@@ -80,7 +80,7 @@ function EditComment() {
 
         !isLoading ?(
             <div>
-                <TopMenuCustomer/>
+                <NavigationBar/>
                 <div className={styles['editCommentContainer']}>
                     <h3>Edit comment</h3>
                     {song && <SongLoader song={song} />}
@@ -102,7 +102,7 @@ function EditComment() {
             </div>
         ) :(
             <div>
-                <TopMenuCustomer/>
+                <NavigationBar/>
                 <h1>test2</h1>
             </div>
         )

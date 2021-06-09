@@ -1,0 +1,64 @@
+.homepageBody{
+    margin: 0;
+    background: #222;
+
+}
+
+
+
+.h1News{
+    font-size: 60px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.newsDates{
+    color: darkgrey;
+    margin-bottom: 0;
+}
+
+.homepageContainer{
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+}
+
+.musicPictures{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    width: 238px;
+}
+
+.homepageBackground {
+
+    width: 100%;
+}
+
+
+.divContainerMusic{
+    display: flex;
+    justify-content: center;
+
+}
+
+.h1Music{
+    display: flex;
+    justify-content: center;
+
+    font-size: 60px;
+    margin-top: 0;
+
+}
+
+.musicContainer{
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 1046px;
+    height: 808px;
+
+}

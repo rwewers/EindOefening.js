@@ -7,7 +7,7 @@ import {
     BrowserRouter as Router,
 
 } from "react-router-dom";
-import {AuthContextProvider} from "./context/AuthContext";
+import {AuthContextProvider} from "./Context/AuthContext";
 
 
 ReactDOM.render(

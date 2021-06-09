@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
-import {useAuthState} from "../../context/AuthContext";
-import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import {useAuthState} from "../../Context/AuthContext";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import SongLoader from "../../components/songLoader/SongLoader";
 import CommentOptions from "../../components/CommentOptions/CommentOptions";
 import {roles} from "../../components/Roles/Roles"
@@ -66,13 +66,13 @@ function ViewComment() {
         !isLoading && song && user?
             (
                 <div>
-                    <TopMenuCustomer/>
+                    <NavigationBar/>
 
                     <div className={styles['viewCommentContainer']}>
                     <h3>View comment</h3>
                     {song && <SongLoader song={song} />}
                     <p>
-                        {comment && comment.message}
+                        Comment: {comment && comment.message}
                     </p>
 
                         {comment && (
@@ -82,7 +82,7 @@ function ViewComment() {
                 </div>
             ): (
                 <div>
-                    <TopMenuCustomer/>
+                    <NavigationBar/>
                     <h1>test2</h1>
                 </div>
             )

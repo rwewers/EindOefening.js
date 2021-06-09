@@ -1,0 +1,54 @@
+h1{
+
+    color: white;
+
+}
+
+input, label {
+    display:block;
+    height: 25px;
+
+}
+
+input{
+    width: 500px;
+
+}
+label{
+
+    color: white;
+    text-transform: uppercase;
+}
+.demodropForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.demodropButton{
+    width: 200px;
+    height: 50px;
+    border-radius: 12px;
+    margin-top: 15px;
+    color: black;
+}
+.fileLabel{
+    min-width: 400px;
+    background-color: white;
+
+}
+.demodropContainer{
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.messageSucces{
+color: white;
+}
+.messageSuccesHere{
+    color: #198c89;
+}
+
+

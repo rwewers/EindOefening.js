@@ -1,5 +1,8 @@
 import React, {forwardRef, useImperativeHandle} from "react";
-import './InputFieldValidation.css';
+
+import styles from './InputFieldValidation.module.css';
+
+
 let password1 = ``;
 
 
@@ -120,7 +123,7 @@ const InputField = forwardRef((props, ref) => {
     })
 
     return(
-        <div className="divInputField">
+        <div className={styles['InputValidationContainer']}>
             {props.label && (
                 <label>{props.label}</label>
             )}
@@ -129,12 +132,13 @@ const InputField = forwardRef((props, ref) => {
                 name={props.name}
                 onChange={(event) => handleChange(event)}
                 id={props.id}
+                className={props.className}
                 type={props.type}
                 value={props.value ? props.value : value}
 
             />
             {error && (
-                <p className="error">{error} </p>
+                <p className={styles['errorMessage']}>{error} </p>
             )}
         </div>
     )
@@ -146,6 +150,7 @@ InputField.defaultProp={
     type: "",
     value: "",
     id: "",
+    className: "",
     validation: ""
 
 

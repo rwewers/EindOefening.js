@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
-import './SignUp.css';
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import InputField from "../../components/InputValidation/InputFieldValidation";
+
+import styles from'./SignUp.module.css';
 
 function SignUp() {
 
@@ -78,19 +79,19 @@ function SignUp() {
 
     return (
         <>
-            <TopMenuCustomer />
-            <div className="signupContainer">
+            <NavigationBar />
+            <div className={styles['signupContainer']}>
 
 
 
                 {createUserSucces === true &&(
-            <h2 className="message-succes">You did it !! Click <Link to="/SignIn">here</Link> to sign in.</h2>
+            <h2 className={styles['messageSucces']}>You did it !! Click <Link  className={styles['signUpSuccesHere']}  to="/SignIn">here</Link> to sign in.</h2>
             )}
-            <form className="signupForm" onSubmit={onSubmit}>
+            <form className={styles['signupForm']} onSubmit={onSubmit}>
 
                 <InputField
                     ref={inputRefs.current[0]}
-                    id="signUpInput"
+                    className={styles['signUpInput']}
                     name="username"
                     label="Username"
                     onChange ={handleChange}
@@ -98,7 +99,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[1]}
-                    id="signUpInput"
+                    className={styles['signUpInput']}
                     name="firstName"
                     label="Firstname"
                     onChange ={handleChange}
@@ -107,7 +108,7 @@ function SignUp() {
 
                 <InputField
                     ref={inputRefs.current[2]}
-                    id="signUpInput"
+                    className={styles['signUpInput']}
                     name="lastName"
                     label="Lastname"
                     onChange ={handleChange}
@@ -115,7 +116,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[3]}
-                    id="signUpInput"
+                    className={styles['signUpInput']}
                     name="email"
                     label="Email"
                     onChange ={handleChange}
@@ -123,7 +124,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[4]}
-                    id="signUpInput"
+                    className={styles['signUpInput']}
                     name="country"
                     label="Country"
                     onChange ={handleChange}
@@ -131,7 +132,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[5]}
-                    id="signUpInput"
+                    className={styles['signUpInput']}
                     name="facebook"
                     label="Facebook"
                     onChange ={handleChange}
@@ -139,7 +140,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[6]}
-                    id="signUpInput"
+                    className={styles['signUpInput']}
                     name="instagram"
                     label="Instagram"
                     onChange ={handleChange}
@@ -147,7 +148,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[7]}
-                    id="signUpInput"
+                    className={styles['signUpInput']}
                     name="password"
                     label="Password"
                     onChange ={handleChange}
@@ -155,7 +156,7 @@ function SignUp() {
                 />
                 <InputField
                     ref={inputRefs.current[8]}
-                    id="signUpInput"
+                    className={styles['signUpInput']}
                     name="passwordRepeat"
                     label="Password repeat"
                     onChange ={handleChange}
@@ -164,11 +165,11 @@ function SignUp() {
 
                 <button
                     type="submit"
-                    className="form-button"
+                    className={styles['signUpButton']}
                 >
                     SIGN UP
                 </button>
-                <p>Already have an account? You can sign in <Link to="/SignIn">here</Link> !</p>
+                <p className={styles['alreadyHaveAnAccount']}>Already have an account? You can sign in <Link className={styles['alreadyHaveAnAccountHere']} to="/SignIn">here</Link> !</p>
             </form>
 
             </div>

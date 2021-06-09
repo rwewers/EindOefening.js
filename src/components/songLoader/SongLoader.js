@@ -1,8 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react'
-import './SongLoader.css';
 import axios from "axios";
 import ReactAudioPlayer from 'react-audio-player';
-import {useAuthState} from "../../context/AuthContext";
+import {useAuthState} from "../../Context/AuthContext";
+
+import styles from './SongLoader.module.css';
 
 function SongLoader({song}) {
     const [isLoading, setIsLoading] = useState(false)

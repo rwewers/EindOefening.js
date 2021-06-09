@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import "./OldSubmissions.css";
 import axios from "axios";
-import TopMenuCustomer from "../../components/TopMenuCustomer/TopMenuCustomer";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import SongLoader from "../../components/songLoader/SongLoader";
 import {NavLink} from "react-router-dom";
 import CommentViewer from "../../components/CommentViewer/CommentViewer";
+
+import styles from "./Submissions.module.css";
 
 
 function NewSubmissions(){
@@ -51,7 +52,7 @@ function NewSubmissions(){
             demo.comment != null ? (
 
 
-                <li className="displayDemoContainer" key={demo.songTitle} >
+                <p className={styles['displayDemoContainer']} key={demo.songTitle} >
 
                     <label>Uername: {user.username}</label>
                     <label> {demo.artist} + {demo.songTitle}</label>
@@ -62,8 +63,8 @@ function NewSubmissions(){
                         songId = {demo.id} />
 
                     <NavLink className="navLinks" to=
-                        {`/viewSubmission?userId=${user.userId}&demoId=${demo.id}`} exact activeClassName="active-link"><button>View info</button></NavLink>
-                </li>
+                        {`/viewSubmission?userId=${user.userId}&demoId=${demo.id}`} exact activeClassName="active-link"><button className={styles['viewInfoButton']}>View info</button></NavLink>
+                </p>
             ):(
                 <div>
                     <p>There are no old demos yet.</p>
@@ -85,7 +86,7 @@ function NewSubmissions(){
 
     return(
         <>
-            <TopMenuCustomer/>
+            <NavigationBar/>
             {isLoading}
             <div className='demo-list'>
                 {!hasDemos && <ul><li key="no-demos">No demos yet...</li></ul>}

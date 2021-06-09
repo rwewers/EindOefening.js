@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import './CommentViewer.css';
+import styles from './CommentViewer.module.css';
 
 function CommentViewer({songId}){
 
@@ -31,14 +31,18 @@ function CommentViewer({songId}){
 
     return (
         !isLoading && comment.comment != null ?(
-        <div>
-            <p className="testClassP">
-                Comment : {comment.comment.message}
-            </p>
+        <div className={styles['commentViewerContainer']}>
+            <label> Comment : </label>
+
+            <textarea
+                className={styles['commentNotEditable']}
+            value={comment.comment.message}>
+
+            </textarea>
         </div>
         ):(
-            <div>
-               <p className="testClassP">There is no comment yet...</p>
+            <div className={styles['noCommentViewerContainer']}>
+               <p> There is no comment yet...</p>
             </div>
         )
     );

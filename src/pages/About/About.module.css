@@ -1,8 +1,6 @@
 @import url('../../css/custom-vars.css');
 
-.h1-about{
-    color: white;
-}
+
 .aboutContainer{
      display: flex;
     align-items: center;
@@ -16,11 +14,15 @@
 }
 
 .spanContainer{
+    color: white;
     display: flex;
     align-items: center;
     flex-direction: column;
     width:100%;
     max-width: 800px;
 
+}
+.spanContainer > span{
+    margin: 10px;
 }
 
