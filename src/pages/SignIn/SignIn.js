@@ -11,7 +11,7 @@ function SignIn() {
 
     const { login } = useContext(AuthContext);
     const { isAuthenticated } = useAuthState();
-    const {user} = useAuthState();
+
 
 
     const history = useHistory();
@@ -30,7 +30,6 @@ function SignIn() {
     async function onSubmit(event) {
         event.preventDefault();
 
-        console.log(user);
         try{
             const response = await axios.post('http://localhost:8080/api/auth/signin', {
                 username: username,
@@ -43,7 +42,6 @@ function SignIn() {
             login(response.data);
 
 
-            console.log(response);
         } catch (e){
             console.log(e);
             alert("Bad Credentials");
@@ -92,8 +90,10 @@ function SignIn() {
                     >
                         Inloggen
                     </button>
-                    <p>Don't have an account yet? You can create an account <Link className={styles['linkToSignUp']} to="/SignUp">here</Link> !</p>
-                </form>
+                    <div className={styles['accountCreate']}>
+                    <p className={styles['createMessage']}>Don't have an account yet? You can create an account <Link className={styles['linkToSignUp']} to="/SignUp">here</Link> !</p>
+                    </div>
+                    </form>
 
 
                 </div>

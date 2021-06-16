@@ -24,6 +24,11 @@
     flex-direction: column;
     align-items: center;
 }
+.viewCommentTextArea{
+    width: 500px;
+    height: 350px;
+    resize: none;
+}
 .writeCommentTextArea{
     width: 500px;
     height: 350px;

@@ -46,9 +46,7 @@ function SignUp() {
 
         if(isValid === true) {
             try {
-                console.log(isValid);
 
-                console.log(data);
 
                 const response = await axios.post('http://localhost:8080/api/auth/signup', {
                     username: data.username,
@@ -64,7 +62,6 @@ function SignUp() {
                 })
 
 
-                console.log(response);
 
                 if (response.data.message === "User registered successfully!") {
                     setCreateUserSucces(true);

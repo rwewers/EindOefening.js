@@ -71,9 +71,12 @@ function ViewComment() {
                     <div className={styles['viewCommentContainer']}>
                     <h3>View comment</h3>
                     {song && <SongLoader song={song} />}
-                    <p>
-                        Comment: {comment && comment.message}
-                    </p>
+                    <textarea
+                        className={styles['viewCommentTextArea']}
+
+                        value = {comment && comment.message}
+                        >
+                    </textarea>
 
                         {comment && (
                             <CommentOptions song={song} comment={comment}/>

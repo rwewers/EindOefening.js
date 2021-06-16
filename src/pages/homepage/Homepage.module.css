@@ -1,10 +1,8 @@
 .homepageBody{
     margin: 0;
-    background: #222;
+    background: black;
 
 }
-
-
 
 .h1News{
     font-size: 60px;
@@ -22,6 +20,7 @@
     align-items: center;
     flex-direction: column;
     margin-bottom: 30px;
+    font-size: 20px;
 
 }
 
@@ -32,7 +31,7 @@
     width: 238px;
 }
 
-.homepageBackground {
+.homepageBackground1 {
 
     width: 100%;
 }
@@ -54,12 +53,44 @@
 }
 
 .musicContainer{
-    margin-top: 0px;
+    margin: 0px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 1046px;
     height: 808px;
+    padding: 0px;
 
+}
+
+@media only screen and (max-width: 600px) {
+    .homepageBody{
+        margin: 0;
+        background: black;
+
+    }
+
+    .h1News{
+        font-size: 30px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .h1Music{
+
+        font-size: 30px;
+
+
+    }
+    .musicPictures{
+
+        width: 100px;
+    }
+
+    .homepageContainer{
+
+
+        font-size: 10px;
+
+    }
 }
 

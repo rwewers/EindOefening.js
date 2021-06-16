@@ -23,7 +23,6 @@ function ViewSubmission(){
     }
 
 
-    console.log(urlParameters);
 
     useEffect(() => {
         fetchData()

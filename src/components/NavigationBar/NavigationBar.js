@@ -90,7 +90,7 @@ function NavigationBar() {
     return (
         <div className={styles['navigationBarContainer']}>
             <header className={styles['homepageHeader']}>
-                /header>
+
                 <nav>
                     <div className={styles['nav-container']}>
                         {whoLoggedIn()}

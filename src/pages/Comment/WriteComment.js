@@ -23,7 +23,6 @@ function Writecomment(){
     }
     let songId = urlParameters[0][1];
     let userId = urlParameters[1][1];
-    console.log(userId);
 
 
 
@@ -71,10 +70,10 @@ function Writecomment(){
         updatedComment.message = event.target.value
         updatedComment.demoId = songId
         setComment(updatedComment)
+        setTextComment(event.target.value);
     }
     async function handleSave() {
 
-        console.log(comment);
         setIsLoading(true)
         try {
 
@@ -94,9 +93,9 @@ function Writecomment(){
     }
 
     function jsFunction(value){
+        let localComment = '';
         if(value === "1"){
-
-            setTextComment(`Dear ${userData.fullName}, 
+            localComment = `Dear ${userData.fullName}, 
                  
 Thanks for sending you track: ${song.data.artist} - ${song.data.songTitle}!
 
@@ -109,12 +108,10 @@ We will send u an invitation within a week.
 Kind regards,
 
 Team Don Diablo.
-` );
-
+`;
         }
         else if(value === "2"){
-
-            setTextComment(`Dear ${userData.fullName}, 
+            localComment = `Dear ${userData.fullName}, 
                  
 Thanks for sending you track: ${song.data.artist} - ${song.data.songTitle}!
 
@@ -125,11 +122,10 @@ We thank you for your time and wish you good luck in the future.
 Kind regards,
 
 Team Don Diablo.
-` );
-
+`;
         }
         else{
-          setTextComment(`Dear ${userData.fullName}, 
+            localComment = `Dear ${userData.fullName}, 
                  
 Thanks for sending you track: ${song.data.artist} - ${song.data.songTitle}!
 
@@ -142,13 +138,19 @@ We will send an response wihtin a week.
 Kind regards,
 
 Team Don Diablo.
-`  );
+`;
+
         }
 
-    }
-    console.log(userData);
-    console.log(song);
 
+        const updatedComment = {
+            message : localComment,
+            demoId: songId
+        }
+        setComment(updatedComment)
+        setTextComment( localComment);
+
+    }
 
 
 
@@ -158,8 +160,9 @@ Team Don Diablo.
             (
                 <div>
                     <NavigationBar/>
-                    <div className={styles['writeCommentContainer']}>
-                        <select name="type" onChange={e => jsFunction(e.target.value) }>
+                    <div  className={styles['writeCommentContainer']}>
+                        <select defaultValue={'default'} name="type" onChange={e => jsFunction(e.target.value) }>
+                            <option value="default" disabled>Choose an option</option>
                             <option value="1">Good submission</option>
                             <option value='2'>Bad submission</option>
                             <option value='3'>Need more time</option>

@@ -29,15 +29,23 @@ function NewSubmissions(){
                 })
 
                 setAllUsers(response);
-                console.log(response);
                 setIsLoading(false)
-                console.log(allUsers);
 
-                for (let i = 0; i <response.data.length ; i++) {
-                    if(response.data[i].demos.length > 0){
-                        setHasDemos(true);
+
+                let {data} = response;
+                data.forEach(user => {
+                    if (user.demos.length > 0) {
+                        for (let i = 0; i < user.demos.length; i++) {
+                            if(user.demos[i].comment == null){
+                                setHasDemos(false);
+                            }
+                            else{
+                                setHasDemos(true);
+                            }
+                        }
                     }
-                }
+                })
+
             } catch (error) {
                 // TODO User error message
                 setIsLoading(false)
@@ -46,7 +54,6 @@ function NewSubmissions(){
         }
     }, [])
     function displayDemos(user, demos) {
-        console.log(demos);
 
         return demos.map(demo => (
             demo.comment != null ? (
@@ -54,8 +61,9 @@ function NewSubmissions(){
 
                 <p className={styles['displayDemoContainer']} key={demo.songTitle} >
 
-                    <label>Uername: {user.username}</label>
-                    <label> {demo.artist} + {demo.songTitle}</label>
+                    <label> {user.username}</label>
+                    <label>{user.firstName} {user.lastName}</label>
+                    <label> {demo.artist} - {demo.songTitle}</label>
                     <SongLoader
                         song={demo}
                     />
@@ -82,14 +90,21 @@ function NewSubmissions(){
         )
     }
 
+    function areThereDemos(){
 
+        if(!hasDemos){
+            return(
+                <p className={styles['noSubmissionMessage']} >There are no old submissons...</p>
+            )
+        }
+    }
 
     return(
         <>
             <NavigationBar/>
             {isLoading}
             <div className='demo-list'>
-                {!hasDemos && <ul><li key="no-demos">No demos yet...</li></ul>}
+                {areThereDemos()}
                 {allUsers?.data && allUsers.data.map(user => (
                     displayUser(user)
 

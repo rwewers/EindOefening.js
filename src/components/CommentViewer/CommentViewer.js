@@ -35,6 +35,7 @@ function CommentViewer({songId}){
             <label> Comment : </label>
 
             <textarea
+                readOnly
                 className={styles['commentNotEditable']}
             value={comment.comment.message}>
 

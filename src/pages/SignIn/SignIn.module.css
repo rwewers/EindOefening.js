@@ -51,4 +51,29 @@
     color: #198c89;
 }
 
+@media only screen and (max-width: 600px) {
+    .username-field{
+        width: 200px;
 
+
+    }
+
+    .password-field{
+        width: 200px;
+
+
+    }
+    .signInContainer{
+        height: 110px;
+    }
+    .loginButton{
+        width: 150px;
+        margin-top: 40px;
+        height: 30px;
+        border-radius: 12px;
+    }
+
+
+
+
+}

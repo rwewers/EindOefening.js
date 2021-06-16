@@ -56,7 +56,7 @@ function Homepage(){
               <h3 className={styles['newsDates']}>JAN 16, 2021</h3>
               <h3 className={styles['newsDates']}>DON DIABLO & IMANBEK - KILL ME BETTER FT. TREVOR DANIEL (DON DIABLO VIP MIX)</h3>
           </div>
-          <img src={donDiabloShows} className={styles['homepageBackground']} alt="logo"/>
+          <img src={donDiabloShows} className={styles['homepageBackground1']} alt="logo"/>
           <h1 className={styles['h1Music']}>MUSIC</h1>
           <div className={styles['divContainerMusic']}>
 

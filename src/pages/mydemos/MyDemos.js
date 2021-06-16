@@ -56,11 +56,7 @@ function Mydemos() {
     }, [user])
 
 
-    if(isLoading === false){
-        console.log(data);
-    }
 
-    console.log(data);
 
 
     return (
@@ -73,7 +69,7 @@ function Mydemos() {
 
                                 return <div className={styles['mydemosContainer']}>
 
-                                     <label> {song.artist} + {song.songTitle} </label>
+                                     <label> {song.artist} - {song.songTitle} </label>
                                     <SongLoader
                                     song={song}
                                 />
@@ -82,7 +78,7 @@ function Mydemos() {
                                 </div>
                             }
                         )
-                        : "Loading..."}
+                        : <div className={styles['noDemoMessage']}>"There are no demo's yet..."</div>}
 
 
         </>

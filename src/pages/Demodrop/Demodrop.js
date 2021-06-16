@@ -31,9 +31,7 @@ function Demodrop() {
         formData.append('songTitle', data.songTitle)
         formData.append('artist', data.artist)
 
-        for (let pair of formData.entries()) {
-            console.log(pair[0] + " - " + pair[1]);
-        }
+
 
         let isValid = true;
         for(let i = 0; i<inputRefs.current.length; i++ ){
@@ -85,6 +83,8 @@ function Demodrop() {
                 />
                 <InputField
                     ref={inputRefs.current[2]}
+                    className={styles['fileLabel']}
+
                     id="fileLabel"
                     name="artist"
                     type="text"
@@ -94,6 +94,7 @@ function Demodrop() {
                 />
                 <InputField
                     ref={inputRefs.current[1]}
+                    className={styles['fileLabel']}
                     id="fileLabel"
                     name="songTitle"
                     type="text"
