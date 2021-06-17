@@ -5,7 +5,7 @@ import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import InputField from "../../components/InputValidation/InputFieldValidation";
 
 import styles from'./SignUp.module.css';
-import backgroundPicture from "../../assets/pictures/home_background.jpg";
+
 
 function SignUp() {
 

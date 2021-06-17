@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import InputField from "../../components/InputValidation/InputFieldValidation";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import axios from "axios";
-import {Link, NavLink} from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 import styles from './Demodrop.module.css';
 

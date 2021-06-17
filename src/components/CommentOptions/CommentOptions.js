@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link, NavLink, useHistory} from 'react-router-dom'
+import { NavLink, useHistory} from 'react-router-dom'
 import {useAuthState} from "../../Context/AuthContext";
 import axios from "axios";
 import DeleteConformation from "./DeleteComment";

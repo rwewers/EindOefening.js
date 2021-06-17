@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { setLocalUser, getLocalUser, resetLocalUser, roles } from "../components/localStorage/localStorage"
+import { setLocalUser, getLocalUser } from "../components/localStorage/localStorage"
 import {useHistory} from "react-router-dom";
 
 
@@ -41,11 +41,7 @@ function AuthContextProvider({ children }) {
         localStorage.setItem('username', newUser.username);
         setUser(newUser)
         setLocalUser(newUser)
-        function isAdmin() {
-            if (user) {
-                return user.roles.includes(roles.ADMIN)
-            }
-        }
+
         setAuthState({
             ...authState,
             user: {

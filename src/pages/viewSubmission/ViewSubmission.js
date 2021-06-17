@@ -64,7 +64,7 @@ function ViewSubmission(){
                 console.log(error)
             }
         };
-    }, [])
+    }, )
 
     function showingComment(comment){
 

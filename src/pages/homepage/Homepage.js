@@ -12,20 +12,16 @@ import music9 from "../../assets/pictures/music/9.png";
 import music10 from "../../assets/pictures/music/10.jpeg";
 import music11 from "../../assets/pictures/music/11.jpeg";
 import music12 from "../../assets/pictures/music/12.jpeg";
-import backgroundPicture from "../../assets/pictures/home_background.jpg"
+import backgroundPicture from "../../../new-project/assets/home_background.jpg"
 import donDiabloShows from "../../assets/pictures/dondiablo_shows.PNG"
 
 import styles from './Homepage.module.css';
-import {
 
-useHistory,
-} from 'react-router-dom';
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 
 
 function Homepage(){
 
-    const history=useHistory();
 
 
 
@@ -63,62 +59,62 @@ function Homepage(){
               <ul className={styles['musicContainer']}>
 
                   <li>
-                      <a href="https://www.youtube.com/watch?v=fItOVIPyYRk" target="_blank">
+                      <a href="https://www.youtube.com/watch?v=fItOVIPyYRk" target="_blank" rel="noreferrer">
                       <img src={music1} className={styles['musicPictures']} alt="musicPic1" />
                       </a>
                       </li>
                   <li>
-                      <a href="https://www.youtube.com/watch?v=2Dvloj_jzqg" target="_blank">
+                      <a href="https://www.youtube.com/watch?v=2Dvloj_jzqg" target="_blank" rel="noreferrer">
                       <img src={music2} className={styles['musicPictures']}  alt="musicPic2" />
                       </a>
                       </li>
                   <li>
-                      <a href="https://www.youtube.com/watch?v=IFQXALpaEwM" target="_blank">
+                      <a href="https://www.youtube.com/watch?v=IFQXALpaEwM" target="_blank"rel="noreferrer">
                       <img src={music3} className={styles['musicPictures']}  alt="musicPic3" />
                       </a>
                       </li>
                   <li>
-                      <a href="https://www.youtube.com/watch?v=2Dvloj_jzqg" target="_blank">
+                      <a href="https://www.youtube.com/watch?v=2Dvloj_jzqg" target="_blank" rel="noreferrer">
                       <img src={music4} className={styles['musicPictures']}  alt="musicPic4" />
                       </a>
                       </li>
                   <li>
-                      <a href="https://www.youtube.com/watch?v=CSrm85yNwCM&feature=youtu.be" target="_blank">
+                      <a href="https://www.youtube.com/watch?v=CSrm85yNwCM&feature=youtu.be" target="_blank"rel="noreferrer" >
                       <img src={music5} className={styles['musicPictures']}  alt="musicPic5" />
                       </a>
                   </li>
                   <li>
-                      <a href="https://www.youtube.com/watch?v=gSDVTS1-cyU&feature=youtu.be" target="_blank">
+                      <a href="https://www.youtube.com/watch?v=gSDVTS1-cyU&feature=youtu.be" target="_blank" rel="noreferrer">
                       <img src={music6} className={styles['musicPictures']}  alt="musicPic6" />
                       </a>
                   </li>
                   <li>
-                      <a href="https://www.youtube.com/watch?v=hHFymqAf-Zo&feature=youtu.be" target="_blank">
+                      <a href="https://www.youtube.com/watch?v=hHFymqAf-Zo&feature=youtu.be" target="_blank" rel="noreferrer">
                       <img src={music7}className={styles['musicPictures']}  alt="musicPic7" />
                       </a>
                   </li>
                   <li>
-                      <a href="https://www.youtube.com/watch?v=a2WXpiBiNcA&feature=youtu.be" target="_blank">
+                      <a href="https://www.youtube.com/watch?v=a2WXpiBiNcA&feature=youtu.be" target="_blank" rel="noreferrer">
                       <img src={music8} className={styles['musicPictures']}  alt="musicPic8" />
                       </a>
                   </li>
                   <li>
-                      <a href="https://www.youtube.com/watch?v=33lKUK-SxzQ" target="_blank">
+                      <a href="https://www.youtube.com/watch?v=33lKUK-SxzQ" target="_blank" rel="noreferrer">
                       <img src={music9} className={styles['musicPictures']}  alt="musicPic9" />
                       </a>
                   </li>
                   <li>
-                      <a href="https://www.youtube.com/watch?v=dnuI31DXAco&feature=youtu.be" target="_blank">
+                      <a href="https://www.youtube.com/watch?v=dnuI31DXAco&feature=youtu.be" target="_blank" rel="noreferrer">
                       <img src={music10} className={styles['musicPictures']}  alt="musicPic10" />
                       </a>
                   </li>
                   <li>
-                      <a href="https://www.youtube.com/watch?v=opMKcQaeTuY&feature=youtu.be" target="_blank">
+                      <a href="https://www.youtube.com/watch?v=opMKcQaeTuY&feature=youtu.be" target="_blank" rel="noreferrer">
                       <img src={music11} className={styles['musicPictures']} alt="musicPic11" />
                       </a>
                   </li>
                   <li>
-                      <a href="https://www.youtube.com/watch?v=0TF9UCwithU" target="_blank">
+                      <a href="https://www.youtube.com/watch?v=0TF9UCwithU" target="_blank" rel="noreferrer">
                       <img src={music12} className={styles['musicPictures']}  alt="musicPic12" />
                       </a>
                   </li>

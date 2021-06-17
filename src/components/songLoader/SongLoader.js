@@ -1,20 +1,14 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from "axios";
 import ReactAudioPlayer from 'react-audio-player';
 import {useAuthState} from "../../Context/AuthContext";
 
-import styles from './SongLoader.module.css';
 
 function SongLoader({song}) {
     const [isLoading, setIsLoading] = useState(false)
     const [data, setData] = useState();
     const {user} = useAuthState()
 
-    const getAudioContext = () => {
-        AudioContext = window.AudioContext || window.webkitAudioContext;
-        const audioContent = new AudioContext();
-        return audioContent;
-    };
 
     useEffect(() => {
         playMusic();
