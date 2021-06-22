@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import { NavLink } from 'react-router-dom';
-import logo1 from '../../logo.png';
+import logo1 from '../../../src/logo.png';
 import { AuthContext, useAuthState } from '../../Context/AuthContext';
 
 import styles from './NavigationBar.module.css';

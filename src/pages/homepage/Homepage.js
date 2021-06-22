@@ -12,7 +12,7 @@ import music9 from "../../assets/pictures/music/9.png";
 import music10 from "../../assets/pictures/music/10.jpeg";
 import music11 from "../../assets/pictures/music/11.jpeg";
 import music12 from "../../assets/pictures/music/12.jpeg";
-import backgroundPicture from "../../../new-project/assets/home_background.jpg"
+import backgroundPicture from "../../../src/assets/pictures/home_background.jpg"
 import donDiabloShows from "../../assets/pictures/dondiablo_shows.PNG"
 
 import styles from './Homepage.module.css';

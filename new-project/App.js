@@ -1,47 +1,34 @@
-import 'react-native-gesture-handler';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import {NavigationContainer} from "@react-navigation/native";
-import Homepage from "../new-project/src/Homepage";
-import SignIn from "./src/SignIn";
-import SignUp from "./src/SignUp";
+import 'react-native-gesture-handler'
+import React from 'react'
+import { AuthProvider } from './hooks/Authentication'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import Home from './pages/Home'
+import SignIn from "./pages/SignIn";
+import MenuStyle from "./components/MenuStyle.js";
+import MyProfile from "./pages/MyProfile";
+import AllDemos from "./pages/AllDemos";
 
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-
-
-const Tab = createBottomTabNavigator();
 
 export default function App() {
-  return (
-      <NavigationContainer>
-    <Tab.Navigator tabBarOptions ={{
-      style:{ backgroundColor: 'black'},
-      tabStyle:{justifyContent: 'center'},
-      labelStyle: {fontSize: 20},
-      activeTintColor: '#198c89'
-    }}>
-      <Tab.Screen
-          name="Home"
-          component={Homepage}
-          options={{title: 'My Home'}}/>
-      <Tab.Screen
-          name="Sign In"
-          component={SignIn}
-          options={{title: 'Sign In'}}/>
-      <Tab.Screen
-          name="Sign Up"
-          component={SignUp}
-          options={{title: 'Sign Up'}}/>
-    </Tab.Navigator>
-      </NavigationContainer>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  const Stack = createStackNavigator()
+
+  return (
+      <AuthProvider>
+        <NavigationContainer>
+          <Stack.Navigator screenOptions={{
+            headerShown: false
+          }}>
+
+            <Stack.Screen name="Home" component={Home}/>
+            <Stack.Screen name="SignIn" component={SignIn} />
+            <Stack.Screen name="Menu" component={MenuStyle} />
+            <Stack.Screen name="MyProfile" component={MyProfile} />
+            <Stack.Screen name="AllDemos" component={AllDemos} />
+
+          </Stack.Navigator>
+        </NavigationContainer>
+      </AuthProvider>
+  )
+}
