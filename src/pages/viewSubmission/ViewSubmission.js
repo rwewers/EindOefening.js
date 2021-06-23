@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import axios from "axios";
 import SongLoader from "../../components/songLoader/SongLoader";
@@ -6,7 +6,7 @@ import CommentOptions from "../../components/CommentOptions/CommentOptions";
 
 import styles from "./viewSubmission.module.css";
 
-function ViewSubmission(){
+function ViewSubmission() {
 
     const urlParams = new URLSearchParams(window.location.search);
     const [userData, setUserData] = useState();
@@ -23,13 +23,11 @@ function ViewSubmission(){
     }
 
 
-
     useEffect(() => {
         fetchData()
+
 //              TODO PAGINA REFRESHEN LOGT UIT!!!
         async function fetchData() {
-
-
 
 
             setIsLoading(true)
@@ -50,7 +48,6 @@ function ViewSubmission(){
                 setIsLoading(false)
 
 
-
                 if (demoResponse) {
 
                     setSong(demoResponse.data)
@@ -64,29 +61,28 @@ function ViewSubmission(){
                 console.log(error)
             }
         };
-    }, )
+    },[])
 
-    function showingComment(comment){
+    function showingComment(comment) {
 
-        if(comment != null){
-            return(
-                    <div className={styles['showCommentDiv']}>
+        if (comment != null) {
+            return (
+                <div className={styles['showCommentDiv']}>
 
-                       Comment:
-                      <textarea className={styles['viewCommentViewSubmission']} value={comment.message}> </textarea>
+                    Comment:
+                    <textarea className={styles['viewCommentViewSubmission']} value={comment.message}> </textarea>
 
-                    </div>
+                </div>
 
             )
 
         }
     }
 
-    function showingCommentOptions(comment){
+    function showingCommentOptions(comment) {
 
-        if(comment != null){
-            return(
-
+        if (comment != null) {
+            return (
 
 
                 <CommentOptions song={song} comment={comment} userId={userData.data.userId}/>
@@ -94,62 +90,63 @@ function ViewSubmission(){
             )
 
 
-        }
-        else{
-            return(
+        } else {
+            return (
 
-                    <CommentOptions song={song} comment={comment} userId={userData.data.userId}/>
+                <CommentOptions song={song} comment={comment} userId={userData.data.userId}/>
 
             )
         }
 
     }
-    return(
-            !isLoading && demoData && song  ?
-                    (
-                        <>
-                            <NavigationBar/>
-                            <div className={styles['containerViewSubmission']}>
-                            <h1>{demoData.data.artist} - {demoData.data.songTitle}</h1>
-                               <table className={styles['tableViewSubmission']}>
-                                        <tr>
-                                            <th>Firstname</th>
-                                            <th>Lastname</th>
-                                            <th>Email</th>
-                                            <th>Country</th>
-                                            <th>Facebook</th>
-                                            <th>Instagram</th>
 
-                                        </tr>
-                                        <tr>
-                                            <td>{userData.data.firstName}</td>
-                                            <td>{userData.data.lastName}</td>
-                                            <td>{userData.data.email}</td>
-                                            <td>{userData.data.country}</td>
-                                            <td>{userData.data.facebook}</td>
-                                            <td>{userData.data.instagram}</td>
-                                        </tr>
-                                    </table>
-                                <div className={styles['spaceDivViewComment']}></div>
-                                    {showingComment(comment)}
-                                    {showingCommentOptions(comment)}
+    return (
+        !isLoading && demoData && song ?
+            (
+                <>
+                    <NavigationBar/>
+                    <div className={styles['containerViewSubmission']}>
+                        <h1>{demoData.data.artist} - {demoData.data.songTitle}</h1>
+                        <table className={styles['tableViewSubmission']}>
+                            <tr>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Email</th>
+                                <th>Country</th>
+                                <th>Facebook</th>
+                                <th>Instagram</th>
 
-                                <SongLoader
-                                   song={demoData.data}
-                                />
+                            </tr>
+                            <tr>
+                                <td>{userData.data.firstName}</td>
+                                <td>{userData.data.lastName}</td>
+                                <td>{userData.data.email}</td>
+                                <td>{userData.data.country}</td>
+                                <td>{userData.data.facebook}</td>
+                                <td>{userData.data.instagram}</td>
+                            </tr>
+                        </table>
+                        <div className={styles['spaceDivViewComment']}></div>
+                        {showingComment(comment)}
+                        {showingCommentOptions(comment)}
 
-                            </div>
-                         </>
-                    ) : (
-                    <>
-                        <NavigationBar/>
+                        <SongLoader
+                            song={demoData.data}
+                        />
 
-                        <h1> teasdsadsad</h1>
-                    </>
-                    )
+                    </div>
+                </>
+            ) : (
+                <>
+                    <NavigationBar/>
+
+                    <h1> teasdsadsad</h1>
+                </>
+            )
 
 
     );
 
 }
+
 export default ViewSubmission;

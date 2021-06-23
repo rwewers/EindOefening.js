@@ -149,6 +149,7 @@ function SignUp() {
                     className={styles['signUpInput']}
                     name="password"
                     label="Password"
+                    type = "password"
                     onChange ={handleChange}
                     validation={"password1|required|password"}
                 />
@@ -157,6 +158,7 @@ function SignUp() {
                     className={styles['signUpInput']}
                     name="passwordRepeat"
                     label="Password repeat"
+                    type = "password"
                     onChange ={handleChange}
                     validation={"password2|required|passwordRepeat|password"}
                 />

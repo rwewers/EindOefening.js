@@ -1,6 +1,6 @@
 import React, { useContext, createContext } from "react"
 import { axiosConfig } from "../helpers/axiosConfig"
-import { setLocalUser, getLocalUser, resetLocalUser } from "../helpers/helpersFunction"
+import { setLocalUser, getLocalUser, resetLocalUser } from "../helpers/helpers"
 import { roles } from "../helpers/roles"
 
 const AuthContext = createContext({})

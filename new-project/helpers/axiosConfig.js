@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { getAccessToken } from '../helpers/helpersFunction'
+import { getAccessToken } from './helpers'
 
 export const axiosConfig = axios.create({
     baseURL: 'http://localhost:8080/'

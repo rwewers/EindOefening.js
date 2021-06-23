@@ -52,7 +52,7 @@ function NewSubmissions(){
                 setIsLoading(false)
                 console.log(error)
             }
-        }
+        };
          }, [])
     function displayDemos(user, demos) {
         return demos.map(demo => (

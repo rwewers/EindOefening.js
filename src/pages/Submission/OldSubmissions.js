@@ -15,7 +15,7 @@ function NewSubmissions(){
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
-
+        console.log(hasDemos);
         fetchData()
 //              TODO PAGINA REFRESHEN LOGT UIT!!!
 
@@ -33,15 +33,21 @@ function NewSubmissions(){
 
 
                 let {data} = response;
+                console.log(data);
                 data.forEach(user => {
+                    console.log(user);
                     if (user.demos.length > 0) {
                         for (let i = 0; i < user.demos.length; i++) {
-                            if(user.demos[i].comment == null){
-                                setHasDemos(false);
-                            }
-                            else{
+
+
+                            if(user.demos[i].comment != null){
                                 setHasDemos(true);
+
+
+
+
                             }
+
                         }
                     }
                 })

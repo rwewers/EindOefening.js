@@ -17,6 +17,7 @@ function SignIn() {
     const history = useHistory();
 
     useEffect( ()=> {
+
         if(isAuthenticated === true ){
 
                 history.push('/');
@@ -29,6 +30,8 @@ function SignIn() {
 
     async function onSubmit(event) {
         event.preventDefault();
+
+
 
         try{
             const response = await axios.post('http://localhost:8080/api/auth/signin', {
@@ -67,7 +70,7 @@ function SignIn() {
                         <input
                             type="text"
                             className={styles['username-field']}
-                            placeholder="nick"
+
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
@@ -79,9 +82,11 @@ function SignIn() {
                         <input
                             type="password"
                             className={styles['password-field']}
-                            placeholder="nicknick"
+
                             value={password}
-                            onChange={(e) => setPassword(e.target.value)} />
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+
                     </label>
                     </div>
                     <button
