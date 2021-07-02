@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios";
 import ReactAudioPlayer from 'react-audio-player';
-import {useAuthState} from "../../Context/AuthContext";
+import {useAuthState} from "../../context/AuthContext";
 
 
 function SongLoader({song}) {

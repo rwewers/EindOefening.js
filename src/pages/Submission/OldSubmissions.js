@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import NavigationBar from "../../components/NavigationBar/NavigationBar";
+import NavigationBar from "../../components/navigationBar/NavigationBar";
 import SongLoader from "../../components/songLoader/SongLoader";
 import {NavLink} from "react-router-dom";
-import CommentViewer from "../../components/CommentViewer/CommentViewer";
+import CommentViewer from "../../components/commentViewer/CommentViewer";
 
 import styles from "./Submissions.module.css";
 

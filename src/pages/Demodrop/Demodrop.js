@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import InputField from "../../components/InputValidation/InputFieldValidation";
-import NavigationBar from "../../components/NavigationBar/NavigationBar";
+import InputField from "../../components/inputValidation/InputFieldValidation";
+import NavigationBar from "../../components/navigationBar/NavigationBar";
 import axios from "axios";
 import {NavLink} from "react-router-dom";
 

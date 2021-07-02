@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import axios from "axios";
-import NavigationBar from "../../components/NavigationBar/NavigationBar";
+import NavigationBar from "../../components/navigationBar/NavigationBar";
 import SongLoader from "../../components/songLoader/SongLoader";
 
 import styles from './Comment.module.css'

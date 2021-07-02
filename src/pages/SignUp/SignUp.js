@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import axios from "axios";
-import NavigationBar from "../../components/NavigationBar/NavigationBar";
-import InputField from "../../components/InputValidation/InputFieldValidation";
+import NavigationBar from "../../components/navigationBar/NavigationBar";
+import InputField from "../../components/inputValidation/InputFieldValidation";
 
 import styles from './SignUp.module.css';
 

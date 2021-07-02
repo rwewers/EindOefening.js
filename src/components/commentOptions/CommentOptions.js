@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import {NavLink, useHistory} from 'react-router-dom'
-import {useAuthState} from "../../Context/AuthContext";
+import {useAuthState} from "../../context/AuthContext";
 import axios from "axios";
 import DeleteConformation from "./DeleteComment";
-import {roles} from "../Roles/Roles";
+import {roles} from "../roles/Roles";
 
 import styles from "./CommentOptions.module.css"
 

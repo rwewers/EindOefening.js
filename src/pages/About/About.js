@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './About.module.css';
 import pictureAboutDiablo from "../../assets/pictures/1+(1).jpg";
-import NavigationBar from "../../components/NavigationBar/NavigationBar";
+import NavigationBar from "../../components/navigationBar/NavigationBar";
 
 
 function About() {

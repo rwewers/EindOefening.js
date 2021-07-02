@@ -17,7 +17,7 @@ import donDiabloShows from "../../assets/pictures/dondiablo_shows.PNG"
 
 import styles from './Homepage.module.css';
 
-import NavigationBar from "../../components/NavigationBar/NavigationBar";
+import NavigationBar from "../../components/navigationBar/NavigationBar";
 
 
 function Homepage() {

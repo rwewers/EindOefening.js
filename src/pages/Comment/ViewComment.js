@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios";
-import {useAuthState} from "../../Context/AuthContext";
-import NavigationBar from "../../components/NavigationBar/NavigationBar";
+import {useAuthState} from "../../context/AuthContext";
+import NavigationBar from "../../components/navigationBar/NavigationBar";
 import SongLoader from "../../components/songLoader/SongLoader";
-import CommentOptions from "../../components/CommentOptions/CommentOptions";
-import {roles} from "../../components/Roles/Roles"
+import CommentOptions from "../../components/commentOptions/CommentOptions";
+import {roles} from "../../components/roles/Roles"
 
 import styles from './Comment.module.css'
 

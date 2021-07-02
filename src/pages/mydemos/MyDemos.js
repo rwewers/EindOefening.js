@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {useAuthState} from '../../Context/AuthContext';
+import {useAuthState} from '../../context/AuthContext';
 import axios from "axios";
-import NavigationBar from "../../components/NavigationBar/NavigationBar";
+import NavigationBar from "../../components/navigationBar/NavigationBar";
 import SongLoader from "../../components/songLoader/SongLoader";
-import CommentViewer from "../../components/CommentViewer/CommentViewer";
+import CommentViewer from "../../components/commentViewer/CommentViewer";
 
 
 import styles from './MyDemos.module.css';

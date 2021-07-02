@@ -1,8 +1,8 @@
 import React, {useState, useContext, useEffect} from 'react';
 import axios from "axios";
 import {Link, useHistory} from "react-router-dom";
-import {AuthContext, useAuthState} from '../../Context/AuthContext';
-import NavigationBar from "../../components/NavigationBar/NavigationBar";
+import {AuthContext, useAuthState} from '../../context/AuthContext';
+import NavigationBar from "../../components/navigationBar/NavigationBar";
 import backgroundPicture from "../../../src/assets/pictures/home_background.jpg"
 
 import styles from './SignIn.module.css';

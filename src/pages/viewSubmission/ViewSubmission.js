@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import NavigationBar from "../../components/NavigationBar/NavigationBar";
+import NavigationBar from "../../components/navigationBar/NavigationBar";
 import axios from "axios";
 import SongLoader from "../../components/songLoader/SongLoader";
-import CommentOptions from "../../components/CommentOptions/CommentOptions";
+import CommentOptions from "../../components/commentOptions/CommentOptions";
 
 import styles from "./viewSubmission.module.css";
 
