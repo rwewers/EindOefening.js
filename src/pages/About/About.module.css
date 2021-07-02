@@ -1,28 +1,29 @@
 @import url('../../css/custom-vars.css');
 
 
-.aboutContainer{
-     display: flex;
+.aboutContainer {
+    display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
 }
 
-.diabloAbout{
+.diabloAbout {
     max-width: 1200px;
     width: 100%;
 }
 
-.spanContainer{
+.spanContainer {
     color: white;
     display: flex;
     align-items: center;
     flex-direction: column;
-    width:100%;
+    width: 100%;
     max-width: 800px;
 
 }
-.spanContainer > span{
+
+.spanContainer > span {
     margin: 10px;
 }
 

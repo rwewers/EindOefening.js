@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory} from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import {useHistory} from 'react-router-dom'
 import SongLoader from "../../components/songLoader/SongLoader";
 import axios from "axios";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
@@ -25,6 +25,7 @@ function EditComment() {
 
     useEffect(() => {
         fetchData()
+
         async function fetchData() {
             setIsLoading(true)
             try {
@@ -46,8 +47,9 @@ function EditComment() {
             }
         }
     }, [songId])
+
     function handleChange(event) {
-        const updatedComment = { ...comment }
+        const updatedComment = {...comment}
         updatedComment.message = event.target.value
         updatedComment.demoId = parseInt(songId)
         updatedComment.viewed = false
@@ -78,12 +80,12 @@ function EditComment() {
 
     return (
 
-        !isLoading ?(
+        !isLoading ? (
             <div>
                 <NavigationBar/>
                 <div className={styles['editCommentContainer']}>
                     <h3>Edit comment</h3>
-                    {song && <SongLoader song={song} />}
+                    {song && <SongLoader song={song}/>}
                     <p>
                         {comment && (
                             <textarea
@@ -97,10 +99,11 @@ function EditComment() {
                         className="save1"
                         type="button"
                         onClick={handleSave}
-                    >Save comment</button>
+                    >Save comment
+                    </button>
                 </div>
             </div>
-        ) :(
+        ) : (
             <div>
                 <NavigationBar/>
                 <h1>test2</h1>

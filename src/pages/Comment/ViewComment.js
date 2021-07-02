@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from "axios";
 import {useAuthState} from "../../Context/AuthContext";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
@@ -20,9 +20,8 @@ function ViewComment() {
     let isAdmin = false;
 
 
-    if(user){
-        if(user.roles.includes(roles.ADMIN))
-        {
+    if (user) {
+        if (user.roles.includes(roles.ADMIN)) {
             isAdmin = true;
 
         }
@@ -37,44 +36,46 @@ function ViewComment() {
     useEffect(() => {
         let timerId;
         fetchData()
-         async function fetchData() {
-                setIsLoading(true)
-                try {
 
-                    const data = await axios.get(`http://localhost:8080/api/demos/${songId}`, {
-                        headers: {
-                            'Authorization': localStorage.getItem('token')
-                        }
-                    })
-                    setIsLoading(false);
-                    if (data) {
-                        setSong(data.data)
-                        setComment(data.data.comment)
+        async function fetchData() {
+            setIsLoading(true)
+            try {
+
+                const data = await axios.get(`http://localhost:8080/api/demos/${songId}`, {
+                    headers: {
+                        'Authorization': localStorage.getItem('token')
                     }
-                } catch (error) {
-                    // TODO User error message
-                    setIsLoading(false)
-                    console.log(error)
+                })
+                setIsLoading(false);
+                if (data) {
+                    setSong(data.data)
+                    setComment(data.data.comment)
+                }
+            } catch (error) {
 
+                setIsLoading(false)
+                console.log(error)
+
+            }
         }
-    }
+
         return () => clearTimeout(timerId)
 
-    } , [songId], isAdmin)
+    }, [songId], isAdmin)
 
     return (
-        !isLoading && song && user?
+        !isLoading && song && user ?
             (
                 <div>
                     <NavigationBar/>
 
                     <div className={styles['viewCommentContainer']}>
-                    <h3>View comment</h3>
-                    {song && <SongLoader song={song} />}
-                    <textarea
-                        className={styles['viewCommentTextArea']}
+                        <h3>View comment</h3>
+                        {song && <SongLoader song={song}/>}
+                        <textarea
+                            className={styles['viewCommentTextArea']}
 
-                        value = {comment && comment.message}
+                            value={comment && comment.message}
                         >
                     </textarea>
 
@@ -83,7 +84,7 @@ function ViewComment() {
                         )}
                     </div>
                 </div>
-            ): (
+            ) : (
                 <div>
                     <NavigationBar/>
                     <h1>test2</h1>
@@ -91,4 +92,5 @@ function ViewComment() {
             )
     );
 }
+
 export default ViewComment

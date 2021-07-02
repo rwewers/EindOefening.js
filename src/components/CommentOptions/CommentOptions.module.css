@@ -2,17 +2,18 @@
     color: #198c89;
     font-size: 25px;
 }
-.deleteMessage{
-color: white;
+
+.deleteMessage {
+    color: white;
 }
 
-.modelDelete{
+.modelDelete {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.customButton{
+.customButton {
     width: 150px;
     height: 40px;
     border-radius: 8px;

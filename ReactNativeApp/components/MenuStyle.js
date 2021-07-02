@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Image } from 'react-native'
+import React, {useEffect, useState} from 'react'
+import {View, Text, StyleSheet, Dimensions, TouchableOpacity, Image} from 'react-native'
 import colors from '../config/colors'
-import { useAuthentication } from '../hooks/Authentication'
+import {useAuthentication} from '../hooks/Authentication'
 
-const { width, height } = Dimensions.get('window')
+const {width, height} = Dimensions.get('window')
 
-function MenuStyle({ navigation }) {
+function MenuStyle({navigation}) {
 
-    const { getUser, logout } = useAuthentication()
+    const {getUser, logout} = useAuthentication()
     const [user, setUser] = useState()
 
     useEffect(() => {
 
         fetchUser()
+
         async function fetchUser() {
             const user = await getUser()
             setUser(user)
@@ -32,13 +33,13 @@ function MenuStyle({ navigation }) {
                 style={styles.closeBtn}
                 onPress={() => navigation.goBack()}
             >
-                <Image style={styles.closeIcon} source={require('../assets/close-btn.png')} />
+                <Image style={styles.closeIcon} source={require('../assets/close-btn.png')}/>
             </TouchableOpacity>
             {!user && (
                 <View style={styles.menuItem}>
                     <Text
                         style={styles.menuLink}
-                        onPress={() => navigation.navigate('SignIn', { name: 'SignIn' })}
+                        onPress={() => navigation.navigate('SignIn', {name: 'SignIn'})}
                     >
                         Sign in
                     </Text>
@@ -49,7 +50,7 @@ function MenuStyle({ navigation }) {
                     <View style={styles.menuItem}>
                         <Text
                             style={styles.menuLink}
-                            onPress={() => navigation.navigate('AllDemos', { name: 'AllDemos' })}
+                            onPress={() => navigation.navigate('AllDemos', {name: 'AllDemos'})}
                         >
                             All demos
                         </Text>
@@ -57,7 +58,7 @@ function MenuStyle({ navigation }) {
                     <View style={styles.menuItem}>
                         <Text
                             style={styles.menuLink}
-                            onPress={() => navigation.navigate('MyProfile', { name: 'MyProfile' })}
+                            onPress={() => navigation.navigate('MyProfile', {name: 'MyProfile'})}
                         >
                             My profile
                         </Text>

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import {useHistory} from 'react-router-dom'
 import axios from "axios";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import SongLoader from "../../components/songLoader/SongLoader";
@@ -7,7 +7,7 @@ import SongLoader from "../../components/songLoader/SongLoader";
 import styles from './Comment.module.css'
 
 
-function Writecomment(){
+function Writecomment() {
 
     const urlParams = new URLSearchParams(window.location.search);
     var urlParameters = [];
@@ -25,10 +25,9 @@ function Writecomment(){
     let userId = urlParameters[1][1];
 
 
-
-
     useEffect(() => {
         fetchData()
+
         async function fetchData() {
             setIsLoading(true)
             try {
@@ -40,11 +39,11 @@ function Writecomment(){
                 })
 
 
-                    const userDataResponse = await axios.get(`http://localhost:8080/api/user/${userId}`, {
-                        headers: {
-                            'Authorization': localStorage.getItem('token')
-                        }
-                    })
+                const userDataResponse = await axios.get(`http://localhost:8080/api/user/${userId}`, {
+                    headers: {
+                        'Authorization': localStorage.getItem('token')
+                    }
+                })
 
 
                 setIsLoading(false)
@@ -55,7 +54,7 @@ function Writecomment(){
                 newComment.demoId = songId
                 newComment.message = ''
 
-        } catch (error) {
+            } catch (error) {
                 // TODO User error message
                 setIsLoading(false)
                 console.log(error)
@@ -63,21 +62,23 @@ function Writecomment(){
 
         }
 
+// eslint-disable-next-line
     }, [songId])
 
     function handleChange(event) {
-        const updatedComment = { ...comment }
+        const updatedComment = {...comment}
         updatedComment.message = event.target.value
         updatedComment.demoId = songId
         setComment(updatedComment)
         setTextComment(event.target.value);
     }
+
     async function handleSave() {
 
         setIsLoading(true)
         try {
 
-            await axios.post(`http://localhost:8080/api/comments/` , comment , {
+            await axios.post(`http://localhost:8080/api/comments/`, comment, {
                 headers: {
                     'Authorization': localStorage.getItem('token')
                 }
@@ -92,9 +93,9 @@ function Writecomment(){
         }
     }
 
-    function jsFunction(value){
+    function jsFunction(value) {
         let localComment = '';
-        if(value === "1"){
+        if (value === "1") {
             localComment = `Dear ${userData.fullName}, 
                  
 Thanks for sending you track: ${song.data.artist} - ${song.data.songTitle}!
@@ -109,8 +110,7 @@ Kind regards,
 
 Team Don Diablo.
 `;
-        }
-        else if(value === "2"){
+        } else if (value === "2") {
             localComment = `Dear ${userData.fullName}, 
                  
 Thanks for sending you track: ${song.data.artist} - ${song.data.songTitle}!
@@ -123,8 +123,7 @@ Kind regards,
 
 Team Don Diablo.
 `;
-        }
-        else{
+        } else {
             localComment = `Dear ${userData.fullName}, 
                  
 Thanks for sending you track: ${song.data.artist} - ${song.data.songTitle}!
@@ -144,55 +143,54 @@ Team Don Diablo.
 
 
         const updatedComment = {
-            message : localComment,
+            message: localComment,
             demoId: songId
         }
         setComment(updatedComment)
-        setTextComment( localComment);
+        setTextComment(localComment);
 
     }
 
 
-
-
-    return(
+    return (
         !isLoading && song ?
             (
                 <div>
                     <NavigationBar/>
-                    <div  className={styles['writeCommentContainer']}>
-                        <select defaultValue={'default'} name="type" onChange={e => jsFunction(e.target.value) }>
+                    <div className={styles['writeCommentContainer']}>
+                        <select defaultValue={'default'} name="type" onChange={e => jsFunction(e.target.value)}>
                             <option value="default" disabled>Choose an option</option>
                             <option value="1">Good submission</option>
                             <option value='2'>Bad submission</option>
                             <option value='3'>Need more time</option>
                         </select>
-                    <h1>Write Comment</h1>
-                   <SongLoader song={song.data} />
+                        <h1>Write Comment</h1>
+                        <SongLoader song={song.data}/>
                         <textarea
                             className={styles['writeCommentTextArea']}
                             onChange={handleChange}
                             value={textComment}
                         ></textarea>
 
-                    <button
-                        className={styles['saveCommentButton']}
+                        <button
+                            className={styles['saveCommentButton']}
 
-                        type="button"
-                        onClick={handleSave}
-                    >Save comment</button>
+                            type="button"
+                            onClick={handleSave}
+                        >Save comment
+                        </button>
 
                     </div>
 
 
                 </div>
-    ): (
+            ) : (
                 <div>
                     <NavigationBar/>
                     <h1>test2</h1>
                 </div>
-    )
+            )
     );
 }
 
-export default  Writecomment;
+export default Writecomment;

@@ -1,4 +1,4 @@
-.errorMessage{
+.errorMessage {
     display: flex;
 
     font-size: 11px;
@@ -7,7 +7,7 @@
     color: red;
 }
 
-.InputValidationContainer{
+.InputValidationContainer {
     margin: 5px;
 }
 

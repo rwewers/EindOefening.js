@@ -1,20 +1,21 @@
-.homepageBody{
+.homepageBody {
     margin: 0;
     background: black;
 
 }
 
-.h1News{
+.h1News {
     font-size: 60px;
     margin-top: 0;
     margin-bottom: 10px;
 }
-.newsDates{
+
+.newsDates {
     color: darkgrey;
     margin-bottom: 0;
 }
 
-.homepageContainer{
+.homepageContainer {
 
     display: flex;
     align-items: center;
@@ -24,7 +25,7 @@
 
 }
 
-.musicPictures{
+.musicPictures {
     display: flex;
     justify-content: center;
     margin: 10px;
@@ -37,13 +38,13 @@
 }
 
 
-.divContainerMusic{
+.divContainerMusic {
     display: flex;
     justify-content: center;
 
 }
 
-.h1Music{
+.h1Music {
     display: flex;
     justify-content: center;
 
@@ -52,7 +53,7 @@
 
 }
 
-.musicContainer{
+.musicContainer {
     margin: 0px;
     display: flex;
     justify-content: center;
@@ -64,29 +65,31 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .homepageBody{
+    .homepageBody {
         margin: 0;
         background: black;
 
     }
 
-    .h1News{
+    .h1News {
         font-size: 30px;
         margin-top: 0;
         margin-bottom: 10px;
     }
-    .h1Music{
+
+    .h1Music {
 
         font-size: 30px;
 
 
     }
-    .musicPictures{
+
+    .musicPictures {
 
         width: 100px;
     }
 
-    .homepageContainer{
+    .homepageContainer {
 
 
         font-size: 10px;

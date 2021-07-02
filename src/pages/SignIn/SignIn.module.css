@@ -1,4 +1,4 @@
-.loginForm{
+.loginForm {
 
     display: flex;
     justify-content: center;
@@ -6,74 +6,77 @@
     align-items: center;
 }
 
-.labelSignIn{
-    margin:20px;
+.labelSignIn {
+    margin: 20px;
 }
 
-.signInContainer{
+.signInContainer {
     height: 200px;
 }
-.signInWrapper{
+
+.signInWrapper {
     margin: 10px;
 }
 
 
-.loginForm p{
+.loginForm p {
 
     color: white;
 
 
 }
 
-.username-field{
+.username-field {
     width: 350px;
 
 
 }
 
-.password-field{
+.password-field {
     width: 350px;
 
 
 }
-.loginButton{
-    width: 150px;
+
+.loginButton {
+
     margin-top: 40px;
     width: 200px;
     height: 50px;
     border-radius: 12px;
 }
 
-.signInBackground{
+.signInBackground {
     width: 100%;
 }
-.linkToSignUp{
+
+.linkToSignUp {
     color: #198c89;
 }
 
 @media only screen and (max-width: 600px) {
-    .username-field{
+    .username-field {
         width: 200px;
 
 
     }
 
-    .password-field{
+    .password-field {
         width: 200px;
 
 
     }
-    .signInContainer{
+
+    .signInContainer {
         height: 110px;
     }
-    .loginButton{
+
+    .loginButton {
         width: 150px;
         margin-top: 40px;
         height: 30px;
         border-radius: 12px;
     }
-
-
 
 
 }

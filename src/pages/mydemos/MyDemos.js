@@ -1,5 +1,5 @@
-import React, { useEffect, useState} from 'react';
-import { useAuthState} from '../../Context/AuthContext';
+import React, {useEffect, useState} from 'react';
+import {useAuthState} from '../../Context/AuthContext';
 import axios from "axios";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import SongLoader from "../../components/songLoader/SongLoader";
@@ -41,8 +41,6 @@ function Mydemos() {
                 setIsLoading(false)
 
 
-
-
             } catch (error) {
                 // TODO User error message
                 setIsLoading(false)
@@ -56,35 +54,31 @@ function Mydemos() {
     }, [user])
 
 
-
-
-
     return (
         <>
             {isLoading}
             <NavigationBar/>
 
-                    {data?.data && data.data.length > 0
-                        ? data.data.map((song) => {
+            {data?.data && data.data.length > 0
+                ? data.data.map((song) => {
 
-                                return <div className={styles['mydemosContainer']}>
+                        return <div className={styles['mydemosContainer']} key={song.songTitle}>
 
-                                     <label> {song.artist} - {song.songTitle} </label>
-                                    <SongLoader
-                                    song={song}
-                                />
-                                        <CommentViewer
-                                            songId = {song.id} />
-                                </div>
-                            }
-                        )
-                        : <div className={styles['noDemoMessage']}>"There are no demo's yet..."</div>}
+                            <label> {song.artist} - {song.songTitle} </label>
+                            <SongLoader
+                                song={song}
+                            />
+                            <CommentViewer
+                                songId={song.id}/>
+                        </div>
+                    }
+                )
+                : <div className={styles['noDemoMessage']}>"There are no demo's yet..."</div>}
 
 
         </>
 
     );
-
 
 
 }

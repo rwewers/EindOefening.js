@@ -1,36 +1,33 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { setLocalUser, getLocalUser } from "../components/localStorage/localStorage"
+import React, {createContext, useContext, useEffect, useState} from 'react';
+import {setLocalUser} from "../components/localStorage/localStorage"
 import {useHistory} from "react-router-dom";
 
 
 const AuthContext = createContext({});
 
-function AuthContextProvider({ children }) {
+function AuthContextProvider({children}) {
     const [authState, setAuthState] = useState({
         status: 'pending',
         error: null,
         user: null,
     })
     const history = useHistory();
-    const [user, setUser] = useState(getLocalUser())
 
     useEffect(() => {
-        // haal uit de local storage de JWT Token
-        // Als die er niet is, kunnen we gewoon verder
-        // Als die token er wel is, dan betekend dat dat de applicatie herstart is
-        // En dan willen we nog even onze gebruikersdata (username, etc.) ophalen.
+
 
         setTimeout(() => {
-            // er is geen token, dus we beginnen met een schone lei!
+
             setAuthState({
                 ...authState,
                 status: 'done',
             })
         }, 2000)
+        // eslint-disable-next-line
     }, []);
 
-    function login(data){
-        const newUser= {}
+    function login(data) {
+        const newUser = {}
         newUser.userId = data.id
         newUser.username = data.username
         newUser.accessToken = 'Bearer ' + data.accessToken
@@ -39,7 +36,7 @@ function AuthContextProvider({ children }) {
         localStorage.setItem('id', newUser.userId);
         localStorage.setItem('role', newUser.roles);
         localStorage.setItem('username', newUser.username);
-        setUser(newUser)
+
         setLocalUser(newUser)
 
         setAuthState({
@@ -52,17 +49,19 @@ function AuthContextProvider({ children }) {
             }
         })
     }
-    function logout(){
-    localStorage.clear();
-    setAuthState({
-        ...authState,
-        user: null,
+
+    function logout() {
+        localStorage.clear();
+        setAuthState({
+            ...authState,
+            user: null,
         })
 
-     history.push('/signin');
+        history.push('/signin');
 
     }
-    const providorData ={
+
+    const providorData = {
         ...authState,
         login: login,
         logout: logout,
@@ -88,10 +87,11 @@ function useAuthState() {
         isAuthenticated: isAuthenticated,
     }
 }
-export{
+
+export {
     AuthContext,
     useAuthState,
     AuthContextProvider,
-    }
+}
 
 

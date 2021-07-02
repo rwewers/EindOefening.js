@@ -8,7 +8,7 @@ function Page({ children, navigation }) {
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar style="auto" />
-            <NavigationBar navigation={navigation} />
+            <NavigationBar navigation={navigation}/>
             <View style={styles.page}>
                 {children}
             </View>

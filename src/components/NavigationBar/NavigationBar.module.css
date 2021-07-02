@@ -1,28 +1,30 @@
 
-.homepageHeader{
-    margin:0;
+.homepageHeader {
+    margin: 0;
     height: 85px;
 }
- ul{
+
+ul {
     display: flex;
     margin-top: 130px;
     justify-content: space-around;
 }
 
 
-header:after{
+header:after {
     content: '';
     display: table;
     clear: both;
 }
- nav ul{
-    margin:0;
+
+nav ul {
+    margin: 0;
     padding: 0;
     list-style: none;
     color: white;
 }
 
- nav li{
+nav li {
     display: inline-block;
 
 
@@ -31,51 +33,51 @@ header:after{
 }
 
 
-
- nav a{
+nav a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 30px;
 }
 
-nav a:hover{
+nav a:hover {
     color: #198c89;
 }
 
 
-nav a::before{
-    content:  '';
+nav a::before {
+    content: '';
     display: block;
     height: 5px;
     width: 0%;
     background-color: #198c89;
     position: absolute;
-    bottom:0;
+    bottom: 0;
     transition: all ease-in-out 250ms;
 
 }
 
- nav a:hover::before{
+nav a:hover::before {
     width: 100%;
 }
 
-.navigationBarLogo{
+.navigationBarLogo {
     width: 100px;
 }
 
 
 @media only screen and (max-width: 600px) {
-    nav a{
+    nav a {
 
         font-size: 15px;
     }
-    .homepageHeader{
-        margin:0;
+
+    .homepageHeader {
+        margin: 0;
         height: 55px;
     }
 
-    .navigationBarLogo{
+    .navigationBarLogo {
         width: 80px;
     }
 

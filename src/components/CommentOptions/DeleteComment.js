@@ -1,7 +1,7 @@
 import styles from './CommentOptions.module.css'
 import React from 'react'
 
-function DeleteComment({ message, action }) {
+function DeleteComment({message, action}) {
     return (
         <div className={styles['modelDelete']}>
             <h3 className={styles['deleteMessage']}>{message}</h3>
@@ -11,16 +11,16 @@ function DeleteComment({ message, action }) {
                     type="button"
                     onClick={() => action(false)}
                 >
-                  Cancel
+                    Cancel
                 </button>
                 <button
                     className={styles['customButton']}
                     type="button"
                     // color="warning"
                     onClick={() => action(true)}
-                    >
-                        Ok
-                  </button>
+                >
+                    Ok
+                </button>
 
             </div>
         </div>

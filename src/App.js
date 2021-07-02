@@ -40,37 +40,37 @@ function App() {
                   <Route exact path="/About">
                       <About />
                   </Route>
-                  <route exact path="/Demodrop">
+                  <Route exact path="/Demodrop">
                       <Demodrop />
-                  </route>
+                  </Route>
                   <Route exact path="/SignIn">
                       <SignIn />
                   </Route>
                   <Route exact path="/SignUp">
                       <SignUp />
                   </Route>
-                  <route exact path ="/myDemos">
+                  <Route exact path ="/myDemos">
                       <MyDemos />
-                  </route>
-                  <route exact path ="/newsubmissions">
+                  </Route>
+                  <Route exact path ="/newsubmissions">
                       <NewSubmissions/>
-                  </route>
-                  <route exact path ="/oldsubmissions">
+                  </Route>
+                  <Route exact path ="/oldsubmissions">
                       <OldSubmissions/>
-                  </route>
-                  <route exact path ="/viewSubmission">
+                  </Route>
+                  <Route exact path ="/viewSubmission">
                       <ViewSubmission/>
-                  </route>
+                  </Route>
 
-                  <route exact path ="/viewComment">
+                  <Route exact path ="/viewComment">
                       <ViewComment/>
-                  </route>
-                  <route exact path ="/writeComment">
+                  </Route>
+                  <Route exact path ="/writeComment">
                       <WriteComment/>
-                  </route>
-                  <route exact path ="/editComment">
+                  </Route>
+                  <Route exact path ="/editComment">
                       <EditComment/>
-                  </route>
+                  </Route>
 
 
               </Switch>

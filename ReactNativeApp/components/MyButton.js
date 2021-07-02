@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import {StyleSheet, Text, TouchableOpacity} from 'react-native'
 
-function MyButton({ handleClick, children }) {
+function MyButton({handleClick, children}) {
 
     return (
         <TouchableOpacity

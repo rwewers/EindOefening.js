@@ -1,11 +1,11 @@
 import React from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import {Text, View, StyleSheet} from 'react-native'
 import {
     useFonts,
     Comfortaa_400Regular
 } from "@expo-google-fonts/comfortaa"
 
-function PageTitle({ children }) {
+function PageTitle({children}) {
 
     let [fontsLoaded] = useFonts({
         Comfortaa_400Regular

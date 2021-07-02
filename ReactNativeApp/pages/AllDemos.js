@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import { getAllUsers } from '../helpers/axiosConfig'
-import { useAuthentication } from '../hooks/Authentication'
+import React, {useEffect, useState} from 'react'
+import {ScrollView, StyleSheet, Text, View} from 'react-native'
+import {getAllUsers} from '../helpers/axiosConfig'
+import {useAuthentication} from '../hooks/Authentication'
 import PageTitle from '../components/PageTitle'
 import Page from '../components/Page'
 
 
-function AllDemos({ navigation }) {
+function AllDemos({navigation}) {
 
-    const { getUser } = useAuthentication()
+    const {getUser} = useAuthentication()
     const [allUsers, setAllUsers] = useState()
 
     useEffect(() => {
 
         fetchData()
+
         async function fetchData() {
 
             const user = await getUser()
@@ -36,7 +37,6 @@ function AllDemos({ navigation }) {
     }, [])
 
 
-
     return (
         <Page navigation={navigation}>
             <PageTitle>All Demos</PageTitle>
@@ -47,10 +47,10 @@ function AllDemos({ navigation }) {
                             <View key={user.userId}>
                                 {user.demos.length > 0 && (
                                     <View>
-                                        <Text style={styles.user} >User: {user.username}</Text>
+                                        <Text style={styles.user}>User: {user.username}</Text>
                                         {user.demos.map(demo => (
                                             <View key={demo.id} style={styles.card}>
-                                                <Text style={styles.demoText} >{demo.artist} -  {demo.songTitle}</Text>
+                                                <Text style={styles.demoText}>{demo.artist} - {demo.songTitle}</Text>
                                             </View>
                                         ))}
                                     </View>
@@ -100,8 +100,8 @@ const styles = StyleSheet.create({
         color: 'white',
     },
 
-    demoText :{
-      color: 'white',
+    demoText: {
+        color: 'white',
     },
 })
 

@@ -1,69 +1,76 @@
-h1{
+h1 {
 
     color: white;
 
 }
 
 input, label {
-    display:block;
+    display: block;
     height: 25px;
 
 }
 
 
-label{
+label {
+
 
     color: white;
     text-transform: uppercase;
 }
-.demodropForm{
+
+.demodropForm {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.demodropButton{
+
+.demodropButton {
     width: 200px;
     height: 50px;
     border-radius: 12px;
     margin-top: 15px;
     color: black;
 }
-.fileLabel{
+
+.fileLabel {
     width: 500px;
     background-color: white;
 
 }
-.demodropContainer{
-    margin-top: 0px;
+
+.demodropContainer {
+    margin-top: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-.messageSucces{
-color: white;
+
+.messageSucces {
+    color: white;
 }
-.messageSuccesHere{
+
+.messageSuccesHere {
     color: #198c89;
 }
 
 @media only screen and (max-width: 600px) {
-    .fileLabel{
+    .fileLabel {
 
         width: 200px;
         height: 20px;
     }
 
 
-    .demodropContainer{
+    .demodropContainer {
         margin: 10px;
         display: flex;
-       flex-direction: column;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
 
-    .demodropButton{
+    .demodropButton {
         width: 100px;
         height: 30px;
         border-radius: 12px;
@@ -71,7 +78,7 @@ color: white;
         color: black;
     }
 
-    .messageSucces{
+    .messageSucces {
         flex-direction: column;
         align-items: center;
         display: flex;

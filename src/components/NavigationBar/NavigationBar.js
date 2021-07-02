@@ -1,76 +1,85 @@
 import React, {useContext} from 'react';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import logo1 from '../../../src/logo.png';
-import { AuthContext, useAuthState } from '../../Context/AuthContext';
+import {AuthContext, useAuthState} from '../../Context/AuthContext';
 
 import styles from './NavigationBar.module.css';
 
 
 function NavigationBar() {
-    const { logout } = useContext(AuthContext);
+    const {logout} = useContext(AuthContext);
     const {isAuthenticated} = useAuthState();
     const {user} = useAuthState();
 
     let isAdmin = false;
-    if(user){
+    if (user) {
         let length = user.roles.length;
         for (let i = 0; i < length; i++) {
-            if(user.roles[i] === 'ROLE_ADMIN'){
+            if (user.roles[i] === 'ROLE_ADMIN') {
                 isAdmin = true;
             }
         }
     }
-    function onSubmit(event){
+
+    function onSubmit(event) {
         event.preventDefault();
-            logout();
+        logout();
     }
 
-    function whoLoggedIn(){
-        if(isAuthenticated){
-            if(isAdmin){
-                return(
+    function whoLoggedIn() {
+        if (isAuthenticated) {
+            if (isAdmin) {
+                return (
                     <ul>
                         <li>
-                            <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1} className={styles['navigationBarLogo']} alt="logo1" ></img></NavLink>
+                            <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1}
+                                                                                                          className={styles['navigationBarLogo']}
+                                                                                                          alt="logo1"></img></NavLink>
                         </li>
                         <li>
-                            <NavLink className="navLinks" to="/newsubmissions" exact activeClassName="active-link">New </NavLink>
+                            <NavLink className="navLinks" to="/newsubmissions" exact
+                                     activeClassName="active-link">New </NavLink>
                         </li>
                         <li>
-                            <NavLink className="navLinks" to="/oldsubmissions" exact activeClassName="active-link">old </NavLink>
+                            <NavLink className="navLinks" to="/oldsubmissions" exact
+                                     activeClassName="active-link">old </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/" activeClassName="active-link" >
+                            <NavLink to="/" activeClassName="active-link">
+                                <span onClick={onSubmit}>Logout</span> </NavLink>
+                        </li>
+                    </ul>
+                )
+            } else {
+                return (
+                    <ul>
+                        <li>
+                            <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1}
+                                                                                                          className={styles['navigationBarLogo']}
+                                                                                                          alt="logo1"></img></NavLink>
+                        </li>
+                        <li>
+                            <NavLink className="navLinks" to="demodrop" exact activeClassName="active-link">Demo
+                                drop</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className="navLinks" to="myDemos" exact activeClassName="active-link">My
+                                demo's</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/" activeClassName="active-link">
                                 <span onClick={onSubmit}>Logout</span> </NavLink>
                         </li>
                     </ul>
                 )
             }
-            else{
-                return(
-                    <ul>
-                        <li>
-                            <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1} className={styles['navigationBarLogo']} alt="logo1" ></img></NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="navLinks" to="demodrop" exact activeClassName="active-link">Demo drop</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="navLinks" to="myDemos" exact activeClassName="active-link">My demo's</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/" activeClassName="active-link" >
-                                <span onClick={onSubmit}>Logout</span> </NavLink>
-                        </li>
-                    </ul>
-                )
-            }
-        }
-        else{
-            return(
+        } else {
+            return (
                 <ul>
                     <li>
-                        <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1} className={styles['navigationBarLogo']} alt="logo1" ></img></NavLink>
+                        <NavLink className="navLinks" to="/" exact activeClassName="active-link"><img src={logo1}
+                                                                                                      className={styles['navigationBarLogo']}
+                                                                                                      alt="logo1"></img></NavLink>
                     </li>
                     <li>
                         <NavLink className="navLinks" to="/" exact activeClassName="active-link">Home</NavLink>
@@ -101,4 +110,5 @@ function NavigationBar() {
         </div>
     );
 }
+
 export default NavigationBar;

@@ -1,4 +1,4 @@
-.signupForm label{
+.signupForm label {
     color: white;
 
 
@@ -11,44 +11,47 @@
     flex-direction: column;
     align-items: center;
 }
-.signUpInput{
+
+.signUpInput {
     height: 18px;
 }
 
-.signUpInput p{
+.signUpInput p {
     color: white;
 
 }
 
-.messageSucces{
+.messageSucces {
     color: white;
 }
 
-.signUpInput{
+.signUpInput {
     width: 350px;
 }
-.signUpButton{
+
+.signUpButton {
     width: 200px;
     height: 50px;
     border-radius: 12px;
     margin-top: 15px;
     color: black;
 }
-.messageSucces{
+
+.messageSucces {
     display: flex;
     justify-content: center;
 }
 
-.signUpSuccesHere{
+.signUpSuccesHere {
     margin-left: 10px;
     margin-right: 10px;
     color: #198c89;
 }
 
-.alreadyHaveAnAccountHere{
+.alreadyHaveAnAccountHere {
     color: #198c89;
 }
 
-.alreadyHaveAnAccount{
+.alreadyHaveAnAccount {
     color: white;
 }

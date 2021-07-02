@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import SongLoader from "../../components/songLoader/SongLoader";
@@ -8,8 +8,7 @@ import CommentViewer from "../../components/CommentViewer/CommentViewer";
 import styles from "./Submissions.module.css";
 
 
-
-function NewSubmissions(){
+function NewSubmissions() {
 
     const [allUsers, setAllUsers] = useState()
     const [hasDemos, setHasDemos] = useState(false)
@@ -18,6 +17,7 @@ function NewSubmissions(){
     useEffect(() => {
 
         fetchData()
+
 //              TODO PAGINA REFRESHEN LOGT UIT!!!
 
         async function fetchData() {
@@ -29,14 +29,13 @@ function NewSubmissions(){
                     }
                 })
 
-               let {data} = response;
+                let {data} = response;
                 data.forEach(user => {
                     if (user.demos.length > 0) {
                         for (let i = 0; i < user.demos.length; i++) {
-                            if(user.demos[i].comment == null){
+                            if (user.demos[i].comment == null) {
                                 setHasDemos(true);
-                            }
-                            else{
+                            } else {
                                 setHasDemos(false);
                             }
                         }
@@ -53,53 +52,58 @@ function NewSubmissions(){
                 console.log(error)
             }
         };
-         }, [])
+    }, [])
+
     function displayDemos(user, demos) {
         return demos.map(demo => (
-            demo.comment == null ?(
+            demo.comment == null ? (
 
 
-            <li className={styles['displayDemoContainer']} key={demo.songTitle} >
+                <div className={styles['displayDemoContainer']}>
 
-                <label>{user.username}</label>
-                <label>{user.firstName} {user.lastName}</label>
-                <label> {demo.artist} - {demo.songTitle}</label>
-                <SongLoader
-                    song={demo}
-                />
-                <CommentViewer
-                    songId = {demo.id} />
+                    <label>{user.username}</label>
+                    <label>{user.firstName} {user.lastName}</label>
+                    <label> {demo.artist} - {demo.songTitle}</label>
+                    <SongLoader
+                        song={demo}
+                    />
+                    <CommentViewer
+                        songId={demo.id}/>
 
-                <NavLink className="navLinks" to=
-                    {`/viewSubmission?userId=${user.userId}&demoId=${demo.id}`} exact activeClassName="active-link"><button className={styles['writeACommentbutton']}>Write a comment</button></NavLink>
-            </li>
-            ):(
+                    <NavLink className="navLinks" to=
+                        {`/viewSubmission?userId=${user.userId}&demoId=${demo.id}`} exact activeClassName="active-link">
+                        <button className={styles['writeACommentbutton']}>Write a comment</button>
+                    </NavLink>
+                </div>
+            ) : (
                 <div>
                     <p></p>
                 </div>
-                )
+            )
         ))
     }
+
     function displayUser(user) {
-            if(user.demos.length > 0){
-                return(
-                    <div>
-                        {displayDemos(user, user.demos)}
+        if (user.demos.length > 0) {
+            return (
+                <div>
+                    {displayDemos(user, user.demos)}
 
-                    </div>
-                )
-            }
-    }
-
-    function areThereDemos(){
-
-        if(!hasDemos){
-            return(
-                <p className={styles['noSubmissionMessage']} >There are no new submissons...</p>
+                </div>
             )
         }
     }
-    return(
+
+    function areThereDemos() {
+
+        if (!hasDemos) {
+            return (
+                <p className={styles['noSubmissionMessage']}>There are no new submissons...</p>
+            )
+        }
+    }
+
+    return (
         <>
             <NavigationBar/>
             {isLoading}
@@ -112,10 +116,10 @@ function NewSubmissions(){
                 ))}
 
 
-
             </div>
         </>
     )
 }
+
 export default NewSubmissions;
 

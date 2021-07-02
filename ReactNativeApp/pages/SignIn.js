@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import { Controller, useForm } from 'react-hook-form'
-import { Text, TextInput, View, StyleSheet } from 'react-native'
+import React, {useState, useEffect} from 'react'
+import {Controller, useForm} from 'react-hook-form'
+import {Text, TextInput, View, StyleSheet} from 'react-native'
 import colors from '../config/colors'
-import { useAuthentication } from '../hooks/Authentication'
+import {useAuthentication} from '../hooks/Authentication'
 import MyButton from '../components/MyButton'
 import Page from '../components/Page'
 
 
-function SignIn({ navigation }) {
+function SignIn({navigation}) {
 
-    const { control } = useForm()
+    const {control} = useForm()
     const [message, setMessage] = useState()
-    const { isAdmin, login } = useAuthentication()
+    const {isAdmin, login} = useAuthentication()
     const [isLoading, setIsLoading] = useState(false)
     const [isMounted, setIsMounted] = useState(false)
 
@@ -27,8 +27,6 @@ function SignIn({ navigation }) {
 
 
     const onSubmit = async data => {
-        console.log(username);
-        console.log(password);
 
         setIsLoading(true)
         const user = await login(username, password)
@@ -54,15 +52,14 @@ function SignIn({ navigation }) {
     }
 
 
-
     return (
         <Page navigation={navigation}>
-            <View style={styles.form} >
+            <View style={styles.form}>
                 <View style={styles.formField}>
                     <Text style={styles.label}>User name</Text>
                     <Controller
                         control={control}
-                        render={({ onChange, onBlur, value }) => (
+                        render={({onChange, onBlur, value}) => (
                             <TextInput
                                 style={styles.input}
                                 onBlur={onBlur}
@@ -71,17 +68,17 @@ function SignIn({ navigation }) {
                             />
                         )}
                         name="username"
-                        rules={{ required: true }}
+                        rules={{required: true}}
                         defaultValue=""
                     />
-                    {/*{errors.userName && <Text style={styles.error}>Username is required</Text>}*/}
+
                 </View>
 
                 <View style={styles.formField}>
                     <Text style={styles.label}>Password</Text>
                     <Controller
                         control={control}
-                        render={({ onChange, onBlur, value }) => (
+                        render={({onChange, onBlur, value}) => (
                             <TextInput
                                 style={styles.input}
                                 onBlur={onBlur}
@@ -91,10 +88,10 @@ function SignIn({ navigation }) {
                             />
                         )}
                         name="password"
-                        rules={{ required: true }}
+                        rules={{required: true}}
                         defaultValue=""
                     />
-                    {/*{errors.password && <Text style={styles.error}>Password is required</Text>}*/}
+
                     {/*{message && <Text style={styles.error}>{message}</Text>}*/}
                 </View>
                 <MyButton handleClick={onSubmit}>Sign in</MyButton>

@@ -1,23 +1,22 @@
 
-
-.mydemosContainer{
+.mydemosContainer {
     border-style: solid;
     border-color: white;
     margin: 10px;
     border-left: 0;
     border-right: 0;
-    padding : 25px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 
-.mydemosContainer > label{
+.mydemosContainer > label {
     padding-bottom: 20px;
 }
 
-.noDemoMessage{
+.noDemoMessage {
     display: flex;
     justify-content: center;
     color: white;

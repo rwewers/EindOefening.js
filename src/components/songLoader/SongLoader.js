@@ -13,8 +13,8 @@ function SongLoader({song}) {
     useEffect(() => {
         playMusic();
 
-    async function playMusic() {
-        setIsLoading(true)
+        async function playMusic() {
+            setIsLoading(true)
             try {
                 const response = await axios.get(`http://localhost:8080/api/fileUpload/${song.fileName}`, {
                     responseType: 'arraybuffer',
@@ -32,9 +32,11 @@ function SongLoader({song}) {
                 console.log(error)
             }
         }
+
+        // eslint-disable-next-line
     }, [user])
-        return (
-            <> {isLoading}
+    return (
+        <> {isLoading}
             <div className="songLoader">
                 <ReactAudioPlayer
                     src={data}
@@ -43,7 +45,8 @@ function SongLoader({song}) {
                     controls
                 />
             </div>
-            </>
-        )
+        </>
+    )
 }
+
 export default SongLoader;

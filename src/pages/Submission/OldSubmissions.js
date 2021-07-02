@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import SongLoader from "../../components/songLoader/SongLoader";
@@ -8,16 +8,15 @@ import CommentViewer from "../../components/CommentViewer/CommentViewer";
 import styles from "./Submissions.module.css";
 
 
-function NewSubmissions(){
+function NewSubmissions() {
 
     const [allUsers, setAllUsers] = useState()
     const [hasDemos, setHasDemos] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
-        console.log(hasDemos);
         fetchData()
-//              TODO PAGINA REFRESHEN LOGT UIT!!!
+
 
         async function fetchData() {
             setIsLoading(true)
@@ -33,17 +32,15 @@ function NewSubmissions(){
 
 
                 let {data} = response;
-                console.log(data);
+
                 data.forEach(user => {
-                    console.log(user);
+
                     if (user.demos.length > 0) {
                         for (let i = 0; i < user.demos.length; i++) {
 
 
-                            if(user.demos[i].comment != null){
+                            if (user.demos[i].comment != null) {
                                 setHasDemos(true);
-
-
 
 
                             }
@@ -59,13 +56,14 @@ function NewSubmissions(){
             }
         }
     }, [])
+
     function displayDemos(user, demos) {
 
         return demos.map(demo => (
             demo.comment != null ? (
 
 
-                <p className={styles['displayDemoContainer']} key={demo.songTitle} >
+                <div className={styles['displayDemoContainer']} key={demo.songTitle}>
 
                     <label> {user.username}</label>
                     <label>{user.firstName} {user.lastName}</label>
@@ -74,21 +72,24 @@ function NewSubmissions(){
                         song={demo}
                     />
                     <CommentViewer
-                        songId = {demo.id} />
+                        songId={demo.id}/>
 
                     <NavLink className="navLinks" to=
-                        {`/viewSubmission?userId=${user.userId}&demoId=${demo.id}`} exact activeClassName="active-link"><button className={styles['viewInfoButton']}>View info</button></NavLink>
-                </p>
-            ):(
+                        {`/viewSubmission?userId=${user.userId}&demoId=${demo.id}`} exact activeClassName="active-link">
+                        <button className={styles['viewInfoButton']}>View info</button>
+                    </NavLink>
+                </div>
+            ) : (
                 <div className={styles['oldDemosYet']}>
 
                 </div>
             )
         ))
     }
+
     function displayUser(user) {
         return user.demos.length > 0 && (
-            <div className="ulContainer">
+            <div className="ulContainer" key="display old submissions">
                 {displayDemos(user, user.demos)}
 
             </div>
@@ -96,16 +97,16 @@ function NewSubmissions(){
         )
     }
 
-    function areThereDemos(){
+    function areThereDemos() {
 
-        if(!hasDemos){
-            return(
-                <p className={styles['noSubmissionMessage']} >There are no old submissons...</p>
+        if (!hasDemos) {
+            return (
+                <p className={styles['noSubmissionMessage']}>There are no old submissons...</p>
             )
         }
     }
 
-    return(
+    return (
         <>
             <NavigationBar/>
             {isLoading}
@@ -117,10 +118,10 @@ function NewSubmissions(){
                 ))}
 
 
-
             </div>
         </>
     )
 }
+
 export default NewSubmissions;
 

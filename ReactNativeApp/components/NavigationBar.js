@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import { Image, StyleSheet, View, TouchableOpacity } from 'react-native'
+import React, {useEffect, useState} from 'react'
+import {Image, StyleSheet, View, TouchableOpacity} from 'react-native'
 import colors from '../config/colors'
-import { useAuthentication } from '../hooks/Authentication'
+import {useAuthentication} from '../hooks/Authentication'
 
-function NavigationBar({ navigation }) {
+function NavigationBar({navigation}) {
 
-    const { getUser, isAdmin } = useAuthentication()
+    const {getUser, isAdmin} = useAuthentication()
     const [user, setUser] = useState()
 
     useEffect(() => {
 
         fetchUser()
+
         async function fetchUser() {
             const user = await getUser()
             if (user && isAdmin(user)) {
@@ -22,24 +23,24 @@ function NavigationBar({ navigation }) {
     return (
         <View style={styles.header}>
             <TouchableOpacity
-                onPress={() => navigation.navigate('Home', { name: 'Home' })}
+                onPress={() => navigation.navigate('Home', {name: 'Home'})}
             >
-                <Image source={require('../assets/logo.png')} style={styles.logo} />
+                <Image source={require('../assets/logo.png')} style={styles.logo}/>
             </TouchableOpacity>
             <View style={styles.tools}>
                 {user && (
                     <TouchableOpacity
                         style={styles.userIcon}
-                        onPress={() => navigation.navigate('MyProfile', { name: 'MyProfile' })}
+                        onPress={() => navigation.navigate('MyProfile', {name: 'MyProfile'})}
                     >
-                        <Image source={require('../assets/user-icon.png')} style={styles.userIcon} />
+                        <Image source={require('../assets/user-icon.png')} style={styles.userIcon}/>
                     </TouchableOpacity>
                 )}
                 <TouchableOpacity
                     style={styles.menu}
-                    onPress={() => navigation.navigate('Menu', { name: 'Menu' })}
+                    onPress={() => navigation.navigate('Menu', {name: 'Menu'})}
                 >
-                    <Image source={require('../assets/menu-icon.png')} style={styles.menu} />
+                    <Image source={require('../assets/menu-icon.png')} style={styles.menu}/>
                 </TouchableOpacity>
             </View>
         </View>

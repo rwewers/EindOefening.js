@@ -61,7 +61,8 @@ function ViewSubmission() {
                 console.log(error)
             }
         };
-    },[])
+        // eslint-disable-next-line
+    }, [])
 
     function showingComment(comment) {
 
@@ -70,7 +71,7 @@ function ViewSubmission() {
                 <div className={styles['showCommentDiv']}>
 
                     Comment:
-                    <textarea className={styles['viewCommentViewSubmission']} value={comment.message}> </textarea>
+                    <textarea className={styles['viewCommentViewSubmission']} value={comment.message}/>
 
                 </div>
 
@@ -108,6 +109,7 @@ function ViewSubmission() {
                     <div className={styles['containerViewSubmission']}>
                         <h1>{demoData.data.artist} - {demoData.data.songTitle}</h1>
                         <table className={styles['tableViewSubmission']}>
+                            <tbody>
                             <tr>
                                 <th>Firstname</th>
                                 <th>Lastname</th>
@@ -117,6 +119,8 @@ function ViewSubmission() {
                                 <th>Instagram</th>
 
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>{userData.data.firstName}</td>
                                 <td>{userData.data.lastName}</td>
@@ -125,6 +129,8 @@ function ViewSubmission() {
                                 <td>{userData.data.facebook}</td>
                                 <td>{userData.data.instagram}</td>
                             </tr>
+                            </tbody>
+
                         </table>
                         <div className={styles['spaceDivViewComment']}></div>
                         {showingComment(comment)}

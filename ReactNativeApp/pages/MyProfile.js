@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { getUserById } from '../helpers/axiosConfig'
-import { useAuthentication } from '../hooks/Authentication'
+import React, {useEffect, useState} from 'react'
+import {StyleSheet, Text, View} from 'react-native'
+import {getUserById} from '../helpers/axiosConfig'
+import {useAuthentication} from '../hooks/Authentication'
 import PageTitle from '../components/PageTitle'
 import Page from '../components/Page'
 
-function MyProfile({ navigation }) {
+function MyProfile({navigation}) {
 
-    const { getUser } = useAuthentication()
+    const {getUser} = useAuthentication()
     const [userData, setUserData] = useState()
 
     useEffect(() => {
 
         fetchData()
+
         async function fetchData() {
             const user = await getUser()
 
@@ -33,7 +34,6 @@ function MyProfile({ navigation }) {
     }, [])
 
 
-
     return (
         <Page navigation={navigation}>
             <PageTitle>My profile</PageTitle>
@@ -50,7 +50,7 @@ function MyProfile({ navigation }) {
                     </View>
                 )
             }
-        </Page >
+        </Page>
     )
 
 }
