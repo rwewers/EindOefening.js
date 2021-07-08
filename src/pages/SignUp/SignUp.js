@@ -26,7 +26,7 @@ function SignUp() {
 
     async function onSubmit(event) {
         event.preventDefault();
-        // console.log(email, username, password);
+      
 
         let isValid = true;
 
