@@ -26,7 +26,7 @@ function ViewSubmission() {
     useEffect(() => {
         fetchData()
 
-//              TODO PAGINA REFRESHEN LOGT UIT!!!
+
         async function fetchData() {
 
 
@@ -56,7 +56,7 @@ function ViewSubmission() {
                 }
 
             } catch (error) {
-                // TODO User error message
+                
                 setIsLoading(false)
                 console.log(error)
             }
